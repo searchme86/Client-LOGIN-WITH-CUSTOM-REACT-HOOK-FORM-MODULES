@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from './pages/User/Login/Login';
+
 import Layout from './assets/Layout';
 import Home from './pages/Home/Home';
+import Login from './pages/User/Login';
 
 function Router() {
   return (
