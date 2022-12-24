@@ -9,36 +9,83 @@ import LoginAlert from './LoginAlert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import useDebounceFn from '../../../../hooks/useDebounce';
 import './input.css';
 
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const validationSchema = z.object({
+  userNickname: z.string().min(1, { message: '닉네임이 입력되지 않았습니다.' }),
+  userPassword: z
+    .string()
+    .min(1, { message: '패스워드가 입력되지 않았습니다.' }),
+});
+
+type ValidationSchema = z.infer<typeof validationSchema>;
+
 function LoginBox() {
+  type InitialStateType = {
+    [key: string]: string;
+  };
+
   const [showPassword, setShowPassword] = useState(true);
+  const [testValue, setTestValue] = useState<InitialStateType>({
+    userNickname: '',
+    userPassword: '',
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ValidationSchema>({
+    resolver: zodResolver(validationSchema),
+  });
+
+  console.log('errors:', errors);
+
+  const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
+    console.log('data', data);
+  };
 
   const handleToggle = () => {
     setShowPassword((prev) => !prev);
-    console.log('clicked');
-    console.log('showPassword', showPassword);
   };
+
+  const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {
+      target: { name, value },
+    } = e;
+    setTestValue({ ...testValue, [name]: value });
+  };
+
+  const inputDebouncedHandler = useDebounceFn(inputChangeHandler);
 
   return (
     <LonginContainer>
       <LoginHeader />
       <div className="container">
-        <form action="">
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="input-holder">
-            <label htmlFor="userEmail">
+            <label htmlFor="userNickname">
               <OffScreenSpan>유저 이메일</OffScreenSpan>
             </label>
             <input
               type="text"
-              id="userEmail"
+              id="userNickname"
               className="input"
-              placeholder="이메일을 입력해주세요"
+              placeholder="닉네임을 입력해주세요"
+              {...register('userNickname', {
+                onChange: inputDebouncedHandler,
+              })}
             />
           </div>
-          <p className="errorMessage">
-            유저 닉네임의 에러메세지 텍스트 입니다.
-          </p>
+          {errors.userNickname ? (
+            <p className="errorMessage">{errors.userNickname.message}</p>
+          ) : null}
+
           <div className="input-holder">
             <label htmlFor="userPassword">
               <OffScreenSpan>유저 이메일</OffScreenSpan>
@@ -48,6 +95,9 @@ function LoginBox() {
               id="userPassword"
               placeholder="비밀번호를 입력해주세요"
               className="input"
+              {...register('userPassword', {
+                onChange: inputDebouncedHandler,
+              })}
             />
             <button type="button" className="button" onClick={handleToggle}>
               {showPassword ? (
@@ -69,6 +119,7 @@ function LoginBox() {
               )}
             </button>
           </div>
+          <button type="submit">sign in</button>
           <p className="errorMessage">
             유저 이메일의 에러메세지 텍스트 입니다.
           </p>
