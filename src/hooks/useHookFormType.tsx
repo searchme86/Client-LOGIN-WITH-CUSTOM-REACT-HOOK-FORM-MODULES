@@ -30,7 +30,7 @@ interface FormPropsWithZod<T extends ZodSchema<any>>
   schema: T;
 }
 
-export interface FormProps<T extends FieldValues = any>
+export interface CustomFormProps<T extends FieldValues = any>
   extends Omit<ComponentProps<'form'>, 'onSubmit'> {
   hookFormReturn: UseFormReturn<T>;
   onSubmit: SubmitHandler<T>;
