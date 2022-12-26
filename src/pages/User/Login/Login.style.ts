@@ -13,9 +13,6 @@ export const LoginWrapper = styled(motion.div)`
 export const LonginContainer = styled.div`
   padding: 15px;
   max-width: 450px;
-`;
-
-export const LoginBox = styled.div`
   position: relative;
   width: 390px;
   padding: 25px 15px 25px 15px;
@@ -23,16 +20,16 @@ export const LoginBox = styled.div`
   border-radius: 14px;
   box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
   background: #fff;
-  z-index: 1;
+  z-index: 4;
+  text-align: center;
 `;
 
-export const LoginHeader = styled.div`
+export const LoginHead = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
-export const LoginImage = styled.div``;
 
 export const LoginToHome = styled(Link)`
   display: block;
@@ -46,12 +43,9 @@ export const LoginTitle = styled.h1`
   margin: 10px 0 15px 0;
 `;
 
-export const LoginContent = styled.div``;
-
-export const LoginBtnArea = styled.div``;
-
 export const LoginAlertArea = styled.div`
   text-align: center;
+  margin: 20px 0 20px 0;
 `;
 
 export const LoginToSignUp = styled(Link)`
@@ -63,8 +57,6 @@ export const LoginToSignUpMsg = styled.p`
   font-size: 17px;
   cursor: pointer;
 `;
-
-export const LoginErrorArea = styled.div``;
 
 export const LoginBgShapehape = styled.div`
   width: 100%;

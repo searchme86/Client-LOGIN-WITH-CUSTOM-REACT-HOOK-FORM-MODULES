@@ -1,12 +1,12 @@
 import React from 'react';
-import LoginBase from './LoginView/LoginBase';
+import LoginBackground from './LoginView/LoginBackground';
 import LoginBox from './LoginView/LoginBox';
 
 function Login() {
   return (
-    <LoginBase>
+    <LoginBackground>
       <LoginBox />
-    </LoginBase>
+    </LoginBackground>
   );
 }
 

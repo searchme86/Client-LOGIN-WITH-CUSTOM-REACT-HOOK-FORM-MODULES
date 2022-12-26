@@ -4,17 +4,17 @@ import { LonginContainer } from '../Login.style';
 
 import { OffScreenSpan } from '../../../../assets/styles/Common.style';
 import LoginHeader from './LoginHeader';
-import LoginAlert from './LoginAlert';
+import LoginAlert from './LoginAlertSection';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import useDebounceFn from '../../../../hooks/useDebounce';
 import './input.css';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import useDebounceFn from '../../../../hooks/useDebounce';
 
 const validationSchema = z.object({
   userNickname: z.string().min(1, { message: '닉네임이 입력되지 않았습니다.' }),
@@ -24,7 +24,6 @@ const validationSchema = z.object({
 });
 
 type ValidationSchema = z.infer<typeof validationSchema>;
-
 function LoginBox() {
   type InitialStateType = {
     [key: string]: string;
