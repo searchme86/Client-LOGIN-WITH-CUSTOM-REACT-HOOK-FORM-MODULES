@@ -1,3 +1,4 @@
+import React, { BaseSyntheticEvent } from 'react';
 import { z } from 'zod';
 import { Tiers } from './LoginFormData';
 import {
@@ -12,6 +13,11 @@ export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
   Tiers[0].id,
   ...Tiers.slice(1).map((p) => p.id),
 ];
+
+export type GenericOnSubmit = (
+  data: Record<string, any>,
+  event?: BaseSyntheticEvent
+) => void;
 
 export type FormSchemaType = z.infer<typeof FormSchema>;
 
