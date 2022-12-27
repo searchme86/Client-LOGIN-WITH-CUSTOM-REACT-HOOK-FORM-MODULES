@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { CustomInputProps } from '../../src/hooks/useCustomElmType';
+import { CustomInputProps } from './TuseCustomElmType';
 import FormErrorMessage from './TFormErrorMessage';
 
 export const InputElm = forwardRef<HTMLInputElement, CustomInputProps>(

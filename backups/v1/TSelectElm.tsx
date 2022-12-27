@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { CustomSelectProps } from '../../src/hooks/useCustomElmType';
+import { CustomSelectProps } from './TuseCustomElmType';
 
 // function SelectElm() {
 //   return <div></div>;

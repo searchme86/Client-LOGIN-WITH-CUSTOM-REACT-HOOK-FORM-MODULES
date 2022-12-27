@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FormProvider, FieldValues } from 'react-hook-form';
-import { CustomFormProps } from '../../src/hooks/useHookFormType';
+import { CustomFormProps } from './TuseHookFormType';
 
 function FormElm<T extends FieldValues>({
   hookFormReturn,
