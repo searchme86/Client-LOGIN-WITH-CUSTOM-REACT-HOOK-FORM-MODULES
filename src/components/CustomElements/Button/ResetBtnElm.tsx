@@ -9,12 +9,15 @@ function ResetBtnElm({ values }: ResetType) {
     formState: { isSubmitting },
   } = useFormContext();
   return (
-    <input
-      disabled={isSubmitting}
-      type="button"
-      onClick={() => reset && reset(values)}
-      value="Reset"
-    />
+    <div className="">
+      <button
+        type="button"
+        disabled={isSubmitting}
+        onClick={() => reset && reset(values)}
+      >
+        Reset
+      </button>
+    </div>
   );
 }
 
