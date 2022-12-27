@@ -12,9 +12,8 @@ function SelectElm({
 }) {
   const {
     register,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = useFormContext();
-  // const errorMessage = errors[name]?.message;
 
   return (
     <div className="">
@@ -24,8 +23,6 @@ function SelectElm({
           <option value={value}>{value}</option>
         ))}
       </select>
-      {/* {errorMessage && <p className="error">{errorMessage.toString()}</p>} */}
-
       <TFormErrorMessage name={name} />
     </div>
   );

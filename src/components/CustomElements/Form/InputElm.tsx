@@ -13,7 +13,7 @@ function InputElm<Model extends Record<string, any>>({
 }) {
   const {
     register,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = useFormContext();
 
   return (
@@ -23,14 +23,10 @@ function InputElm<Model extends Record<string, any>>({
         <input
           type={type}
           className={`block border text-lg px-4 py-3 mt-2 rounded-lg border-gray-200 focus:bg-white text-gray-900 focus:border-blue-600 focus:ring-0 outline-none w-full  disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed`}
-          // {...register(name as string)}
           {...register(name.toString())}
           disabled={isSubmitting}
         />
       </label>
-      {/* {errors[name as string] ? (
-        <p className="error">{errors[name as string]?.message?.toString()}</p>
-      ) : null} */}
 
       <TFormErrorMessage name={name.toString()} />
     </div>

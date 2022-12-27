@@ -5,10 +5,8 @@ import FormErrorMessage from '../display/FormErrorMessage';
 function CheckBoxElm({ name, text }: { name: string; text: string }) {
   const {
     register,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = useFormContext();
-
-  // const error = errors[name];
 
   return (
     <div>
