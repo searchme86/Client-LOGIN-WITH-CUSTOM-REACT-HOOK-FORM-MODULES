@@ -2,7 +2,7 @@ import React, { BaseSyntheticEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { GenericOnSubmit } from '../../../hooks/useHookFormType';
+import { GenericOnSubmit } from '../../../pages/User/Login/LoginUtils/LoginFormType';
 
 function FormElm<
   DataSchema extends Record<string, any>,
