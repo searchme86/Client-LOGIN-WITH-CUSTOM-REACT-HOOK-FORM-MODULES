@@ -10,7 +10,7 @@
  *  the beauty of this is, the values returned by the submit handler are fully typed
  * */
 
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, BaseSyntheticEvent } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -35,6 +35,11 @@ export interface CustomFormProps<T extends FieldValues = any>
   hookFormReturn: UseFormReturn<T>;
   onSubmit: SubmitHandler<T>;
 }
+
+export type GenericOnSubmit = (
+  data: Record<string, any>,
+  event?: BaseSyntheticEvent
+) => void;
 
 function useHookFormType() {
   const ApplyingZodValidation = <T extends ZodSchema<any>>({
