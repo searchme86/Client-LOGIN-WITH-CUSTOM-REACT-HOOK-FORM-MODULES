@@ -1,11 +1,7 @@
 import React, { BaseSyntheticEvent } from 'react';
 import { z } from 'zod';
 import { Tiers } from './LoginFormData';
-import {
-  signUpFormSchema,
-  validationSchema,
-  FormSchema,
-} from './LoginValidationSchema';
+import { signUpFormSchema, validationSchema, FormSchema } from './LoginSchema';
 
 export type TireIDType = typeof Tiers[number]['id'];
 
