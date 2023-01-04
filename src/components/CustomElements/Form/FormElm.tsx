@@ -4,6 +4,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { GenericOnSubmit } from '../../../pages/User/Login/LoginUtils/LoginFormType';
 
+import { FormElmContainer } from './FormElm.style';
+
 function FormElm<
   DataSchema extends Record<string, any>,
   Schema extends z.Schema<any, any>
@@ -28,11 +30,13 @@ function FormElm<
   console.log('여기는 form 에러!!', errors);
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit as GenericOnSubmit)}>
-        {children}
-      </form>
-    </FormProvider>
+    <FormElmContainer>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit as GenericOnSubmit)}>
+          {children}
+        </form>
+      </FormProvider>
+    </FormElmContainer>
   );
 }
 

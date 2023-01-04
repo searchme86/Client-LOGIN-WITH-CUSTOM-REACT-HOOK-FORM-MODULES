@@ -1,20 +1,25 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
+import { ButtonWrapper, Button } from '../../../assets/styles/Button.style';
+
 function SubmitBtnElm() {
   const {
     formState: { isSubmitting },
   } = useFormContext();
   return (
-    <div className="">
-      <button
+    <ButtonWrapper>
+      <Button
         type="submit"
-        className="w-full px-8 py-4 flex items-center justify-center uppercase text-white font-semibold bg-blue-600 rounded-lg disabled:bg-gray-100 disabled:text-gray-400"
         disabled={isSubmitting}
+        width="100px"
+        height="100px"
+        padding="10px 0"
+        bgColor="red"
       >
-        Create account
-      </button>
-    </div>
+        Create accountss
+      </Button>
+    </ButtonWrapper>
   );
 }
 
