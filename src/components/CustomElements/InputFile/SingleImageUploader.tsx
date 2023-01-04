@@ -4,10 +4,10 @@ import { useFormContext } from 'react-hook-form';
 import useImageCompression from '../../../hooks/useImageCompression';
 
 function SingleImageUploader<Model extends Record<string, any>>({
-  name,
+  zodValidationKey,
   btnTxt,
 }: {
-  name: keyof Model;
+  zodValidationKey: keyof Model;
   btnTxt: string;
 }) {
   const [base64, setBase64] = useState<string>();
@@ -19,12 +19,18 @@ function SingleImageUploader<Model extends Record<string, any>>({
     formState: { isSubmitting, errors },
   } = useFormContext();
 
-  let isImage = watch(name.toString()) && watch(name.toString())[0];
+  let isImage =
+    watch(zodValidationKey.toString()) && watch(zodValidationKey.toString())[0];
 
   useEffect(() => {
     const transformBase64 = async () => {
-      if (watch(name.toString()) && watch(name.toString())[0]) {
-        let compressed = await CompressImage(watch(name.toString())[0]);
+      if (
+        watch(zodValidationKey.toString()) &&
+        watch(zodValidationKey.toString())[0]
+      ) {
+        let compressed = await CompressImage(
+          watch(zodValidationKey.toString())[0]
+        );
         const reader = new FileReader();
         if (compressed) reader.readAsDataURL(compressed);
         reader.onloadend = () => {
@@ -45,10 +51,9 @@ function SingleImageUploader<Model extends Record<string, any>>({
 
       <input
         type="file"
-        multiple
         id="fileupload"
         disabled={isSubmitting}
-        {...register(name.toString())}
+        {...register(zodValidationKey.toString())}
         style={{ display: 'none' }}
       />
 
@@ -56,14 +61,15 @@ function SingleImageUploader<Model extends Record<string, any>>({
         {btnTxt}
       </label>
 
-      {watch(name.toString()) && watch(name.toString())[0] ? (
-        <span>{watch(name.toString())[0]?.name}</span>
+      {watch(zodValidationKey.toString()) &&
+      watch(zodValidationKey.toString())[0] ? (
+        <span>{watch(zodValidationKey.toString())[0]?.zodValidationKey}</span>
       ) : (
         <span>등록값이 없어서 watch가 안나옴</span>
       )}
 
-      {errors[name.toString()] ? (
-        <div>{errors[name.toString()]?.message?.toString()}</div>
+      {errors[zodValidationKey.toString()] ? (
+        <div>{errors[zodValidationKey.toString()]?.message?.toString()}</div>
       ) : null}
     </div>
   );
