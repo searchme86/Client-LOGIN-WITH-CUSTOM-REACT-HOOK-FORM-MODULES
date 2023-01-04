@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { HTMLInputTypeAttribute } from 'react';
 import { useFormContext } from 'react-hook-form';
+
+import {
+  InputWrapper,
+  Input,
+  InputLabel,
+} from '../../../assets/styles/Input.style';
+
 import TFormErrorMessage from '../UtilElements/FormErrorMessage';
 
 function InputElm<Model extends Record<string, any>>({
-  name,
-  displayName,
-  type,
+  zodValidationKey,
+  LabelTxt,
+  labelWeight,
+  labelSize,
+  labelMargin,
+  inputType,
+  inputID,
+  autoComplete,
+  inputPadding,
+  placeholder,
+  inputWidth,
+  inputHeight,
 }: {
-  name: keyof Model;
-  displayName: string;
-  type: string;
+  zodValidationKey: keyof Model;
+  LabelTxt: string;
+  labelSize?: string;
+  labelWeight?: number;
+  labelMargin?: string;
+  inputType: HTMLInputTypeAttribute;
+  inputID: string;
+  placeholder: string;
+  autoComplete?: string;
+  inputWidth?: string;
+  inputHeight?: string;
+  inputPadding?: string;
 }) {
   const {
     register,
@@ -17,19 +42,28 @@ function InputElm<Model extends Record<string, any>>({
   } = useFormContext();
 
   return (
-    <div>
-      <label className="block">
-        <span className="block">{displayName}</span>
-        <input
-          type={type}
-          className={`block border text-lg px-4 py-3 mt-2 rounded-lg border-gray-200 focus:bg-white text-gray-900 focus:border-blue-600 focus:ring-0 outline-none w-full  disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed`}
-          {...register(name.toString())}
+    <>
+      <InputLabel
+        htmlFor={inputID}
+        fontWeight={labelWeight}
+        fontSize={labelSize}
+        margin={labelMargin}
+      >
+        {LabelTxt}
+      </InputLabel>
+      <InputWrapper width={inputWidth} height={inputHeight}>
+        <Input
+          type={inputType}
+          id={inputID}
+          {...register(zodValidationKey.toString())}
+          autoComplete={autoComplete}
+          placeholder={placeholder}
+          padding={inputPadding}
           disabled={isSubmitting}
         />
-      </label>
-
-      <TFormErrorMessage name={name.toString()} />
-    </div>
+        <TFormErrorMessage name={zodValidationKey.toString()} />
+      </InputWrapper>
+    </>
   );
 }
 
