@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
 import { FormSchemaType } from '../LoginUtils/LoginFormType';
 import { SubmitHandler } from 'react-hook-form';
-
-import useImageCompression from '../../../../components/CustomElements/Utils/useImageCompression';
-import useCreateFormData from '../../../../components/CustomElements/Utils/useCreateFormData';
+import useImageCompression from '../../../../hooks/useImageCompression';
+import useCreateFormData from '../../../../hooks/useCreateFormData';
 
 function useLoginFormAction() {
   const { CompressImage } = useImageCompression();

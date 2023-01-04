@@ -2,47 +2,39 @@ import React from 'react';
 import {
   FormElm,
   InputElm,
-  CheckBoxElm,
-  CheckBoxElmMessage,
   SelectElm,
   RadioBoxElm,
-} from '../components/CustomElements/Form';
-import { ResetBtnElm, SubmitBtnElm } from '../components/CustomElements/Button';
+} from '../components/CustomElements';
+import SingleImageUploader from '../components/CustomElements/InputFile/SingleImageUploader';
+import TestCustomCheckbox from '../components/CustomElements/CheckBox/TestCustomCheckbox';
+import SubmitBtnElm from '../components/CustomElements/UtilElements/SubmitBtnElm';
+import ResetBtnElm from '../components/CustomElements/UtilElements/ResetBtnElm';
+import PreElm from '../components/CustomElements/UtilElements/PreElm';
 
-import PreElm from '../components/CustomElements/display/PreElm';
+import ButtonElm from '../components/CustomElements/Button/ButtonElm';
 
 import { FormSchema } from '../pages/User/Login/LoginUtils/LoginSchema';
-import {
-  FormSchemaType,
-  ResetType,
-} from '../pages/User/Login/LoginUtils/LoginFormType';
+import { FormSchemaType } from '../pages/User/Login/LoginUtils/LoginFormType';
 import { Tiers } from '../pages/User/Login/LoginUtils/LoginFormData';
-
 import { someDefaultValues } from '../pages/User/Login/LoginUtils/LoginFormData';
 import useLoginFormAction from '../pages/User/Login/hooks/useLoginFormAction';
 
 import './NewAppSinup.css';
-
-import CutomButton from '../components/CustomElements/Button/CutomButton';
-import Text from '../components/CustomElements/Text/Text';
-import TestApp from './TestApp';
-import AnimatedCheckbox from './AnimatedCheckbox';
-import TestCustomCheckbox from '../components/CustomElements/Form/TestCustomCheckbox';
 
 function NewAppSignup() {
   const { onSubmit } = useLoginFormAction();
 
   return (
     <>
-      <Text typography="h1" element="p">
-        ddd
-      </Text>
-
       <FormElm<FormSchemaType, typeof FormSchema>
         onSubmit={onSubmit}
         schema={FormSchema}
         defaultValues={someDefaultValues}
       >
+        {/* 추가 */}
+        <ButtonElm type="button">버튼</ButtonElm>
+        {/* 추가 */}
+        <SingleImageUploader name="files" btnTxt="파일을 등록해주세요" />
         <InputElm<FormSchemaType>
           displayName="Email"
           name="email"
@@ -57,21 +49,15 @@ function NewAppSignup() {
           name="pizzaChoice"
           options={['Chicken BBQ', 'Margarita', 'All-dressed']}
         />
-        {/* <CheckBoxElm name="accept" text="I accept the Terms of Service" /> */}
-
         <TestCustomCheckbox
           name="accept"
           text="I accept the Terms of Service"
         />
-        {/* <CheckBoxElmMessage /> */}
         <RadioBoxElm tiers={Tiers} />
         <PreElm />
         <SubmitBtnElm />
         <ResetBtnElm values={someDefaultValues} />
       </FormElm>
-
-      <TestApp />
-      {/* <AnimatedCheckbox /> */}
     </>
   );
 }

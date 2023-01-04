@@ -17,28 +17,28 @@ const GlobalStyle = createGlobalStyle`
     main,nav,footer{display:block; width:100%;}
     button{ text-transform:none; border:0; outline:none; cursor:pointer;}
 
-    input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    // input {
+    // -webkit-appearance: none;
+    //    -moz-appearance: none;
+    //         appearance: none;
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
+// input[type='number']::-webkit-inner-spin-button,
+// input[type='number']::-webkit-outer-spin-button {
+//     -webkit-appearance: none;
+//        -moz-appearance: none;
+//             appearance: none;
+// }
 
-input::-ms-clear { display: none; }
+// input::-ms-clear { display: none; }
 
-select {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
+// select {
+//     -webkit-appearance: none;
+//        -moz-appearance: none;
+//             appearance: none;
+// }
 
-select::-ms-expand { display: none; }
-`;
+// select::-ms-expand { display: none; }
+// `;
 
 export default GlobalStyle;
