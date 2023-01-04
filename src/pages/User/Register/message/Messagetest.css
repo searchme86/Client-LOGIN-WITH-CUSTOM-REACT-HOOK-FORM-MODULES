@@ -1,0 +1,10 @@
+.message-container {
+  margin: 15px 0 0 0;
+  padding: 0 0 10px 0;
+  box-sizing: border-box;
+}
+
+.message {
+  text-align: center;
+  font-size: 16px;
+}
