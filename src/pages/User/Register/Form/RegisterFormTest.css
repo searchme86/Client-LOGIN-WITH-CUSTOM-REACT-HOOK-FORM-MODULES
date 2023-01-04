@@ -1,32 +1,28 @@
-/* .formContainer {
-  background: red;
+/* .form-list > li {
+  margin: 0 0 10px 0;
+  padding: 5px 0 5px 0;
 } */
 
-.form-list > li {
-  margin: 0 0 10px 0;
-  /* padding: 5px 0 5px 0; */
-}
-
-.display-container {
+/* .display-container {
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.display-item {
+/* .display-item {
   width: 45%;
-}
+} */
 
-.inputBox {
+/* .inputBox {
   height: 40px;
   box-sizing: border-box;
-}
+} */
 
-label {
+/* label {
   display: block;
   font-size: 16px;
   margin: 0 0 5px 0;
   font-weight: 500;
-}
+} */
 
 input {
   display: block;

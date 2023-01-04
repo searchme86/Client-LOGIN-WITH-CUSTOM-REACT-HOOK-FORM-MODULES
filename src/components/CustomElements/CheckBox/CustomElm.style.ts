@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-export const CheckboxContainer = styled.div`
-  background: yellow;
-  border: 1px solid red;
-`;
+export const CheckboxContainer = styled.div``;
 
 export const CheckboxLabel = styled.label`
   position: relative;
