@@ -22,7 +22,10 @@ function FormElm<
     defaultValues,
     resolver: zodResolver(schema),
   });
+
   const handleSubmit = methods.handleSubmit;
+  const errors = methods.formState.errors;
+  console.log('여기는 form 에러!!', errors);
 
   return (
     <FormProvider {...methods}>
