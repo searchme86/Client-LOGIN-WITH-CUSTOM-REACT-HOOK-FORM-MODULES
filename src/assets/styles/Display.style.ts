@@ -20,12 +20,17 @@ export const DisplayContainer = styled.div<LayOutType>`
   align-items: ${({ alignItems }) => alignItems};
   padding: ${({ padding }) => padding};
   margin: ${({ margin }) => margin};
+  box-sizing: border-box;
 `;
 
 export const DisplayItem = styled.div<LayOutType>`
   display: ${({ display }) => display || `block`};
+  flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
+  width: ${({ width }) => width};
   padding: ${({ padding }) => padding};
   margin: ${({ margin }) => margin};
+  text-align: ${({ textAlign }) => textAlign};
+  box-sizing: border-box;
 `;
