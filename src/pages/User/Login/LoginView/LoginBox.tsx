@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { LonginContainer } from '../Login.style';
 
-import { OffScreenSpan } from '../../../../assets/styles/Common.style';
+import { OffScreenSpan } from '../../../../assets/styles/common/Common.style';
 import LoginHeader from './LoginHeader';
 import LoginAlert from './LoginAlertSection';
 
