@@ -1,36 +1,29 @@
 import React, { useState } from 'react';
 import { FormSchemaType } from '../LoginUtils/LoginFormType';
-import { SubmitHandler, useFormContext } from 'react-hook-form';
-import { useForm } from 'react-hook-form';
-import { decode as base64_decode, encode as base64_encode } from 'base-64';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { SubmitHandler } from 'react-hook-form';
 
-import { FormSchema } from '../LoginUtils/LoginSchema';
+import useImageCompression from '../../../../components/CustomElements/Utils/useImageCompression';
+import useCreateFormData from '../../../../components/CustomElements/Utils/useCreateFormData';
 
 function useLoginFormAction() {
-  const methods = useForm({
-    resolver: zodResolver(FormSchema),
-  });
-
-  const setValue = methods.setValue;
+  const { CompressImage } = useImageCompression();
+  const { createFormData } = useCreateFormData();
 
   const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
-    if (data.files) {
-      let file = data.files[0];
-      console.log('file', file);
-      const fileRef = data.files[0] || '';
-      const fileType: string = fileRef.type || '';
-      const reader = new FileReader();
-      reader.readAsBinaryString(fileRef);
-      reader.onload = (ev: any) => {
-        let encoded = base64_encode(`${ev.target.result}`);
-        setValue('files', `data:${fileType};base64,${encoded}`);
-      };
-      console.log('나옴?', data.files);
-    }
+    if (data) {
+      // console.log('data', data);
+      // console.log('나옴?', data.files);
+      let Image = data.files[0];
 
-    console.log('data', { data });
-    console.log('ddd');
+      let compress = await CompressImage(Image);
+      // console.log('compress', compress);
+      const reader = new FileReader();
+      if (compress) reader.readAsDataURL(compress);
+      reader.onloadend = () => {
+        // console.log('base64data', reader.result);
+        createFormData(reader.result as string, data);
+      };
+    }
 
     await new Promise((resolve) => {
       setTimeout(() => {

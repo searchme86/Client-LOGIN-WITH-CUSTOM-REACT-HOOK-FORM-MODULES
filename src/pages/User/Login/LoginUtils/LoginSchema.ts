@@ -2,6 +2,14 @@ import { z } from 'zod';
 import { Tiers } from './LoginFormData';
 import { TireIDEnum } from './LoginFormType';
 
+const MAX_FILE_SIZE = 500000;
+const ACCEPTED_IMAGE_TYPES = [
+  'image/jpeg',
+  'image/jpg',
+  'image/png',
+  'image/webp',
+];
+
 export const signUpFormSchema = z.object({
   firstName: z.string().min(1, 'First Name must be atleast 1 characters long!'),
   username: z
@@ -43,4 +51,16 @@ export const FormSchema = z.object({
   tier: z
     .enum(TireIDEnum)
     .refine((val) => Tiers.map((tier) => tier.id).includes(val)),
+
+  files: z
+    .any()
+    .refine((files) => files?.length > 0, {
+      message: '이미지가 등록되지 않았습니다.',
+    })
+    .refine((files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type), {
+      message: '파일 확장자는 jpg, jpeg, png, webp 만 가능합니다.',
+    })
+    .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
+      message: '최대 5MB 까지 업로드 가능 합니다, 파일 용량을 체크해주세요',
+    }),
 });
