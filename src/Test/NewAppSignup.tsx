@@ -6,7 +6,7 @@ import {
   RadioBoxElm,
 } from '../components/CustomElements';
 import SingleImageUploader from '../components/CustomElements/InputFile/SingleImageUploader';
-import TestCustomCheckbox from '../components/CustomElements/CheckBox/TestCustomCheckbox';
+import CustomCheckbox from '../components/CustomElements/CheckBox/CustomCheckbox';
 import SubmitBtnElm from '../components/CustomElements/UtilElements/SubmitBtnElm';
 import ResetBtnElm from '../components/CustomElements/UtilElements/ResetBtnElm';
 import PreElm from '../components/CustomElements/UtilElements/PreElm';
@@ -59,8 +59,8 @@ function NewAppSignup() {
           name="pizzaChoice"
           options={['Chicken BBQ', 'Margarita', 'All-dressed']}
         />
-        <TestCustomCheckbox
-          name="accept"
+        <CustomCheckbox<FormSchemaType>
+          zodValidationKey="accept"
           text="I accept the Terms of Service"
         />
         <RadioBoxElm tiers={Tiers} />

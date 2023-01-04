@@ -2,6 +2,7 @@ import React, { HTMLInputTypeAttribute } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 import {
+  InputContainer,
   InputWrapper,
   Input,
   InputLabel,
@@ -43,26 +44,30 @@ function InputElm<Model extends Record<string, any>>({
 
   return (
     <>
-      <InputLabel
-        htmlFor={inputID}
-        fontWeight={labelWeight}
-        fontSize={labelSize}
-        margin={labelMargin}
-      >
-        {LabelTxt}
-      </InputLabel>
-      <InputWrapper width={inputWidth} height={inputHeight}>
-        <Input
-          type={inputType}
-          id={inputID}
-          {...register(zodValidationKey.toString())}
-          autoComplete={autoComplete}
-          placeholder={placeholder}
-          padding={inputPadding}
-          disabled={isSubmitting}
-        />
-        <TFormErrorMessage name={zodValidationKey.toString()} />
-      </InputWrapper>
+      <InputContainer>
+        <InputLabel
+          htmlFor={inputID}
+          display="block"
+          fontWeight={labelWeight}
+          fontSize={labelSize}
+          margin={labelMargin}
+        >
+          {LabelTxt}
+        </InputLabel>
+        <InputWrapper width={inputWidth}>
+          <Input
+            type={inputType}
+            id={inputID}
+            {...register(zodValidationKey.toString())}
+            autoComplete={autoComplete}
+            placeholder={placeholder}
+            padding={inputPadding}
+            height={inputHeight}
+            disabled={isSubmitting}
+          />
+          <TFormErrorMessage name={zodValidationKey.toString()} />
+        </InputWrapper>
+      </InputContainer>
     </>
   );
 }

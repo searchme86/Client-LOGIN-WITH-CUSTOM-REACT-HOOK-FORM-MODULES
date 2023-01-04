@@ -3,6 +3,22 @@ import { useFormContext } from 'react-hook-form';
 
 import useImageCompression from '../../../hooks/useImageCompression';
 
+import {
+  ImageContainer,
+  ImageWrapper,
+  ImageElmn,
+  ImageClickBtn,
+  ImageTitle,
+  ImageErrorMessage,
+} from '../../../assets/styles/Image.style';
+
+import {
+  DisplayContainer,
+  DisplayItem,
+} from '../../../assets/styles/Display.style';
+
+import upload from '../../../assets/Images/upload.png';
+
 function SingleImageUploader<Model extends Record<string, any>>({
   zodValidationKey,
   btnTxt,
@@ -42,36 +58,48 @@ function SingleImageUploader<Model extends Record<string, any>>({
   }, [isImage]);
 
   return (
-    <div>
-      {base64 ? (
-        <div className="">
-          <img src={base64} alt="upload" />
-        </div>
-      ) : null}
+    <ImageContainer>
+      <DisplayContainer display="flex">
+        <ImageWrapper width="40%" height="80px">
+          {base64 ? (
+            <ImageElmn src={base64} alt="upload" />
+          ) : (
+            <ImageElmn src={upload} alt="upload" />
+          )}
+        </ImageWrapper>
 
-      <input
-        type="file"
-        id="fileupload"
-        disabled={isSubmitting}
-        {...register(zodValidationKey.toString())}
-        style={{ display: 'none' }}
-      />
+        <input
+          type="file"
+          id="fileupload"
+          disabled={isSubmitting}
+          {...register(zodValidationKey.toString())}
+          style={{ display: 'none' }}
+        />
 
-      <label htmlFor="fileupload" className="imageUploadBtn">
-        {btnTxt}
-      </label>
-
-      {watch(zodValidationKey.toString()) &&
-      watch(zodValidationKey.toString())[0] ? (
-        <span>{watch(zodValidationKey.toString())[0]?.zodValidationKey}</span>
-      ) : (
-        <span>등록값이 없어서 watch가 안나옴</span>
-      )}
+        <DisplayItem
+          display="flex"
+          width="60%"
+          flexDirection="column"
+          textAlign="left"
+          padding="10px"
+          margin="auto 0 0 0"
+        >
+          <ImageClickBtn htmlFor="fileupload">{btnTxt}</ImageClickBtn>
+          {watch(zodValidationKey.toString()) &&
+          watch(zodValidationKey.toString())[0] ? (
+            <ImageTitle>
+              {watch(zodValidationKey.toString())[0]?.name}
+            </ImageTitle>
+          ) : null}
+        </DisplayItem>
+      </DisplayContainer>
 
       {errors[zodValidationKey.toString()] ? (
-        <div>{errors[zodValidationKey.toString()]?.message?.toString()}</div>
+        <ImageErrorMessage>
+          {errors[zodValidationKey.toString()]?.message?.toString()}
+        </ImageErrorMessage>
       ) : null}
-    </div>
+    </ImageContainer>
   );
 }
 

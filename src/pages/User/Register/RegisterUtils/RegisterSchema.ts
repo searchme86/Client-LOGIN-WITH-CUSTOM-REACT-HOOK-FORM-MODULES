@@ -35,11 +35,13 @@ export const RegisterFormSchema = z
     // 유저 이메일
     userEmail: z
       .string()
+      .trim()
       .email({ message: '올바른 형식의 이메일을 입력해주세요' }),
 
     // 유저 비밀번호
     userPassword: z
       .string()
+      .trim()
       .min(6, { message: '문자는 적어도 6자를 충족해야 합니다.' })
       .regex(
         new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,24}$'),
@@ -49,7 +51,19 @@ export const RegisterFormSchema = z
       ),
 
     // 유저 비밀번호 확인
-    userConfirmPassword: z.string().email(),
+    userConfirmPassword: z
+      .string()
+      .trim()
+      .min(6, { message: '문자는 적어도 6자를 충족해야 합니다.' })
+      .regex(
+        new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,24}$'),
+        {
+          message: '대문자와 소문자, 그리고 숫자와 특수문자를 포함해주세요..',
+        }
+      ),
+
+    //유저 정보 동의사항
+    userAgreement: z.literal(false),
   })
   .refine((data) => data.userPassword === data.userConfirmPassword, {
     message: '입력한 비밀번호와 일치하지 않습니다.',
