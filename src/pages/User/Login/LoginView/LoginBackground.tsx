@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { LoginWrapper, LoginBgShapehape } from '../Login.style';
+import { LoginWrapper, LoginBgShapehape } from './Login.style';
 
 import BgAnimation from '../../../../components/Design/BgAnimation/BgAnimation';
 

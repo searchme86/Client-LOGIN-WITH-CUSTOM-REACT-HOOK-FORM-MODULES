@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LoginHead, LoginToHome, LoginTitle } from '../Login.style';
+import { LoginHead, LoginToHome, LoginTitle } from './Login.style';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseChimneyWindow } from '@fortawesome/free-solid-svg-icons';

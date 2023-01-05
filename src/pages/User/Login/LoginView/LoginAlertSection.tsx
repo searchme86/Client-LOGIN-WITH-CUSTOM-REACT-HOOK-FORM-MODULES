@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  LoginAlertArea,
-  LoginToSignUp,
-  LoginToSignUpMsg,
-} from '../Login.style';
+import { LoginAlertArea, LoginToSignUp, LoginToSignUpMsg } from './Login.style';
 
 function LoginAlert() {
   return (
