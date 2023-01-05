@@ -60,7 +60,7 @@ function SingleImageUploader<Model extends Record<string, any>>({
   return (
     <ImageContainer>
       <DisplayContainer display="flex">
-        <ImageWrapper width="40%" height="80px">
+        <ImageWrapper width="60%" height="80px">
           {base64 ? (
             <ImageElmn src={base64} alt="upload" />
           ) : (

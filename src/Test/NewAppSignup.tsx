@@ -13,6 +13,9 @@ import PreElm from '../components/CustomElements/UtilElements/PreElm';
 
 import { FormSchema } from '../pages/User/Login/LoginUtils/LoginSchema';
 import { FormSchemaType } from '../pages/User/Login/LoginUtils/LoginFormType';
+
+import { ResetType } from '../pages/User/Login/LoginUtils/LoginFormType';
+
 import { Tiers } from '../pages/User/Login/LoginUtils/LoginFormData';
 import { someDefaultValues } from '../pages/User/Login/LoginUtils/LoginFormData';
 import useLoginFormAction from '../pages/User/Login/hooks/useLoginFormAction';
@@ -65,8 +68,8 @@ function NewAppSignup() {
         />
         <RadioBoxElm tiers={Tiers} />
         <PreElm />
-        <SubmitBtnElm />
-        <ResetBtnElm values={someDefaultValues} />
+        <SubmitBtnElm btnTxt="초기화" width="50%" bgColor="#f2f2f2" />
+        <ResetBtnElm btnTxt="초기화" values={someDefaultValues} />
       </FormElm>
     </>
   );
