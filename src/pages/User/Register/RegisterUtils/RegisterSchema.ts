@@ -61,9 +61,6 @@ export const RegisterFormSchema = z
           message: '대문자와 소문자, 그리고 숫자와 특수문자를 포함해주세요..',
         }
       ),
-
-    //유저 정보 동의사항
-    userAgreement: z.literal(false),
   })
   .refine((data) => data.userPassword === data.userConfirmPassword, {
     message: '입력한 비밀번호와 일치하지 않습니다.',
