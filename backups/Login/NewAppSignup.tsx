@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  FormElm,
-  InputElm,
-  SelectElm,
-  RadioBoxElm,
-} from '../../src/components/CustomElements';
+import { FormElm, InputElm, SelectElm, RadioBoxElm } from '.';
 import SingleImageUploader from '../../src/components/CustomElements/InputFile/SingleImageUploader';
 import CustomCheckbox from '../../src/components/CustomElements/CheckBox/CustomCheckbox';
 import SubmitBtnElm from '../../src/components/CustomElements/UtilElements/SubmitBtnElm';
