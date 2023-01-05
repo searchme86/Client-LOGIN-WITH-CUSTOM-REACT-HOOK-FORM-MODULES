@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-
-import { ButtonProps } from './Button.style.type';
+import { StyleProps } from './common/Style.type';
 
 export const ButtonWrapper = styled.div``;
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<StyleProps>`
   display: ${({ display }) => display};
   width: ${({ width }) => width};
   height: ${({ height }) => height};

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { ImageProps } from './Image.style.type';
+import { StyleProps } from './common/Style.type';
 
-export const ImageContainer = styled.div<ImageProps>`
+export const ImageContainer = styled.div<StyleProps>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   margin: ${({ margin }) => margin};
@@ -10,7 +10,7 @@ export const ImageContainer = styled.div<ImageProps>`
   overflow: hidden;
 `;
 
-export const ImageWrapper = styled.div<ImageProps>`
+export const ImageWrapper = styled.div<StyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ export const ImageElmn = styled.img`
   height: auto;
 `;
 
-export const ImageClickBtn = styled.label<ImageProps>`
+export const ImageClickBtn = styled.label<StyleProps>`
   text-align: center;
   width: 85px;
   margin: 0 auto;
@@ -39,14 +39,14 @@ export const ImageClickBtn = styled.label<ImageProps>`
   border: 1px solid red;
 `;
 
-export const ImageTitle = styled.p<ImageProps>`
+export const ImageTitle = styled.p<StyleProps>`
   margin: 10px 0 5px 0;
   font-style: italic;
   font-weight: 600;
   text-align: center;
 `;
 
-export const ImageErrorMessage = styled.p<ImageProps>`
+export const ImageErrorMessage = styled.p<StyleProps>`
   font-size: 13px;
   margin: 5px 0 0 5px;
   color: #ff3333;

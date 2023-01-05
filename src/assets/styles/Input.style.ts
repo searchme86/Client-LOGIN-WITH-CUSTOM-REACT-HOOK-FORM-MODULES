@@ -1,17 +1,17 @@
 import styled, { css } from 'styled-components';
+import { StyleProps } from './common/Style.type';
 
-import { InputProps } from './Input.style.type';
-
-export const InputContainer = styled.div<InputProps>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-`;
-export const InputWrapper = styled.div<InputProps>`
+export const InputContainer = styled.div<StyleProps>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
 `;
 
-export const Input = styled.input<InputProps>`
+export const InputWrapper = styled.div<StyleProps>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+`;
+
+export const Input = styled.input<StyleProps>`
   display: block;
   width: 100%;
   height: ${({ height }) => height};
@@ -19,7 +19,7 @@ export const Input = styled.input<InputProps>`
   box-sizing: border-box;
 `;
 
-export const InputLabel = styled.label<InputProps>`
+export const InputLabel = styled.label<StyleProps>`
   line-height: 1;
   display: ${({ display }) => display};
   margin: ${({ margin }) => margin};

@@ -1,20 +1,19 @@
 import styled from 'styled-components';
+import { StyleProps } from './common/Style.type';
 
-import { LayOutType } from './Display.style.type';
-
-export const UlList = styled.ul<LayOutType>`
+export const UlList = styled.ul<StyleProps>`
   display: ${({ display }) => display || `block`};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-itmes: ${({ alignItems }) => alignItems};
 `;
 
-export const UlLi = styled.li<LayOutType>`
+export const UlLi = styled.li<StyleProps>`
   width: ${({ width }) => width};
   padding: ${({ padding }) => padding};
   margin: ${({ margin }) => margin};
 `;
 
-export const DisplayContainer = styled.div<LayOutType>`
+export const DisplayContainer = styled.div<StyleProps>`
   display: ${({ display }) => display || `block`};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
@@ -23,7 +22,7 @@ export const DisplayContainer = styled.div<LayOutType>`
   box-sizing: border-box;
 `;
 
-export const DisplayItem = styled.div<LayOutType>`
+export const DisplayItem = styled.div<StyleProps>`
   display: ${({ display }) => display || `block`};
   flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};
