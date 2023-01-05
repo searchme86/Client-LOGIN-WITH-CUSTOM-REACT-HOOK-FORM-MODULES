@@ -4,15 +4,21 @@ import { useFormContext } from 'react-hook-form';
 import { Button } from '../../../assets/styles/Button.style';
 
 function SubmitBtnElm({
+  display,
   bgColor,
   width,
   btnTxt,
   fontColor,
+  padding,
+  margin,
 }: {
   btnTxt: string;
   bgColor?: string;
   width?: string;
   fontColor?: string;
+  display?: string;
+  padding?: string;
+  margin?: string;
 }) {
   const {
     formState: { isSubmitting },
@@ -20,11 +26,13 @@ function SubmitBtnElm({
   return (
     <Button
       type="submit"
+      display={display}
       disabled={isSubmitting}
       width={width}
-      padding="10px 0"
       bgColor={bgColor}
       fontColor={fontColor}
+      padding={padding}
+      margin={margin}
     >
       {btnTxt}
     </Button>

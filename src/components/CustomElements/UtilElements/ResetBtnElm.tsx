@@ -9,12 +9,18 @@ function ResetBtnElm<DefaultValue extends Record<string, any>>({
   btnTxt,
   bgColor,
   fontColor,
+  display,
+  padding,
+  margin,
 }: {
   values: DefaultValue;
   btnTxt: string;
   width?: string;
   bgColor?: string;
   fontColor?: string;
+  display?: string;
+  padding?: string;
+  margin?: string;
 }) {
   const {
     reset,
@@ -24,9 +30,12 @@ function ResetBtnElm<DefaultValue extends Record<string, any>>({
     <Button
       type="button"
       disabled={isSubmitting}
+      display={display}
       width={width}
       bgColor={bgColor}
       fontColor={fontColor}
+      padding={padding}
+      margin={margin}
       onClick={() => reset && reset(values)}
     >
       {btnTxt}
