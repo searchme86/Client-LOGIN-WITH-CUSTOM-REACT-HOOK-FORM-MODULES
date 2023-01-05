@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Tiers } from '../../../pages/User/Login/LoginUtils/LoginFormData';
+import { Tiers } from '../../../../backups/Login/LoginFormData';
 
 function RadioBoxElm({ tiers }: { tiers: typeof Tiers }) {
   const {
