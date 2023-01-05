@@ -40,7 +40,7 @@ function LoginForm() {
               inputHeight="40px"
               inputType="text"
               placeholder="닉네임을 입력해주세요"
-              inputID="LoginUserNickname"
+              inputID="loginUserNickName"
               inputPadding="0 10px 0 10px"
             />
           </UlLi>
@@ -56,7 +56,7 @@ function LoginForm() {
               inputHeight="40px"
               inputType="password"
               placeholder="비밀번호를 입력해주세요"
-              inputID="LoginUserNickname"
+              inputID="loginUserPassword"
               inputPadding="0 10px 0 10px"
             />
           </UlLi>
