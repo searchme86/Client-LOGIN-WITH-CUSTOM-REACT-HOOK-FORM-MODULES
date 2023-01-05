@@ -11,5 +11,7 @@ export const Button = styled.button<ButtonProps>`
   margin: ${({ margin }) => (margin ? margin : 0)};
   padding: ${({ padding }) => (padding ? padding : 0)};
   background-color: ${({ bgColor }) => bgColor};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  color: ${({ fontColor }) => fontColor};
   cursor: pointer;
 `;

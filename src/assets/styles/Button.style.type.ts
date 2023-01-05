@@ -7,4 +7,6 @@ export interface ButtonProps extends ComponentProps<'button'> {
   padding?: string;
   margin?: string;
   bgColor?: string;
+  borderRadius?: string;
+  fontColor?: string;
 }
