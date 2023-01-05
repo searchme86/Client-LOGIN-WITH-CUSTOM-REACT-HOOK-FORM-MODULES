@@ -1,7 +1,7 @@
 import React from 'react';
 import { LoginAlertArea, LoginToSignUp, LoginToSignUpMsg } from './Login.style';
 
-function LoginAlert() {
+function LoginBottom() {
   return (
     <LoginAlertArea>
       <LoginToSignUp to="/register">
@@ -11,4 +11,4 @@ function LoginAlert() {
   );
 }
 
-export default LoginAlert;
+export default LoginBottom;
