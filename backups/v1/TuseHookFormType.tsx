@@ -23,7 +23,7 @@ import {
 
 import { ZodSchema, TypeOf } from 'zod';
 
-import { signUpFormSchema } from '../../src/pages/User/Login/LoginUtils/LoginSchema';
+import { signUpFormSchema } from '../Login/LoginSchema';
 
 interface FormPropsWithZod<T extends ZodSchema<any>>
   extends UseFormProps<TypeOf<T>> {
