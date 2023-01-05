@@ -1,23 +1,36 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { ResetType } from '../../../pages/User/Login/LoginUtils/LoginFormType';
+import { Button } from '../../../assets/styles/Button.style';
 
-function ResetBtnElm({ values }: ResetType) {
+function ResetBtnElm<DefaultValue extends Record<string, any>>({
+  width,
+  values,
+  btnTxt,
+  bgColor,
+  fontColor,
+}: {
+  values: DefaultValue;
+  btnTxt: string;
+  width?: string;
+  bgColor?: string;
+  fontColor?: string;
+}) {
   const {
     reset,
     formState: { isSubmitting },
   } = useFormContext();
   return (
-    <div className="">
-      <button
-        type="button"
-        disabled={isSubmitting}
-        onClick={() => reset && reset(values)}
-      >
-        Reset
-      </button>
-    </div>
+    <Button
+      type="button"
+      disabled={isSubmitting}
+      width={width}
+      bgColor={bgColor}
+      fontColor={fontColor}
+      onClick={() => reset && reset(values)}
+    >
+      {btnTxt}
+    </Button>
   );
 }
 
