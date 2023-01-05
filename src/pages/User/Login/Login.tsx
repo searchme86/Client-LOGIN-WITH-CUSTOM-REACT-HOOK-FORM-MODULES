@@ -1,11 +1,10 @@
-import React from 'react';
 import LoginBackground from './LoginView/LoginBackground';
-import LoginForm from './Form/LoginForm';
+import LoginMain from './LoginView/LoginMain';
 
 function Login() {
   return (
     <LoginBackground>
-      <LoginForm />
+      <LoginMain />
     </LoginBackground>
   );
 }
