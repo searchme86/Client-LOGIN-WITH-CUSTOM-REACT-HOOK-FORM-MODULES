@@ -15,7 +15,7 @@ import SubmitBtnElm from '../../../../components/CustomElements/UtilElements/Sub
 import ResetBtnElm from '../../../../components/CustomElements/UtilElements/ResetBtnElm';
 
 import List from '../../../../components/Design/List/List';
-import useRegisterFormAction from '../hooks/useRegisterFormAction';
+import useRegisterFormAction from '../RegisterUtils/useRegisterFormAction';
 import { RegisterFormDefaultData } from '../RegisterUtils/RegisterData';
 
 function RegisterForm() {
