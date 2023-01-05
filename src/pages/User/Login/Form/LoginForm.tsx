@@ -59,7 +59,7 @@ function LoginForm() {
           <DisplayContainer>
             <SubmitBtnElm
               display="block"
-              btnTxt="등록"
+              btnTxt="로그인"
               fontColor="#fff"
               bgColor="#375E97"
               width="100%"

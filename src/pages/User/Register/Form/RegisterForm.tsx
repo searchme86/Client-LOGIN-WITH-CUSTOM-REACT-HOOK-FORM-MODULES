@@ -112,12 +112,14 @@ function RegisterForm() {
               fontColor="#fff"
               bgColor="#375E97"
               width="40%"
+              padding="10px 0 10px 0"
             />
             <ResetBtnElm
               width="40%"
               btnTxt="초기화"
               bgColor="#FB6542"
               fontColor="#fff"
+              padding="10px 0 10px 0"
               values={RegisterFormDefaultData}
             />
           </DisplayContainer>
