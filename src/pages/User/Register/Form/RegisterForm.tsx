@@ -1,6 +1,4 @@
 import React from 'react';
-import './RegisterFormTest.css';
-import RegisterAlertMessage from '../message/RegisterAlertMessage';
 
 import {
   RegisterFormSchema,
@@ -11,17 +9,19 @@ import {
   UlList,
   UlLi,
   DisplayContainer,
-  DisplayItem,
 } from '../../../../assets/styles/Display.style';
 
 import FormElm from '../../../../components/CustomElements/Form/FormElm';
 import InputElm from '../../../../components/CustomElements/Input/InputElm';
 import SingleImageUploader from '../../../../components/CustomElements/InputFile/SingleImageUploader';
-import CustomCheckbox from '../../../../components/CustomElements/CheckBox/CustomCheckbox';
 import SubmitBtnElm from '../../../../components/CustomElements/UtilElements/SubmitBtnElm';
+import ResetBtnElm from '../../../../components/CustomElements/UtilElements/ResetBtnElm';
+
+import List from '../../../../components/Design/List/List';
 
 import useRegisterFormAction from '../hooks/useRegisterFormAction';
-import PreElm from '../../../../components/CustomElements/UtilElements/PreElm';
+
+import { RegisterFormDefaultData } from '../RegisterUtils/RegisterData';
 
 function RegisterForm() {
   const { onRegisterSubmit } = useRegisterFormAction();
@@ -32,13 +32,15 @@ function RegisterForm() {
       schema={RegisterFormSchema}
     >
       <UlList>
-        <UlLi margin="0 0 6px 0">
+        {/* 프로필 이미지 */}
+        <UlLi margin="0 0 14px 0">
           <SingleImageUploader<RegisterSchemaType>
             zodValidationKey="userImage"
             btnTxt="파일 등록"
           />
         </UlLi>
-        <UlLi margin="0 0 6px 0">
+        {/* 유저 닉네임 */}
+        <UlLi margin="0 0 14px 0">
           <InputElm<RegisterSchemaType>
             zodValidationKey="userNickName"
             LabelTxt="닉네임"
@@ -53,7 +55,8 @@ function RegisterForm() {
             inputPadding="0 10px 0 10px"
           />
         </UlLi>
-        <UlLi margin="0 0 6px 0">
+        {/* 유저 이메일  */}
+        <UlLi margin="0 0 14px 0">
           <InputElm<RegisterSchemaType>
             zodValidationKey="userEmail"
             LabelTxt="이메일"
@@ -68,7 +71,8 @@ function RegisterForm() {
             inputPadding="0 10px 0 10px"
           />
         </UlLi>
-        <UlLi margin="0 0 6px 0">
+        {/* 유저 비밀번호 */}
+        <UlLi margin="0 0 14px 0">
           <InputElm<RegisterSchemaType>
             zodValidationKey="userPassword"
             LabelTxt="비밀번호"
@@ -83,20 +87,8 @@ function RegisterForm() {
             inputID="userPassword"
             inputPadding="0 10px 0 10px"
           />
-          <div className="info">
-            <strong className="info-title">비밀번호 작성규칙</strong>
-            <ul className="info-list">
-              <li>
-                <p>* 대문자 혹은 소문자로 시작해주세요</p>
-              </li>
-              <li>
-                <p>* 최소 8자 부터 24자 이내로 작성해주세요</p>
-              </li>
-              <li>
-                <p>* 특수문자를 포함해주세요</p>
-              </li>
-            </ul>
-          </div>
+          {/* 비밀번호 작성규칙 */}
+          <List />
         </UlLi>
         <UlLi margin="0 0 15px 0">
           <InputElm<RegisterSchemaType>
@@ -114,21 +106,28 @@ function RegisterForm() {
             inputPadding="0 10px 0 10px"
           />
         </UlLi>
-        <UlLi margin="0 0 6px 0">
-          <CustomCheckbox<RegisterSchemaType>
-            zodValidationKey="userAgreement"
-            text="I accept the Terms of Service"
-          />
-        </UlLi>
         <UlLi>
-          <div className="button-container">
-            <SubmitBtnElm />
-            <button className="button-submit">등록</button>
-          </div>
+          <DisplayContainer
+            display="flex"
+            justifyContent="space-evenly"
+            padding="20px 0 0 0"
+          >
+            <SubmitBtnElm
+              btnTxt="등록"
+              fontColor="#fff"
+              bgColor="#375E97"
+              width="40%"
+            />
+            <ResetBtnElm
+              width="40%"
+              btnTxt="초기화"
+              bgColor="#FB6542"
+              fontColor="#fff"
+              values={RegisterFormDefaultData}
+            />
+          </DisplayContainer>
         </UlLi>
       </UlList>
-
-      {/* <PreElm /> */}
     </FormElm>
   );
 }
