@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { InputProps } from './Input.style.type';
 
@@ -20,10 +20,22 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const InputLabel = styled.label<InputProps>`
+  line-height: 1;
   display: ${({ display }) => display};
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
-  line-height: 1;
+  ${({ LabelHide }) =>
+    LabelHide &&
+    css`
+      display: inline-block;
+      position: absolute;
+      overflow: hidden;
+      border: 0;
+      width: 1px;
+      height: 1px;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+    `}
 `;

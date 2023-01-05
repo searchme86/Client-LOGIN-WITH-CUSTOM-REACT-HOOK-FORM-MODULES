@@ -13,6 +13,7 @@ import TFormErrorMessage from '../UtilElements/FormErrorMessage';
 function InputElm<Model extends Record<string, any>>({
   zodValidationKey,
   LabelTxt,
+  LabelHide,
   labelWeight,
   labelSize,
   labelMargin,
@@ -36,6 +37,7 @@ function InputElm<Model extends Record<string, any>>({
   inputWidth?: string;
   inputHeight?: string;
   inputPadding?: string;
+  LabelHide?: boolean;
 }) {
   const {
     register,
@@ -51,6 +53,7 @@ function InputElm<Model extends Record<string, any>>({
           fontWeight={labelWeight}
           fontSize={labelSize}
           margin={labelMargin}
+          LabelHide={LabelHide}
         >
           {LabelTxt}
         </InputLabel>

@@ -7,4 +7,5 @@ export interface InputProps {
   bgColor?: string;
   fontSize?: string;
   fontWeight?: number;
+  LabelHide?: boolean;
 }
