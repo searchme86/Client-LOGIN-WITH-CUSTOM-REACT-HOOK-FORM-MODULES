@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }: AuthProviderInterface) => {
 
   const [auth, setAuth] =
     useState<ContextAuthType['auth']>(ContextInitialValue);
+
   const [persist, setPersist] = useState<ContextAuthType['persist']>(() => {
     if (typeof localStoragePersitValue === 'string') {
       const InitialLocalStorageValue =
@@ -26,7 +27,14 @@ export const AuthProvider = ({ children }: AuthProviderInterface) => {
   });
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, persist, setPersist }}>
+    <AuthContext.Provider
+      value={{
+        auth,
+        setAuth,
+        persist,
+        setPersist,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
