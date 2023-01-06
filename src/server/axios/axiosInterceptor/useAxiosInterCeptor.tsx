@@ -4,7 +4,7 @@
  *  */
 
 import { useEffect } from 'react';
-import { userCustomAxios } from '../axiosConfig';
+import { userCustomAxios } from '../axiosCustom';
 import useAxiosRequest from './useAxiosRequest';
 import useAxiosResponse from './useAxiosResponse';
 

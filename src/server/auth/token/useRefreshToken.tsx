@@ -1,4 +1,4 @@
-import axios from '../../axios/axiosConfig';
+import axios from '../../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
 import useAuth from '../context/useAuth';
 import { requestRefeshTokenType } from './tokenUtils/tokenType';
