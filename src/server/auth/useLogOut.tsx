@@ -1,5 +1,5 @@
 import axios from '../axios/axiosCustom';
-import useAuth from './context/useAuth';
+import useAuth from '../../store/context/useAuth';
 
 function useLogOut() {
   const { setAuth } = useAuth();

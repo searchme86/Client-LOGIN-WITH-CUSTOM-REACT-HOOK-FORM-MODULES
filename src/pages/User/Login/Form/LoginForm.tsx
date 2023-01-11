@@ -12,10 +12,33 @@ import {
 import { LoginSchemaType } from '../LoginUtils/LoginSchema';
 import { LoginFormSchema } from '../LoginUtils/LoginSchema';
 import { LoginFormDefaultData } from '../LoginUtils/LoginData';
-import useLoginFormAction from '../LoginUtils/useLoginFormAction';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useStateContext } from '../../../../store/context/NewContext';
+
+import { SubmitHandler } from 'react-hook-form';
+
+import UserRequestQuery from '../../UserRequestQuery';
 
 function LoginForm() {
-  const { onLoginSubmit } = useLoginFormAction();
+  const stateContext = useStateContext();
+
+  const {
+    LoginQuery: { mutate: LoginUser },
+  } = UserRequestQuery();
+
+  const onLoginSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
+    if (data) {
+      LoginUser(data);
+      console.log('data', data);
+    }
+
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        alert(JSON.stringify(data));
+        resolve(undefined);
+      }, 3000);
+    });
+  };
 
   return (
     <FormElm<LoginSchemaType, typeof LoginFormSchema>

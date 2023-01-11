@@ -1,4 +1,5 @@
 import React from 'react';
+import { SubmitHandler } from 'react-hook-form';
 import {
   RegisterFormSchema,
   RegisterSchemaType,
@@ -13,13 +14,89 @@ import InputElm from '../../../../components/CustomElements/Input/InputElm';
 import SingleImageUploader from '../../../../components/CustomElements/InputFile/SingleImageUploader';
 import SubmitBtnElm from '../../../../components/CustomElements/UtilElements/SubmitBtnElm';
 import ResetBtnElm from '../../../../components/CustomElements/UtilElements/ResetBtnElm';
-
 import List from '../../../../components/Design/List/List';
-import useRegisterFormAction from '../RegisterUtils/useRegisterFormAction';
+
 import { RegisterFormDefaultData } from '../RegisterUtils/RegisterData';
+import useImageCompression from '../../../../hooks/useImageCompression';
+
+import UserRequestQuery from '../../UserRequestQuery';
 
 function RegisterForm() {
-  const { onRegisterSubmit } = useRegisterFormAction();
+  const { CompressImage } = useImageCompression();
+  const {
+    RegisterQuery: { mutate: createUser },
+  } = UserRequestQuery();
+
+  const createFormData = async (
+    base64: string,
+    fileNameUploaded: string,
+    data: any
+  ) => {
+    const { userNickName, userEmail, userPassword } = data;
+
+    const byteString = window.atob(base64.split(',')[1]);
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+    for (let i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    const pngblob = new Blob([ia], {
+      type: 'image/png',
+    });
+    const imagePng = new File([pngblob], fileNameUploaded, {
+      type: 'image/png',
+    });
+
+    const userFormData = new FormData();
+    userFormData.append('userProfile', imagePng);
+    userFormData.append('userNickName', userNickName);
+    userFormData.append('userEmail', userEmail);
+    userFormData.append('userPassword', userPassword);
+
+    createUser(userFormData);
+  };
+
+  const onRegisterSubmit: SubmitHandler<RegisterSchemaType> = async (
+    registerFormdata
+  ) => {
+    try {
+      let userRawFile = registerFormdata.userImage[0];
+      let fileNameUploaded = registerFormdata.userImage[0]?.name;
+      let fileCompressed = await CompressImage(userRawFile);
+
+      if (fileCompressed) {
+        const reader = new FileReader();
+        reader.readAsDataURL(fileCompressed);
+
+        reader.onload = () => {
+          createFormData(
+            reader.result as string,
+            fileNameUploaded,
+            registerFormdata
+          );
+        };
+
+        reader.onerror = () => {
+          reader.abort();
+          new Error(
+            `File 읽기에서 에러가 발생했습니다.: ${reader?.error?.message}`
+          );
+        };
+      }
+
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(undefined);
+        }, 3000);
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(error.message);
+      } else {
+        console.log(error);
+      }
+    }
+  };
 
   return (
     <FormElm<RegisterSchemaType, typeof RegisterFormSchema>

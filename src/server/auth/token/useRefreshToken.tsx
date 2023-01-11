@@ -1,6 +1,6 @@
 import axios from '../../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
-import useAuth from '../context/useAuth';
+import useAuth from '../../../store/context/useAuth';
 import { requestRefeshTokenType } from './tokenUtils/tokenType';
 
 function useRefreshToken() {

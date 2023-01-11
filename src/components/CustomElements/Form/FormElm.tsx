@@ -26,8 +26,8 @@ function FormElm<
   });
 
   const handleSubmit = methods.handleSubmit;
-  const errors = methods.formState.errors;
-  console.log('여기는 form 에러!!', errors);
+  // const errors = methods.formState.errors;
+  // console.log('여기는 form 에러!!', errors);
 
   return (
     <FormElmContainer margin="10px 0 10px 0">

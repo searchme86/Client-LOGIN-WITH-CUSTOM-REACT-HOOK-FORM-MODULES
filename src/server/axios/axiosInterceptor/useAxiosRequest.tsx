@@ -4,7 +4,7 @@
  *  */
 
 import { AxiosRequestConfig, AxiosError } from 'axios';
-import useAuth from '../../auth/context/useAuth';
+import useAuth from '../../../store/context/useAuth';
 
 function useAxiosRequest() {
   const { auth } = useAuth();

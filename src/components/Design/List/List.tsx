@@ -9,10 +9,8 @@ function List() {
       { id: '3', info: '* 특수문자(!,@,#,$,%)를 포함해주세요' },
     ],
   };
-
   const { title, content } = listData;
 
-  console.log('title', title);
   return (
     <div style={{ padding: '0 0 0 5px', boxSizing: 'border-box' }}>
       <strong
