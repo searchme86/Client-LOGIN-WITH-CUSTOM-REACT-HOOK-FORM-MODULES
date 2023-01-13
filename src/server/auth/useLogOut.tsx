@@ -1,13 +1,15 @@
 import axios from '../axios/axiosCustom';
-import useAuth from '../../store/context/useAuth';
+import { useStateContext } from '../../context/NewContext';
+import { contextActionCreator } from '../../context/NewContextType';
 
 function useLogOut() {
-  const { setAuth } = useAuth();
+  const { dispatch } = useStateContext();
 
   const logout = async () => {
-    setAuth({ pwd: '', roles: [], accessToken: '', user: '' });
+    dispatch(contextActionCreator.setUserLogout());
+
     try {
-      const response = await axios('/logout', {
+      await axios('/logout', {
         withCredentials: true,
       });
     } catch (err) {

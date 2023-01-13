@@ -19,7 +19,7 @@ import List from '../../../../components/Design/List/List';
 import { RegisterFormDefaultData } from '../RegisterUtils/RegisterData';
 import useImageCompression from '../../../../hooks/useImageCompression';
 
-import UserRequestQuery from '../../UserRequestQuery';
+import UserRequestQuery from '../../UserConfig/Query/UserRequestQuery';
 
 function RegisterForm() {
   const { CompressImage } = useImageCompression();

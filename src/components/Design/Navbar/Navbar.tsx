@@ -1,66 +1,122 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useStateContext } from '../../../context/NewContext';
+import { contextActionCreator } from '../../../context/NewContextType';
+import UserRequestQuery from '../../../pages/User/UserConfig/Query/UserRequestQuery';
+
 import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
-import logo from './logo.svg';
-import './index.css';
+import { links } from './data';
+
+import { HeaderContainer } from '../../../assets/styles/common/PageLayout.style';
+
+import {
+  HeaderLogoSection,
+  HeaderLogo,
+  HeaderToggleBtn,
+  HeaderContent,
+  HeaderMuenu,
+  HeaderMenuList,
+  HeaderMenuLi,
+} from './NavBar.style';
 
 function Navbar() {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const HeaderContainerRef = useRef<HTMLDivElement>(null);
-  const ListContainerRef = useRef<HTMLUListElement>(null);
-  const clickBtnMenuHidden = () => {
-    setIsMenuShown((prev) => !prev);
-  };
+  const HeaderContentRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
+
+  const {
+    contextValue: { authUser },
+    dispatch,
+  } = useStateContext();
+  const {
+    LogoutQuery: { mutate: LogOut },
+  } = UserRequestQuery();
+
   useLayoutEffect(() => {
-    if (ListContainerRef.current) {
+    if (HeaderContentRef.current) {
       const MenuAreaHeight =
-        ListContainerRef.current.getBoundingClientRect().height;
-      if (isMenuShown && HeaderContainerRef.current) {
+        HeaderContentRef.current.getBoundingClientRect().height;
+
+      console.log('MenuAreaHeight', MenuAreaHeight);
+
+      if (!isMenuShown && HeaderContainerRef.current) {
         HeaderContainerRef.current.style.height = `${MenuAreaHeight}px`;
-      } else if (!isMenuShown && HeaderContainerRef.current) {
+      } else if (isMenuShown && HeaderContainerRef.current) {
         HeaderContainerRef.current.style.height = '0px';
       }
     }
   }, [isMenuShown]);
+
+  const clickBtnMenuHidden = () => {
+    setIsMenuShown((prev) => !prev);
+    console.log('isMenuShown', isMenuShown);
+  };
+
+  const onLoginHandler = () => navigate('/login');
+
+  const onLogoutHandler = () => {
+    dispatch(contextActionCreator.setUserLogout());
+    LogOut();
+  };
+
   return (
-    <header className="nav-center">
-      <div className="logo-section">
-        <h1 className="nav-header">
-          <div className="nav-logo">
-            <img src={logo} className="logo" alt="logo" />
-          </div>
-        </h1>
-        <button className="nav-toggle" onClick={clickBtnMenuHidden}>
+    <HeaderContainer>
+      <HeaderLogoSection>
+        <HeaderLogo onClick={() => navigate('/')}>Home</HeaderLogo>
+        <HeaderToggleBtn onClick={clickBtnMenuHidden}>
           <FaBars />
-        </button>
-      </div>
-      <div className="links-container" ref={HeaderContainerRef}>
-        <nav role="navigation">
-          <ul className="links" ref={ListContainerRef}>
-            {links.map((link) => {
-              const { id, url, text } = link;
-              return (
-                <li key={id}>
-                  <a href={url}>{text}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
-      <div className="">
-        <ul className="social-icons">
-          {social.map((socialIcon) => {
-            const { id, url, icon } = socialIcon;
-            return (
-              <li key={id}>
-                <a href={url}>{icon}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </header>
+        </HeaderToggleBtn>
+      </HeaderLogoSection>
+
+      <HeaderMuenu ref={HeaderContainerRef}>
+        <HeaderContent className="" ref={HeaderContentRef}>
+          <nav role="navigation">
+            <HeaderMenuList>
+              {links.map((link) => {
+                const { id, url, text } = link;
+                return (
+                  <HeaderMenuLi key={id}>
+                    <a href={url}>{text}</a>
+                  </HeaderMenuLi>
+                );
+              })}
+            </HeaderMenuList>
+          </nav>
+
+          {authUser?.accessToken ? (
+            <ul>
+              <HeaderMenuLi>
+                <button
+                  type="button"
+                  onClick={onLogoutHandler}
+                  style={{
+                    background: 'white',
+                  }}
+                >
+                  Logout
+                </button>
+              </HeaderMenuLi>
+            </ul>
+          ) : (
+            <ul>
+              <HeaderMenuLi>
+                <button
+                  type="button"
+                  onClick={onLoginHandler}
+                  style={{
+                    background: 'white',
+                  }}
+                >
+                  LogIn
+                </button>
+              </HeaderMenuLi>
+            </ul>
+          )}
+        </HeaderContent>
+      </HeaderMuenu>
+    </HeaderContainer>
   );
 }
 

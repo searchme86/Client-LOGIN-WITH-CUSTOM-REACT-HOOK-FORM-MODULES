@@ -1,10 +1,11 @@
 import axios from '../../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
-import useAuth from '../../../store/context/useAuth';
+import { useStateContext } from '../../../context/NewContext';
 import { requestRefeshTokenType } from './tokenUtils/tokenType';
+import { contextActionCreator } from '../../../context/NewContextType';
 
 function useRefreshToken() {
-  const { setAuth } = useAuth();
+  const { dispatch } = useStateContext();
 
   const refresh = async () => {
     try {
@@ -17,13 +18,9 @@ function useRefreshToken() {
         data: { roles, accessToken },
       } = userRefreshedInfo;
 
-      setAuth((currentUserInfo) => {
-        return {
-          ...currentUserInfo,
-          roles,
-          accessToken,
-        };
-      });
+      if (roles && accessToken) {
+        dispatch(contextActionCreator.refreshToken(roles, accessToken));
+      }
 
       return accessToken;
     } catch (error) {

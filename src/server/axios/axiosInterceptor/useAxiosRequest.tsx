@@ -4,16 +4,19 @@
  *  */
 
 import { AxiosRequestConfig, AxiosError } from 'axios';
-import useAuth from '../../../store/context/useAuth';
+// import useAuth from '../../../store/context/useAuth';
+import { useStateContext } from '../../../context/NewContext';
 
 function useAxiosRequest() {
-  const { auth } = useAuth();
+  const { contextValue } = useStateContext();
 
   // axiosInterceptor에서 request를 하기 전에 true 일 경우,
   const onRequest = (request: AxiosRequestConfig): AxiosRequestConfig => {
     if (!request.headers) {
       request['headers'] = request.headers ?? {};
-      request.headers!['Authorization'] = `Bearer ${auth?.accessToken}`;
+      request.headers![
+        'Authorization'
+      ] = `Bearer ${contextValue?.authUser.accessToken}`;
     }
     // if (!request.headers!['Authorization']) {
     //   request.headers!['Authorization'] = `Bearer ${auth?.accessToken}`;
@@ -25,7 +28,7 @@ function useAxiosRequest() {
   const onRequestError = (requestError: AxiosError): Promise<AxiosError> =>
     Promise.reject(requestError);
 
-  return { auth, onRequest, onRequestError };
+  return { contextValue, onRequest, onRequestError };
 }
 
 export default useAxiosRequest;

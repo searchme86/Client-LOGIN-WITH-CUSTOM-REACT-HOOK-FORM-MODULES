@@ -10,7 +10,7 @@ import useAxiosResponse from './useAxiosResponse';
 
 function useAxiosInterCeptor() {
   // interceptor의 Request/Response 함수를 가져옴
-  const { auth, onRequest, onRequestError } = useAxiosRequest();
+  const { contextValue, onRequest, onRequestError } = useAxiosRequest();
   const { onResponse, onResponseError } = useAxiosResponse();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function useAxiosInterCeptor() {
       userCustomAxios.interceptors.request.eject(requestIntercept);
       userCustomAxios.interceptors.response.eject(responseIntercept);
     };
-  }, [auth, onRequest, onRequestError, onResponse, onResponseError]);
+  }, [contextValue, onRequest, onRequestError, onResponse, onResponseError]);
 
   return userCustomAxios;
 }
