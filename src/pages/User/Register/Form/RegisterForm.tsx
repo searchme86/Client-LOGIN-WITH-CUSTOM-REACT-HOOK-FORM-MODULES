@@ -19,13 +19,14 @@ import List from '../../../../components/Design/List/List';
 import { RegisterFormDefaultData } from '../Utils/RegisterData';
 import useImageCompression from '../../../../hooks/useImageCompression';
 
-import UserRequestQuery from '../../UserUtils/Query/UserRequestQuery';
+// import UserRequestQuery from '../../UserUtils/Query/UserRequestQuery';
+import RegisterQuery from '../Query/RegisterQuery';
 
 function RegisterForm() {
   const { CompressImage } = useImageCompression();
   const {
     RegisterQuery: { mutate: createUser },
-  } = UserRequestQuery();
+  } = RegisterQuery();
 
   const createFormData = async (
     base64: string,
