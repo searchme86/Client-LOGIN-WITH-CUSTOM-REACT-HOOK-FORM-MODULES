@@ -1,6 +1,5 @@
 import axios from '../../../../server/axios/axiosCustom';
-
-import { ILoginInfo, ILoginResponse } from '../../UserUtils/UserRequestType';
+import { ILoginInfo, ILoginResponse } from './LoginType';
 
 export const LoginUserApi = async (LoginInput: ILoginInfo) => {
   const response = await axios.post<ILoginResponse>(

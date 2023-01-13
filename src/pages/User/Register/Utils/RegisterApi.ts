@@ -1,6 +1,6 @@
 import axios from '../../../../server/axios/axiosCustom';
 
-import { IRegisterFormData } from '../../UserUtils/UserRequestType';
+import { IRegisterFormData } from './RegisterType';
 
 export const RegisterFormApi = async (formData: FormData) => {
   const response = await axios.post<IRegisterFormData>('/register', formData, {
