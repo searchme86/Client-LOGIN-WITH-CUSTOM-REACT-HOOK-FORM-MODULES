@@ -2,7 +2,10 @@ import { useState, useRef, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '../../../context/NewContext';
 import { contextActionCreator } from '../../../context/NewContextType';
-import UserRequestQuery from '../../../pages/User/UserConfig/Query/UserRequestQuery';
+
+// import UserRequestQuery from '../../../pages/User/UserUtils/Query/UserRequestQuery';
+
+import LoginQuery from '../../../pages/User/Login/Query/LoginQuery';
 
 import { FaBars } from 'react-icons/fa';
 import { links } from './data';
@@ -32,7 +35,7 @@ function Navbar() {
   } = useStateContext();
   const {
     LogoutQuery: { mutate: LogOut },
-  } = UserRequestQuery();
+  } = LoginQuery();
 
   useLayoutEffect(() => {
     if (HeaderContentRef.current) {

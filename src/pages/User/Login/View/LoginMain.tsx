@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from '../LoginForm/LoginForm';
+import LoginForm from '../Form/LoginForm';
 
 import { LonginContainer } from './Login.style';
 import LoginBottom from './LoginBottom';

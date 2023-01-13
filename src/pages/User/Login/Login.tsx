@@ -1,5 +1,5 @@
-import LoginBackground from './LoginView/LoginBackground';
-import LoginMain from './LoginView/LoginMain';
+import LoginBackground from './View/LoginBackground';
+import LoginMain from './View/LoginMain';
 
 function Login() {
   return (

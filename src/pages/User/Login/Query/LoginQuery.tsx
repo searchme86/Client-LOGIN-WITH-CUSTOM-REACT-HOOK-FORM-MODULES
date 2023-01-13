@@ -1,42 +1,21 @@
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
 
-import {
-  RegisterFormApi,
-  LoginUserApi,
-  LogoutUserApi,
-} from '../UserRequestApi';
-import { ILoginInfo } from '../UserRequestType';
+import { ILoginInfo } from '../../UserUtils/UserRequestType';
+import { LoginUserApi, LogoutUserApi } from '../../UserUtils/UserRequestApi';
 
 import { useStateContext } from '../../../../context/NewContext';
 import { contextActionCreator } from '../../../../context/NewContextType';
 
-import { useLocation, useNavigate } from 'react-router-dom';
-
-function UserRequestQuery() {
+function LoginQuery() {
   const stateContext = useStateContext();
   const navigate = useNavigate();
 
   const location = useLocation();
 
   const from = ((location.state as any)?.from.pathname as string) || '/';
-
-  const RegisterQuery = useMutation(
-    (userInfo: FormData) => RegisterFormApi(userInfo),
-    {
-      onSuccess: () => {
-        console.log('리액트 쿼리가 성공했습니다.');
-        window.location.href = '/login';
-      },
-      onError: (error) => {
-        if (error instanceof AxiosError) {
-          console.log('리액트 쿼리가 실패했습니다', error);
-        } else if (error instanceof Error) {
-          console.log('리액트 쿼리가 실패했습니다.', error.message);
-        }
-      },
-    }
-  );
 
   const LoginQuery = useMutation(
     (userData: ILoginInfo) => LoginUserApi(userData),
@@ -66,7 +45,7 @@ function UserRequestQuery() {
     onError: () => {},
   });
 
-  return { RegisterQuery, LoginQuery, LogoutQuery };
+  return { LoginQuery, LogoutQuery };
 }
 
-export default UserRequestQuery;
+export default LoginQuery;

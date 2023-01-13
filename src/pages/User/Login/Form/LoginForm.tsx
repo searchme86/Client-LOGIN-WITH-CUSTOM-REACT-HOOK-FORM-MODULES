@@ -9,17 +9,18 @@ import {
   DisplayContainer,
 } from '../../../../assets/styles/Display.style';
 
-import { LoginSchemaType } from '../LoginUtils/LoginSchema';
-import { LoginFormSchema } from '../LoginUtils/LoginSchema';
-import { LoginFormDefaultData } from '../LoginUtils/LoginData';
+import { LoginSchemaType } from '../Utils/LoginSchema';
+import { LoginFormSchema } from '../Utils/LoginSchema';
+import { LoginFormDefaultData } from '../Utils/LoginData';
 
 import { SubmitHandler } from 'react-hook-form';
 
-import UserRequestQuery from '../../UserConfig/Query/UserRequestQuery';
+import LoginQuery from '../Query/LoginQuery';
+
 function LoginForm() {
   const {
     LoginQuery: { mutate: LoginUser },
-  } = UserRequestQuery();
+  } = LoginQuery();
 
   const onLoginSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
     if (data) {

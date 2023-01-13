@@ -1,7 +1,7 @@
 import {
   ILoginResponse,
   ApiResponse,
-} from '../pages/User/UserConfig/UserRequestType';
+} from '../pages/User/UserUtils/UserRequestType';
 
 interface IUser {
   LoginUserNickname: string;
