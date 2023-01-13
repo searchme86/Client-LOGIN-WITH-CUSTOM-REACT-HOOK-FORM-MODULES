@@ -1,4 +1,4 @@
-import { ILoginResponse } from '../pages/User/UserUtils/UserRequestType';
+import { ILoginResponse } from '../pages/User/Login/Utils/LoginType';
 
 const contextAction = {
   ADD_ERRORMESSAGE: 'addErrorMessage' as const,

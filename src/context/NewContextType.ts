@@ -1,7 +1,8 @@
-import {
-  ILoginResponse,
-  ApiResponse,
-} from '../pages/User/UserUtils/UserRequestType';
+import { ILoginResponse } from '../pages/User/Login/Utils/LoginType';
+
+interface ApiResponse {
+  message: string;
+}
 
 interface IUser {
   LoginUserNickname: string;

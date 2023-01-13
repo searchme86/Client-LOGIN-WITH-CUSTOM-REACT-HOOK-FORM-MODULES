@@ -3,8 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
 
-import { ILoginInfo } from '../../UserUtils/UserRequestType';
-
+import { ILoginInfo } from '../Utils/LoginType';
 import { LoginUserApi, LogoutUserApi } from '../Utils/LoginApi';
 
 import { useStateContext } from '../../../../context/NewContext';
