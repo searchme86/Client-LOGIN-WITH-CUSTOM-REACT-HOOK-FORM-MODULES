@@ -27,13 +27,6 @@ function LoginForm() {
       LoginUser(data);
       console.log('data', data);
     }
-
-    // await new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     alert(JSON.stringify(data));
-    //     resolve(undefined);
-    //   }, 3000);
-    // });
   };
 
   return (

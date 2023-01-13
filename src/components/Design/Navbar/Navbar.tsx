@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '../../../context/NewContext';
 import { contextActionCreator } from '../../../context/NewContextType';
 
-// import UserRequestQuery from '../../../pages/User/UserUtils/Query/UserRequestQuery';
-
 import LoginQuery from '../../../pages/User/Login/Query/LoginQuery';
 
 import { FaBars } from 'react-icons/fa';
