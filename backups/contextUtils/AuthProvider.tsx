@@ -1,9 +1,6 @@
 import { createContext, useState } from 'react';
-import {
-  ContextAuthType,
-  AuthProviderInterface,
-} from './contextUtils/AuthProviderType';
-import { ContextInitialValue } from './contextUtils/AuthProviderData';
+import { ContextAuthType, AuthProviderInterface } from './AuthProviderType';
+import { ContextInitialValue } from './AuthProviderData';
 
 const AuthContext = createContext<ContextAuthType>({
   auth: ContextInitialValue,
