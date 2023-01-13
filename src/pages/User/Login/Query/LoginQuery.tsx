@@ -4,7 +4,8 @@ import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
 
 import { ILoginInfo } from '../../UserUtils/UserRequestType';
-import { LoginUserApi, LogoutUserApi } from '../../UserUtils/UserRequestApi';
+
+import { LoginUserApi, LogoutUserApi } from '../Utils/LoginApi';
 
 import { useStateContext } from '../../../../context/NewContext';
 import { contextActionCreator } from '../../../../context/NewContextType';
