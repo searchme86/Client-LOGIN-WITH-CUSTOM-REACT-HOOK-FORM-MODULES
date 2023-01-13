@@ -16,21 +16,13 @@ const initialContextState: contextStateType = {
   errorMessage: '',
 };
 
-const StateContext = createContext<{
-  contextValue: contextStateType;
-  dispatch: (action: contextActionType) => void;
-}>({
-  contextValue: {
-    authUser: {
-      LoginUserNickname: '',
-      userProfileImage: [],
-      roles: [],
-      accessToken: '',
-    },
-    errorMessage: '',
-  },
-  dispatch: () => null,
-});
+const StateContext = createContext<
+  | {
+      contextValue: contextStateType;
+      dispatch: (action: contextActionType) => void;
+    }
+  | undefined
+>(undefined);
 
 const contextStateReducer = (
   state: contextStateType = initialContextState,
@@ -76,9 +68,10 @@ const StateContextProvider = ({ children }: { children: ReactNode }) => {
 const useStateContext = () => {
   const context = useContext(StateContext);
 
-  if (context) {
-    return context;
-  }
+  if (!context)
+    throw new Error('useCtx must be inside a Provider with a value');
+
+  return context;
 };
 
 export { StateContextProvider, useStateContext };

@@ -32,10 +32,8 @@ function UserRequestQuery() {
       onSuccess: (data) => {
         console.log('리액트 쿼리가 완료했습니다.');
         console.log('로그인후무엇이왔을까요', data);
-        if (stateContext) {
-          stateContext.dispatch(contextActionCreator.setUser(data));
-          console.log('hello!', stateContext?.contextValue.authUser);
-        }
+        stateContext.dispatch(contextActionCreator.setUser(data));
+        console.log('hello!', stateContext?.contextValue.authUser);
       },
       onError: (error) => {
         if (error instanceof AxiosError) {
