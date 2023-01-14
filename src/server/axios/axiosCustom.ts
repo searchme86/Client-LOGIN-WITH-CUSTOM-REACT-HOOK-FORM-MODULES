@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CustomAxiosInstanceType } from './axiosInterceptor/axiosInterceptorType';
+import { CustomAxiosInstanceType } from './axiosType';
 
 const BASE_URL = 'http://localhost:3500';
 
