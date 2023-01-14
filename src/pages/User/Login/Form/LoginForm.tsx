@@ -9,8 +9,7 @@ import {
   DisplayContainer,
 } from '../../../../assets/styles/Display.style';
 
-import { LoginSchemaType } from '../Utils/LoginSchema';
-import { LoginFormSchema } from '../Utils/LoginSchema';
+import { LoginSchemaType, LoginFormSchema } from '../Utils/LoginSchema';
 import { LoginFormDefaultData } from '../Utils/LoginData';
 
 import { SubmitHandler } from 'react-hook-form';
