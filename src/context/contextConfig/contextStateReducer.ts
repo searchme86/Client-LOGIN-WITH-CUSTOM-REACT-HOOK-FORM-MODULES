@@ -1,27 +1,8 @@
-import { ReactNode, useContext, createContext, useReducer } from 'react';
-import { contextStateType } from './NewContextType';
+import { initialContextState } from '../Context';
+import { contextReducerAction } from './contextAction';
+import { contextStateType, contextActionType } from './contextType';
 
-import { contextReducerAction, contextActionType } from './NewContextType';
-
-const initialContextState: contextStateType = {
-  authUser: {
-    LoginUserNickname: '',
-    userProfileImage: [],
-    roles: [],
-    accessToken: '',
-  },
-  errorMessage: '',
-};
-
-const StateContext = createContext<
-  | {
-      contextValue: contextStateType;
-      dispatch: (action: contextActionType) => void;
-    }
-  | undefined
->(undefined);
-
-const contextStateReducer = (
+export const contextStateReducer = (
   state: contextStateType = initialContextState,
   action: contextActionType
 ) => {
@@ -77,26 +58,3 @@ const contextStateReducer = (
       return state;
   }
 };
-
-const StateContextProvider = ({ children }: { children: ReactNode }) => {
-  const [contextValue, dispatch] = useReducer(
-    contextStateReducer,
-    initialContextState
-  );
-  const value = { contextValue, dispatch };
-
-  return (
-    <StateContext.Provider value={value}>{children}</StateContext.Provider>
-  );
-};
-
-const useStateContext = () => {
-  const context = useContext(StateContext);
-
-  if (!context)
-    throw new Error('useCtx must be inside a Provider with a value');
-
-  return context;
-};
-
-export { StateContextProvider, useStateContext };

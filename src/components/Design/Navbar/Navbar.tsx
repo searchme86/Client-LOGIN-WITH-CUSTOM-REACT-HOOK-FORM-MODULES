@@ -1,7 +1,8 @@
 import { useState, useRef, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useStateContext } from '../../../context/NewContext';
-import { contextActionCreator } from '../../../context/NewContextType';
+import { useStateContext } from '../../../context/Context';
+// import { contextActionCreator } from '../../../store/context/contextConfig/contextType';
+import { contextActionCreator } from '../../../context/contextConfig/contextActionCreator';
 
 import LoginQuery from '../../../pages/User/Login/Query/LoginQuery';
 

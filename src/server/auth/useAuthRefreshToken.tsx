@@ -1,7 +1,7 @@
 import axios from '../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
-import { useStateContext } from '../../context/NewContext';
-import { contextActionCreator } from '../../context/NewContextType';
+import { useStateContext } from '../../context/Context';
+import { contextActionCreator } from '../../context/contextConfig/contextActionCreator';
 
 interface requestRefeshTokenType {
   // roles: number[];

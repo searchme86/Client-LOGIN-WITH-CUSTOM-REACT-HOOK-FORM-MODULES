@@ -1,27 +1,6 @@
-import { ILoginResponse } from '../pages/User/Login/Utils/LoginType';
-
-interface ApiResponse {
-  message: string;
-}
-
-interface IUser {
-  LoginUserNickname: string;
-  userProfileImage: string[];
-  roles?: number[];
-  accessToken?: string;
-}
-
-export type contextStateType = {
-  authUser: IUser;
-  errorMessage: string;
-};
-
-export const contextReducerAction = {
-  ADD_ERRORMESSAGE: 'ADD_ERRORMESSAGE' as const,
-  SET_USER: 'SET_USER' as const,
-  REFRESH_TOKEN: 'REFRESH_TOKEN' as const,
-  SET_USER_LOGOUT: 'SET_USER_LOGOUT' as const,
-};
+import { contextReducerAction } from './contextAction';
+import { ILoginResponse } from '../../pages/User/Login/Utils/LoginType';
+import { ApiResponse } from '../../pages/User/Login/Utils/LoginType';
 
 export const contextActionCreator = {
   addErrorMessage: (error: ApiResponse) => ({
@@ -57,9 +36,3 @@ export const contextActionCreator = {
     },
   }),
 };
-
-export type contextActionType =
-  | ReturnType<typeof contextActionCreator.addErrorMessage>
-  | ReturnType<typeof contextActionCreator.setUser>
-  | ReturnType<typeof contextActionCreator.refreshToken>
-  | ReturnType<typeof contextActionCreator.setUserLogout>;

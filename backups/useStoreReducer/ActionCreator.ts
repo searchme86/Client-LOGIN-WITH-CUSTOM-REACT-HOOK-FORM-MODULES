@@ -1,13 +1,7 @@
-import { ILoginResponse } from '../pages/User/Login/Utils/LoginType';
+import { ILoginResponse } from '../../src/pages/User/Login/Utils/LoginType';
+import { contextAction } from './Action';
 
-const contextAction = {
-  ADD_ERRORMESSAGE: 'addErrorMessage' as const,
-  SET_USER: 'setUser' as const,
-  REFRESH_TOKEN: 'refreshToken' as const,
-  SET_USER_LOGOUT: 'SET_USER_LOGOUT' as const,
-};
-
-const contextActionCreator = {
+export const contextActionCreator = {
   addErrorMessage: (error: string) => ({
     type: contextAction.ADD_ERRORMESSAGE,
     payload: { message: error },
@@ -41,9 +35,3 @@ const contextActionCreator = {
     },
   }),
 };
-
-export type contextActionType =
-  | ReturnType<typeof contextActionCreator.addErrorMessage>
-  | ReturnType<typeof contextActionCreator.setUser>
-  | ReturnType<typeof contextActionCreator.refreshToken>
-  | ReturnType<typeof contextActionCreator.setUserLogout>;
