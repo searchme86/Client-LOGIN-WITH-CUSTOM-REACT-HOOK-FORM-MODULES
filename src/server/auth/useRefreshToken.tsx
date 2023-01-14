@@ -1,8 +1,16 @@
-import axios from '../../axios/axiosCustom';
+import axios from '../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
-import { useStateContext } from '../../../context/NewContext';
-import { requestRefeshTokenType } from './tokenUtils/tokenType';
-import { contextActionCreator } from '../../../context/NewContextType';
+import { useStateContext } from '../../context/NewContext';
+import { contextActionCreator } from '../../context/NewContextType';
+
+interface requestRefeshTokenType {
+  // roles: number[];
+  // accessToken: string;
+  LoginUserNickname: string;
+  userProfileImage: string[];
+  roles?: number[];
+  accessToken?: string;
+}
 
 function useRefreshToken() {
   const { dispatch } = useStateContext();

@@ -1,7 +1,8 @@
+import React from 'react';
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useStateContext } from '../../context/NewContext';
 
-const RequireAuth = ({ allowedRoles }: { allowedRoles: number[] }) => {
+function AuthRequired({ allowedRoles }: { allowedRoles: number[] }) {
   console.log('allowedRoles', allowedRoles);
   const location = useLocation();
   const { contextValue } = useStateContext();
@@ -15,6 +16,6 @@ const RequireAuth = ({ allowedRoles }: { allowedRoles: number[] }) => {
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />
   );
-};
+}
 
-export default RequireAuth;
+export default AuthRequired;

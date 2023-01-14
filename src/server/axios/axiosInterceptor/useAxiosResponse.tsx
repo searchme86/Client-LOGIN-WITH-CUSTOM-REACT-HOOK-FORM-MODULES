@@ -4,7 +4,7 @@
  *  */
 
 import { AxiosError, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
-import useRefreshToken from '../../auth/token/useRefreshToken';
+import useRefreshToken from '../../auth/useRefreshToken';
 import { CustomAxiosRequestConfig } from './axiosInterceptorType';
 import { userCustomAxios } from '../axiosCustom';
 
