@@ -42,10 +42,6 @@ function useAxiosPost<T, R>(
     }
   }, [url, args]);
 
-  // if (!response) {
-  //   throw Error('logic Error');
-  // }
-
   return { response, axiosPost, loading, errorMessage };
 }
 

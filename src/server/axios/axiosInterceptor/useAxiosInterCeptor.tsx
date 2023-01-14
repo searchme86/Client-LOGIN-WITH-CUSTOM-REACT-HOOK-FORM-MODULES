@@ -1,15 +1,9 @@
-/***
- * 용도 :
- * axiosInterceptor를 설정하는 컴포넌트
- *  */
-
 import { useEffect } from 'react';
 import { userCustomAxios } from '../axiosCustom';
 import useAxiosRequest from './useAxiosRequest';
 import useAxiosResponse from './useAxiosResponse';
 
 function useAxiosInterCeptor() {
-  // interceptor의 Request/Response 함수를 가져옴
   const { contextValue, onRequest, onRequestError } = useAxiosRequest();
   const { onResponse, onResponseError } = useAxiosResponse();
 

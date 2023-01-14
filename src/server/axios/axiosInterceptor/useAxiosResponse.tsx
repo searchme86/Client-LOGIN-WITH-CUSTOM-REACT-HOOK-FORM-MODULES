@@ -1,8 +1,3 @@
-/***
- * 용도 :
- * axiosInterceptor의 Response를 담당하는 함수
- *  */
-
 import { AxiosError, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
 import useRefreshToken from '../../auth/useRefreshToken';
 import { CustomAxiosRequestConfig } from './axiosInterceptorType';
@@ -13,12 +8,10 @@ import { StatusCode } from '../axiosUtils/axiosConfigType';
 function useAxiosResponse() {
   const refresh = useRefreshToken();
 
-  // axiosInterceptor에서 response를 받기 전에 값이 true 일 경우,
   const onResponse = (response: AxiosResponse): AxiosResponse => {
     return response;
   };
 
-  // axiosInterceptor에서 response를 받기 전, responseError가 발생 할 경우, 실행되는 함수
   const onResponseError = async (
     responseError: AxiosError
   ): Promise<AxiosError> => {
