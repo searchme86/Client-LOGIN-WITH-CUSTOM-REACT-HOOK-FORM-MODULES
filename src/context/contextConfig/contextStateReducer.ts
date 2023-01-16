@@ -1,7 +1,9 @@
-// import { initialContextState } from '..';
-import { initialContextState } from '../index';
-import { contextReducerAction } from './contextAction';
-import { contextStateType, contextActionType } from './contextType';
+import { initialContextState } from '@context/index';
+import { contextReducerAction } from '@context/contextConfig/contextAction';
+import {
+  contextStateType,
+  contextActionType,
+} from '@context/contextConfig/contextType';
 
 export const contextStateReducer = (
   state: contextStateType = initialContextState,

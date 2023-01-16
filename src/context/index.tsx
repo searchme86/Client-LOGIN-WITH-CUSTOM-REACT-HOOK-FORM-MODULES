@@ -2,8 +2,8 @@ import { ReactNode, useContext, createContext, useReducer } from 'react';
 import {
   contextStateType,
   contextActionType,
-} from './contextConfig/contextType';
-import { contextStateReducer } from './contextConfig/contextStateReducer';
+} from '@context/contextConfig/contextType';
+import { contextStateReducer } from '@context/contextConfig/contextStateReducer';
 
 export const initialContextState: contextStateType = {
   authUser: {

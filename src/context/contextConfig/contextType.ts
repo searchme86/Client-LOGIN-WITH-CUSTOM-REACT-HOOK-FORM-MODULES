@@ -1,4 +1,4 @@
-import { contextActionCreator } from './contextActionCreator';
+import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
 import { IUser } from '@pages/User/Login/Utils/LoginType';
 
 export type contextStateType = {
