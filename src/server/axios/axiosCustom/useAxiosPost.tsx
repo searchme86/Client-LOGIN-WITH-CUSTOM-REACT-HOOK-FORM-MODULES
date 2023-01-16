@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { AxiosError } from 'axios';
-import axios from '../axiosCustom';
+import axios from '@server/axios/axiosCustom';
 
 function useAxiosPost<T, R>(
   url: string,

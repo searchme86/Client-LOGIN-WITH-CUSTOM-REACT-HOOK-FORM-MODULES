@@ -1,4 +1,4 @@
-import axios from '../axios/axiosCustom';
+import axios from '@server/axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
