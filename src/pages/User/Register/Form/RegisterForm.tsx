@@ -13,7 +13,7 @@ import ResetBtnElm from '@components/CustomElements/UtilElements/ResetBtnElm';
 import List from '@components/Design/List/List';
 
 import { RegisterFormDefaultData } from '../Utils/RegisterData';
-import useImageCompression from '../../../../hooks/useImageCompression';
+import useImageCompression from '@hooks/useImageCompression';
 
 import RegisterQuery from '../Query/RegisterQuery';
 

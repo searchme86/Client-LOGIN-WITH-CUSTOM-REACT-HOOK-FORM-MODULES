@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import useImageCompression from '../../../hooks/useImageCompression';
+import useImageCompression from '@hooks/useImageCompression';
 
 import {
   ImageContainer,
