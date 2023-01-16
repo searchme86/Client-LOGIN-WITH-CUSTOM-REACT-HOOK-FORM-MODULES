@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { StateContextProvider } from './context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import GlobalStyle from './assets/styles/common/GlobalStyle';
+import GlobalStyle from '@assets/styles/common/GlobalStyle';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
