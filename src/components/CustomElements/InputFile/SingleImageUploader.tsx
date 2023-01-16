@@ -10,14 +10,11 @@ import {
   ImageClickBtn,
   ImageTitle,
   ImageErrorMessage,
-} from '../../../assets/styles/Image.style';
+} from '@assets/styles/Image.style';
 
-import {
-  DisplayContainer,
-  DisplayItem,
-} from '../../../assets/styles/Display.style';
+import { DisplayContainer, DisplayItem } from '@assets/styles/Display.style';
 
-import upload from '../../../assets/Images/upload.png';
+import upload from '@assets/Images/upload.png';
 
 function SingleImageUploader<Model extends Record<string, any>>({
   zodValidationKey,

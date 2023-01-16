@@ -4,11 +4,7 @@ import {
   RegisterFormSchema,
   RegisterSchemaType,
 } from '../Utils/RegisterSchema';
-import {
-  UlList,
-  UlLi,
-  DisplayContainer,
-} from '../../../../assets/styles/Display.style';
+import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
 import FormElm from '../../../../components/CustomElements/Form/FormElm';
 import InputElm from '../../../../components/CustomElements/Input/InputElm';
 import SingleImageUploader from '../../../../components/CustomElements/InputFile/SingleImageUploader';

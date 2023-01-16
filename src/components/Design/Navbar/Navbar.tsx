@@ -8,7 +8,7 @@ import LoginQuery from '../../../pages/User/Login/Query/LoginQuery';
 import { FaBars } from 'react-icons/fa';
 import { links } from './data';
 
-import { HeaderContainer } from '../../../assets/styles/common/PageLayout.style';
+import { HeaderContainer } from '@assets/styles/common/PageLayout.style';
 
 import {
   HeaderLogoSection,

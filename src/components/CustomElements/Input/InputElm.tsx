@@ -6,7 +6,7 @@ import {
   InputWrapper,
   Input,
   InputLabel,
-} from '../../../assets/styles/Input.style';
+} from '@assets/styles/Input.style';
 
 import TFormErrorMessage from '../UtilElements/FormErrorMessage';
 

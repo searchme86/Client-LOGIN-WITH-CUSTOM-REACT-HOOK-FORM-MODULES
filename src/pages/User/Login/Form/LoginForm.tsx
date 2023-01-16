@@ -3,11 +3,7 @@ import InputElm from '../../../../components/CustomElements/Input/InputElm';
 import SubmitBtnElm from '../../../../components/CustomElements/UtilElements/SubmitBtnElm';
 import ResetBtnElm from '../../../../components/CustomElements/UtilElements/ResetBtnElm';
 
-import {
-  UlList,
-  UlLi,
-  DisplayContainer,
-} from '../../../../assets/styles/Display.style';
+import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
 
 import { LoginSchemaType, LoginFormSchema } from '../Utils/LoginSchema';
 import { LoginFormDefaultData } from '../Utils/LoginData';

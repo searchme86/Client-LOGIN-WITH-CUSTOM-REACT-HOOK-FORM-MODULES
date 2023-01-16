@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { Button } from '../../../assets/styles/Button.style';
+import { Button } from '@assets/styles/Button.style';
 
 function ResetBtnElm<DefaultValue extends Record<string, any>>({
   width,
