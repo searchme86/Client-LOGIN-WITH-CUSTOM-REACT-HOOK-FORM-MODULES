@@ -1,4 +1,5 @@
-import { initialContextState } from '../Context';
+// import { initialContextState } from '..';
+import { initialContextState } from '../index';
 import { contextReducerAction } from './contextAction';
 import { contextStateType, contextActionType } from './contextType';
 

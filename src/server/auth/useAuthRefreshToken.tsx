@@ -1,6 +1,6 @@
 import axios from '../axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
-import { useStateContext } from '../../context/Context';
+import { useStateContext } from '../../context';
 import { contextActionCreator } from '../../context/contextConfig/contextActionCreator';
 
 interface requestRefeshTokenType {

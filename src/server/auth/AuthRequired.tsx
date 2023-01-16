@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
-import { useStateContext } from '../../context/Context';
+import { useStateContext } from '../../context';
 
 function AuthRequired({ allowedRoles }: { allowedRoles: number[] }) {
   console.log('allowedRoles', allowedRoles);
