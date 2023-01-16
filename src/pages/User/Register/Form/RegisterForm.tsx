@@ -5,12 +5,12 @@ import {
   RegisterSchemaType,
 } from '../Utils/RegisterSchema';
 import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
-import FormElm from '../../../../components/CustomElements/Form/FormElm';
-import InputElm from '../../../../components/CustomElements/Input/InputElm';
-import SingleImageUploader from '../../../../components/CustomElements/InputFile/SingleImageUploader';
-import SubmitBtnElm from '../../../../components/CustomElements/UtilElements/SubmitBtnElm';
-import ResetBtnElm from '../../../../components/CustomElements/UtilElements/ResetBtnElm';
-import List from '../../../../components/Design/List/List';
+import FormElm from '@components/CustomElements/Form/FormElm';
+import InputElm from '@components/CustomElements/Input/InputElm';
+import SingleImageUploader from '@components/CustomElements/InputFile/SingleImageUploader';
+import SubmitBtnElm from '@components/CustomElements/UtilElements/SubmitBtnElm';
+import ResetBtnElm from '@components/CustomElements/UtilElements/ResetBtnElm';
+import List from '@components/Design/List/List';
 
 import { RegisterFormDefaultData } from '../Utils/RegisterData';
 import useImageCompression from '../../../../hooks/useImageCompression';

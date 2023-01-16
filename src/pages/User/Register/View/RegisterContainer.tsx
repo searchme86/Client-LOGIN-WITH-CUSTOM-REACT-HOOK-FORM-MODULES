@@ -7,7 +7,7 @@ import {
   RegisterForm,
 } from './Register.style';
 
-import BgAnimation from '../../../../components/Design/BgAnimation/BgAnimation';
+import BgAnimation from '@components/Design/BgAnimation/BgAnimation';
 import { OffScreenTitle } from '@assets/styles/common/Common.style';
 
 interface ContainerProps {
