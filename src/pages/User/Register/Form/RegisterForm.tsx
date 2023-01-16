@@ -141,6 +141,7 @@ function RegisterForm() {
             placeholder="이메일을 등록해주세요"
             inputID="userEmail"
             inputPadding="0 10px 0 10px"
+            autoComplete="username"
           />
         </UlLi>
         {/* 유저 비밀번호 */}

@@ -48,6 +48,7 @@ function LoginForm() {
             placeholder="닉네임을 입력해주세요"
             inputID="loginUserNickName"
             inputPadding="0 10px 0 10px"
+            autoComplete="username"
           />
         </UlLi>
         <UlLi>
