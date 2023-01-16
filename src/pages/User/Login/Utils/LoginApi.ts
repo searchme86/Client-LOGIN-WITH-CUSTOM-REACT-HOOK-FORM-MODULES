@@ -1,8 +1,8 @@
 import axios from '@server/axios/axiosCustom';
-import { ILoginInfo, ILoginResponse } from './LoginType';
+import { ILoginInfo, IUser } from './LoginType';
 
 export const LoginUserApi = async (LoginInput: ILoginInfo) => {
-  const response = await axios.post<ILoginResponse>(
+  const response = await axios.post<IUser>(
     '/auth/create',
     JSON.stringify(LoginInput),
     { headers: { 'Content-Type': 'application/json' }, withCredentials: true }

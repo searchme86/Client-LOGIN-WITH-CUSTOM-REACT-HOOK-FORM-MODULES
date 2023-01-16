@@ -2,25 +2,19 @@ import axios from '@server/axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
-
-interface requestRefeshTokenType {
-  // roles: number[];
-  // accessToken: string;
-  LoginUserNickname: string;
-  userProfileImage: string[];
-  roles?: number[];
-  accessToken?: string;
-}
+import { IUser } from '@pages/User/Login/Utils/LoginType';
 
 function useRefreshToken() {
   const { dispatch } = useStateContext();
 
   const refresh = async () => {
     try {
-      const userRefreshedInfo: AxiosResponse<requestRefeshTokenType, any> =
-        await axios.get('/refresh', {
+      const userRefreshedInfo: AxiosResponse<IUser, any> = await axios.get(
+        '/refresh',
+        {
           withCredentials: true,
-        });
+        }
+      );
 
       const {
         data: { roles, accessToken },

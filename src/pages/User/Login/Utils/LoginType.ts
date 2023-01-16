@@ -1,20 +1,15 @@
-export interface IUser {
+interface ILoginUser {
   LoginUserNickname: string;
+}
+
+export interface IUser extends ILoginUser {
   userProfileImage: string[];
   roles?: number[];
   accessToken?: string;
 }
 
-export interface ILoginInfo {
-  LoginUserNickname: string;
+export interface ILoginInfo extends ILoginUser {
   LoginUserPassword: string;
-}
-
-export interface ILoginResponse {
-  LoginUserNickname: string;
-  userProfileImage: string[];
-  roles?: number[];
-  accessToken?: string;
 }
 
 export interface ApiResponse {

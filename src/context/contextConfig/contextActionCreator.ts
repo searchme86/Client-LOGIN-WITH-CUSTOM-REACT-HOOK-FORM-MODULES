@@ -1,5 +1,5 @@
 import { contextReducerAction } from '@context/contextConfig/contextAction';
-import { ILoginResponse } from '@pages/User/Login/Utils/LoginType';
+import { IUser } from '@pages/User/Login/Utils/LoginType';
 import { ApiResponse } from '@pages/User/Login/Utils/LoginType';
 
 export const contextActionCreator = {
@@ -8,7 +8,7 @@ export const contextActionCreator = {
     payload: { message: error.message },
   }),
 
-  setUser: (user: ILoginResponse) => ({
+  setUser: (user: IUser) => ({
     type: contextReducerAction.SET_USER,
     paylod: {
       LoginUserNickname: user.LoginUserNickname,
