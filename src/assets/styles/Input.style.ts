@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { StyleProps } from './common/Style.type';
+import { hiddenTextStyle } from './common/Common.style';
 
 export const InputContainer = styled.div<StyleProps>`
   width: ${({ width }) => width};
@@ -29,13 +30,6 @@ export const InputLabel = styled.label<StyleProps>`
   ${({ LabelHide }) =>
     LabelHide &&
     css`
-      display: inline-block;
-      position: absolute;
-      overflow: hidden;
-      border: 0;
-      width: 1px;
-      height: 1px;
-      clip: rect(1px, 1px, 1px, 1px);
-      clip-path: inset(50%);
+      ${hiddenTextStyle}
     `}
 `;

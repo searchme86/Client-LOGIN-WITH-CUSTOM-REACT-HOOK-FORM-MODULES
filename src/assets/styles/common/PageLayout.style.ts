@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const containerCenterStyle = css`
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+`;
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -15,19 +21,13 @@ export const HeaderContainer = styled.header`
 `;
 
 export const MainContainer = styled.main`
-  position: relative;
-  width: 1280px;
-  margin: 0 auto;
+  ${containerCenterStyle}
 `;
 
 export const FooterContainer = styled.footer`
-  position: relative;
-  width: 1280px;
-  margin: 0 auto;
+  ${containerCenterStyle}
 `;
 
 export const PageContainer = styled.div`
-  position: relative;
-  width: 1280px;
-  margin: 0 auto;
+  ${containerCenterStyle}
 `;

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const OffScreen = styled.p`
+export const hiddenTextStyle = css`
   display: inline-block;
   position: absolute;
   overflow: hidden;
@@ -9,39 +9,22 @@ export const OffScreen = styled.p`
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
+`;
+
+export const OffScreen = styled.p`
+  ${hiddenTextStyle}
 `;
 
 export const OffScreenSpan = styled.span`
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  border: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  ${hiddenTextStyle}
 `;
 
 export const OffScreenStrong = styled.strong`
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  border: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  ${hiddenTextStyle}
 `;
 
 export const OffScreenTitle = styled.h1`
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  border: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  ${hiddenTextStyle}
 `;
 
 export const BasicUl = styled.ul`
