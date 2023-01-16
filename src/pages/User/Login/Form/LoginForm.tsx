@@ -64,6 +64,7 @@ function LoginForm() {
             placeholder="비밀번호를 입력해주세요"
             inputID="loginUserPassword"
             inputPadding="0 10px 0 10px"
+            autoComplete="current-password"
           />
         </UlLi>
         <UlLi margin="0 0 10px 0">
