@@ -2,9 +2,13 @@ import React, { BaseSyntheticEvent } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { GenericOnSubmit } from '../../../../backups/Login/LoginFormType';
 
 import { FormElmContainer } from '../../../assets/styles/Form.style';
+
+type GenericOnSubmit = (
+  data: Record<string, any>,
+  event?: BaseSyntheticEvent
+) => void;
 
 function FormElm<
   DataSchema extends Record<string, any>,
@@ -26,8 +30,6 @@ function FormElm<
   });
 
   const handleSubmit = methods.handleSubmit;
-  // const errors = methods.formState.errors;
-  // console.log('여기는 form 에러!!', errors);
 
   return (
     <FormElmContainer margin="10px 0 10px 0">
