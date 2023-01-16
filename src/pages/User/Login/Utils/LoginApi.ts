@@ -1,4 +1,4 @@
-import axios from '../../../../server/axios/axiosCustom';
+import axios from '@server/axios/axiosCustom';
 import { ILoginInfo, ILoginResponse } from './LoginType';
 
 export const LoginUserApi = async (LoginInput: ILoginInfo) => {

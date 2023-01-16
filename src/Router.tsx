@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Layout from './Layout';
-import Home from './pages/Home';
-import Login from './pages/User/Login/Login';
-import Register from './pages/User/Register/Register';
-import RequireAuth from './server/auth/AuthRequired';
-import Unauthorized from './pages/Unauthorized';
+import Home from '@pages/Home';
+import Login from '@pages/User/Login/Login';
+import Register from '@pages/User/Register/Register';
+import RequireAuth from '@server/auth/AuthRequired';
+import Unauthorized from '@pages/Unauthorized';
 
-import Editor from './pages/Editor';
-import Admin from './pages/Admin';
-import User from './pages/User/User';
+import Editor from '@pages/Editor';
+import Admin from '@pages/Admin';
+import User from '@pages/User/User';
 
 const ROLES = {
   User: 2001,
