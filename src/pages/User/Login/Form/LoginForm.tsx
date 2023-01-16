@@ -1,7 +1,7 @@
-import FormElm from '@components/CustomElements/Form/FormElm';
-import InputElm from '@components/CustomElements/Input/InputElm';
-import SubmitBtnElm from '@components/CustomElements/UtilElements/SubmitBtnElm';
-import ResetBtnElm from '@components/CustomElements/UtilElements/ResetBtnElm';
+import FormElm from '@components/customElements/Form/FormElm';
+import InputElm from '@components/customElements/Input/InputElm';
+import SubmitBtnElm from '@components/customElements/UtilElements/SubmitBtnElm';
+import ResetBtnElm from '@components/customElements/UtilElements/ResetBtnElm';
 
 import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
 
