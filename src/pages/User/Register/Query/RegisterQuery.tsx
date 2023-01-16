@@ -8,7 +8,6 @@ function RegisterQuery() {
     (userInfo: FormData) => RegisterFormApi(userInfo),
     {
       onSuccess: () => {
-        console.log('리액트 쿼리가 성공했습니다.');
         window.location.href = '/login';
       },
       onError: (error) => {

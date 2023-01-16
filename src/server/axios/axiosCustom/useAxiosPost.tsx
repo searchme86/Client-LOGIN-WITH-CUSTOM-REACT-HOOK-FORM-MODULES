@@ -25,8 +25,6 @@ function useAxiosPost<T, R>(
       setResponse(data);
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log('진입');
-        console.log('error.response', error.response);
         if (!error?.response) {
           setErrorMessage('No Server Response');
         } else if (error.response?.status === 400) {

@@ -40,8 +40,6 @@ function Navbar() {
       const MenuAreaHeight =
         HeaderContentRef.current.getBoundingClientRect().height;
 
-      console.log('MenuAreaHeight', MenuAreaHeight);
-
       if (!isMenuShown && HeaderContainerRef.current) {
         HeaderContainerRef.current.style.height = `${MenuAreaHeight}px`;
       } else if (isMenuShown && HeaderContainerRef.current) {
@@ -52,7 +50,6 @@ function Navbar() {
 
   const clickBtnMenuHidden = () => {
     setIsMenuShown((prev) => !prev);
-    console.log('isMenuShown', isMenuShown);
   };
 
   const onLoginHandler = () => navigate('/login');

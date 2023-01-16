@@ -24,7 +24,6 @@ function LoginForm() {
   const onLoginSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
     if (data) {
       LoginUser(data);
-      console.log('data', data);
     }
   };
 

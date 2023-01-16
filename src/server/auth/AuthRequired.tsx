@@ -3,7 +3,6 @@ import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useStateContext } from '../../context';
 
 function AuthRequired({ allowedRoles }: { allowedRoles: number[] }) {
-  console.log('allowedRoles', allowedRoles);
   const location = useLocation();
   const { contextValue } = useStateContext();
 
