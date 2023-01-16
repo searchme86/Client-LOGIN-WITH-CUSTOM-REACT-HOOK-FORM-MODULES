@@ -1,5 +1,5 @@
 import { AxiosRequestConfig, AxiosError } from 'axios';
-import { useStateContext } from '../../../context';
+import { useStateContext } from '@context/index';
 
 function useAxiosRequest() {
   const { contextValue } = useStateContext();

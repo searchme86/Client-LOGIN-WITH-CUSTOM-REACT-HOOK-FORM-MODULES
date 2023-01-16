@@ -6,8 +6,8 @@ import { useMutation } from '@tanstack/react-query';
 import { ILoginInfo } from '../Utils/LoginType';
 import { LoginUserApi, LogoutUserApi } from '../Utils/LoginApi';
 
-import { useStateContext } from '../../../../context';
-import { contextActionCreator } from '../../../../context/contextConfig/contextActionCreator';
+import { useStateContext } from '@context/index';
+import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
 
 function LoginQuery() {
   const stateContext = useStateContext();
