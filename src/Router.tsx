@@ -1,12 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-
 import Layout from './Layout';
+import RequireAuth from '@server/auth/AuthRequired';
+
 import Home from '@pages/Home';
 import Login from '@pages/User/Login/Login';
 import Register from '@pages/User/Register/Register';
-import RequireAuth from '@server/auth/AuthRequired';
 import Unauthorized from '@pages/Unauthorized';
-
 import Editor from '@pages/Editor';
 import Admin from '@pages/Admin';
 import User from '@pages/User/User';
@@ -26,7 +25,6 @@ function Router() {
 
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
           <Route path="/user" element={<User />} />
         </Route>

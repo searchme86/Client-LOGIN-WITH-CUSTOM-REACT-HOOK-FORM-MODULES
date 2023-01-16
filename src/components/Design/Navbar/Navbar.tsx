@@ -5,11 +5,7 @@ import { contextActionCreator } from '@context/contextConfig/contextActionCreato
 
 import LoginQuery from '@pages/User/Login/Query/LoginQuery';
 
-import { FaBars } from 'react-icons/fa';
-import { links } from './data';
-
 import { HeaderContainer } from '@assets/styles/common/PageLayout.style';
-
 import {
   HeaderLogoSection,
   HeaderLogo,
@@ -19,6 +15,9 @@ import {
   HeaderMenuList,
   HeaderMenuLi,
 } from './NavBar.style';
+
+import { FaBars } from 'react-icons/fa';
+import { links } from './data';
 
 function Navbar() {
   const [isMenuShown, setIsMenuShown] = useState(false);

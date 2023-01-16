@@ -1,5 +1,4 @@
 import React from 'react';
-
 import RegisterContainer from './View/RegisterContainer';
 import RegisterHead from './View/RegisterHead';
 import RegisterForm from './Form/RegisterForm';

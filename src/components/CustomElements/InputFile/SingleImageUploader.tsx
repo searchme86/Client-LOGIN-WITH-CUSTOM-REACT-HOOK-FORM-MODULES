@@ -11,7 +11,6 @@ import {
   ImageTitle,
   ImageErrorMessage,
 } from '@assets/styles/Image.style';
-
 import { DisplayContainer, DisplayItem } from '@assets/styles/Display.style';
 
 import upload from '@assets/Images/upload.png';

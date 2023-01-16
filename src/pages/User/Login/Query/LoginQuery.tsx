@@ -2,19 +2,17 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
-
-import { ILoginInfo } from '../Utils/LoginType';
 import { LoginUserApi, LogoutUserApi } from '../Utils/LoginApi';
 
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
 
+import { ILoginInfo } from '../Utils/LoginType';
+
 function LoginQuery() {
   const stateContext = useStateContext();
   const navigate = useNavigate();
-
   const location = useLocation();
-
   const from = ((location.state as any)?.from.pathname as string) || '/';
 
   const LoginQuery = useMutation(

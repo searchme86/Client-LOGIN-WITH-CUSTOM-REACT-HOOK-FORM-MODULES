@@ -1,4 +1,5 @@
 import React from 'react';
+
 type AuthMiddlewareProps = {
   children: React.ReactElement;
 };
