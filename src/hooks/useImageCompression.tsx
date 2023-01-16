@@ -12,7 +12,10 @@ function ImageCompression() {
       const compressedFile = await imageCompression(data, options);
       return compressedFile;
     } catch (error) {
-      console.log(error);
+      console.log(
+        'ImageCompression으로 이미지 압축 중 에러가 발생했습니다.',
+        error
+      );
     }
   };
 

@@ -88,9 +88,9 @@ function RegisterForm() {
       });
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error.message);
+        console.log('파일 처리하는 중 에러가 발생했습니다.', error.message);
       } else {
-        console.log(error);
+        console.log('파일 처리하는 중 에러가 발생했습니다.', error);
       }
     }
   };

@@ -27,8 +27,14 @@ function useRefreshToken() {
       return accessToken;
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.error(error.response);
-        console.log('error.response', error.response);
+        console.error(
+          '리프레쉬 토큰을 획득하는 중 에러가 발생했습니다.',
+          error.response
+        );
+        console.log(
+          '리프레쉬 토큰을 획득하는 중 에러가 발생했습니다.',
+          error.response
+        );
       }
     }
   };

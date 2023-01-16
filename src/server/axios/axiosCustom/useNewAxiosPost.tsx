@@ -11,7 +11,7 @@ function useNewAxiosPost() {
       });
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log('axios error', error);
+        console.log('axios POST 요청 중, 에러가 발생했습니다.', error);
       }
     }
   };
