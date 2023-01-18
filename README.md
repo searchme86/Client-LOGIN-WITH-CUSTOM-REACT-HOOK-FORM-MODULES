@@ -1,18 +1,18 @@
 ## ⌨️ 개요
 
-### [React Hook Form](https://react-hook-form.com/,"react-hook-form")이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 클라이언트를 담당하는 프로젝트입니다.
+### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 클라이언트를 담당하는 프로젝트입니다.
 
 ### 해당 강좌를 통해서 아이디어를 얻었습니다
 
-- 💡 [React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios](https://www.youtube.com/watch?v=nI8PYZNFtac, 'React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios')
+- 💡 [React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios](https://www.youtube.com/watch?v=nI8PYZNFtac)
 
-- 💡 [How to create reusable form components with React Hook Forms and Typescript](https://www.thisdot.co/blog/how-to-create-reusable-form-components-with-react-hook-forms-and-typescript, 'How to create reusable form components with React Hook Forms and Typescript')
+- 💡 [How to create reusable form components with React Hook Forms and Typescript](https://www.thisdot.co/blog/how-to-create-reusable-form-components-with-react-hook-forms-and-typescript)
 
-- 💡 [File Upload with Chakra UI and react-hook-form](https://gist.github.com/brenopolanski/5efe54b46cad0882b3ce41dc8db64608, 'File Upload with Chakra UI and react-hook-form')
+- 💡 [File Upload with Chakra UI and react-hook-form](https://gist.github.com/brenopolanski/5efe54b46cad0882b3ce41dc8db64608)
 
 ## 🚀 프로젝트 착수계기
 
-### [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed, '이전 포트폴리오,fleamarketagora') 코드를 다음의 이유로 개선하려고 합니다.
+### [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed '이전 포트폴리오,fleamarketagora') 코드를 다음의 이유로 개선하려고 합니다.
 
 - Cannot read properties of undefined, 타입스크립트 적용.
 
