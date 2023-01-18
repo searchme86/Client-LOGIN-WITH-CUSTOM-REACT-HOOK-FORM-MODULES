@@ -1,6 +1,6 @@
 ## ⌨️ 개요
 
-### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 클라이언트를 담당하는 프로젝트입니다.
+### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 *클라이언트*를 담당하는 프로젝트입니다.
 
 ### 해당 강좌를 통해서 아이디어를 얻었습니다
 
