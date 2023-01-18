@@ -1,9 +1,10 @@
 import React from 'react';
-import LoginForm from '../Form/LoginForm';
 
-import { LonginContainer } from './Login.style';
+import LoginForm from '../Form/LoginForm';
 import LoginBottom from './LoginBottom';
 import LoginHeader from './LoginHeader';
+
+import { LonginContainer } from './Login.style';
 
 function LoginMain() {
   return (

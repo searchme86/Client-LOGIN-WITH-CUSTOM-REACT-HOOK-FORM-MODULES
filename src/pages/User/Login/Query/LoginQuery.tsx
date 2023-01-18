@@ -2,12 +2,12 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
+
 import { LoginUserApi, LogoutUserApi } from '../Utils/LoginApi';
+import { ILoginInfo } from '../Utils/LoginType';
 
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
-
-import { ILoginInfo } from '../Utils/LoginType';
 
 function LoginQuery() {
   const stateContext = useStateContext();

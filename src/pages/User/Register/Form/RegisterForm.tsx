@@ -1,5 +1,6 @@
 import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
+
 import FormElm from '@components/customElements/Form/FormElm';
 import InputElm from '@components/customElements/Input/InputElm';
 import SingleImageUploader from '@components/customElements/InputFile/SingleImageUploader';
@@ -8,15 +9,15 @@ import ResetBtnElm from '@components/customElements/UtilElements/ResetBtnElm';
 import List from '@components/Design/List/List';
 
 import RegisterQuery from '../Query/RegisterQuery';
-import useImageCompression from '@hooks/useImageCompression';
-
-import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
-
 import {
   RegisterFormSchema,
   RegisterSchemaType,
 } from '../Utils/RegisterSchema';
 import { RegisterFormDefaultData } from '../Utils/RegisterData';
+
+import useImageCompression from '@hooks/useImageCompression';
+
+import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
 
 function RegisterForm() {
   const { CompressImage } = useImageCompression();
