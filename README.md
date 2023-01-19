@@ -368,8 +368,6 @@
 | RegisterContainer.tsx |                            등록 폼 컴포넌트를 담는 등록 메인 컴포넌트                            |
 |   RegisterHead.tsx    |          등록 페이지의 헤더 영역으로, 로그인 페이지로 이동하는 링크를 반환하는 컴포넌트          |
 
-//
-
 ### 3.프로젝트 로그인 코드
 
 ```
@@ -388,31 +386,37 @@
 
 ```
 
-|         파일명          |                                               내용                                               |
-| :---------------------: | :----------------------------------------------------------------------------------------------: |
-|   AuthMiddleware.tsx    |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
-|    AuthRequired.tsx     |                                  로그인 페이지의 레퍼 컴포넌트                                   |
-| useAuthRefreshToken.tsx | 로그인 페이지의 로그인 버튼 클릭 후, 에러 메세지 및 등록폼으로 이동하는 링크를 반환하는 컴포넌트 |
+|         파일명          |                                 내용                                  | 특이사항 |
+| :---------------------: | :-------------------------------------------------------------------: | :------: |
+|   AuthMiddleware.tsx    |      Auth정보가 있을 경우, children을 반환하는 미들웨어 컴포넌트      |  작업중  |
+|    AuthRequired.tsx     | 토큰정보에서 유저의 Role에 따라 children을 반환하는 미들웨어 컴포넌트 |  작업중  |
+| useAuthRefreshToken.tsx |    서버에 새로운 토큰을 요청하고 이를 context에 저장하는 컴포넌트     |  작업중  |
 
 ### 3-2. 프로젝트 코드 - Axios 관련 컴포넌트
 
 ```
+📦axios
+ ┣ 📂axiosCustom
+ ┃ ┣ 📜useAxiosGet.tsx
+ ┃ ┗ 📜useAxiosPost.tsx
+ ┣ 📂axiosInterceptor
+ ┃ ┣ 📜useAxiosInterCeptor.tsx
+ ┃ ┣ 📜useAxiosRequest.tsx
+ ┃ ┗ 📜useAxiosResponse.tsx
+ ┣ 📜axiosCustom.ts
+ ┗ 📜axiosType.ts
 
 ```
 
-|        파일명         |                                               내용                                               |
-| :-------------------: | :----------------------------------------------------------------------------------------------: |
-|    Login.style.ts     |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
-|  LoginBackground.tsx  |                                  로그인 페이지의 레퍼 컴포넌트                                   |
-|    LoginBottom.tsx    | 로그인 페이지의 로그인 버튼 클릭 후, 에러 메세지 및 등록폼으로 이동하는 링크를 반환하는 컴포넌트 |
-|    LoginHeader.tsx    |           로그인 페이지의 헤더 영역으로, fontAwesome 이미지와 제목을 반환하는 컴포넌트           |
-|     LoginMain.tsx     |                                로그인 폼을 반환하는 메인 컴포넌트                                |
-|       Login.tsx       |                     이하 모든 로그인 컴포넌트를 모두 반환하는 레퍼 컴포넌트                      |
-|   Register.style.ts   |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
-| RegisterContainer.tsx |                            등록 폼 컴포넌트를 담는 등록 메인 컴포넌트                            |
-|   RegisterHead.tsx    |          등록 페이지의 헤더 영역으로, 로그인 페이지로 이동하는 링크를 반환하는 컴포넌트          |
-
-//
+|         파일명          |                                       내용                                        | 특이사항 |
+| :---------------------: | :-------------------------------------------------------------------------------: | :------: |
+|     useAxiosGet.tsx     |          React-Query 도입 전, Axios Get 액션만 담당하는 커스텀 컴포넌트           | 삭제예정 |
+|    useAxiosPost.tsx     |          React-Query 도입 전, Axios Post 액션만 담당하는 커스텀 컴포넌트          | 삭제예정 |
+| useAxiosInterCeptor.tsx | Request(useAxiosRequest),Response(useAxiosResponse) 함수를 받는 Axios InterCeptor | 보완예정 |
+|   useAxiosRequest.tsx   |                  Axios InterCeptor에서 Request, 요청 로직을 담당                  | 보완예정 |
+|  useAxiosResponse.tsx   |                 Axios InterCeptor에서 Response, 반환 로직을 담당                  | 보완예정 |
+|     axiosCustom.ts      |                               Axios를 커스텀한 코드                               |          |
+|      axiosType.ts       |       Axios를 커스텀하거나 Axios InterCeptor 사용하는데 필요한 타입을 정의        |          |
 
 ## 🔧 5. 프로젝트 스펙
 
