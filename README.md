@@ -197,6 +197,15 @@
 
 ## 📦 폴더구조
 
+- 1. 프로젝트 전체 코드
+- 2. 프로젝트 커스텀 엘리먼트 코드
+  - 커스텀 엘리먼트
+  - 커스텀 엘리먼트가 적용된 컴포넌트
+  - React-Query가 적용된 컴포넌트
+  - Zod을 활용한 타입정의 컴포넌트
+  - 로그인/등록 페이지의 뷰 컴포넌트
+- 3. 프로젝트 로그인 코드
+
 ### 1. 프로젝트 전체 코드
 
 ```
@@ -228,7 +237,7 @@
 | Router.tsx |        프로젝트 라우트를 따로 분리해 정의함         |
 | index.tsx  |                 프로젝트 기본 진입                  |
 
-### 2. 프로젝트 핵심폴더 (커스텀 엘리먼트 - 커스텀 엘리먼트)
+### 2. 프로젝트 코드 - 커스텀 엘리먼트
 
 ```
 📦customElements
@@ -255,7 +264,7 @@
 |     ResetBtnElm.tsx     |        React Hook Form에서 입력한 모든 값을 초기화 하는 컴포넌트        | button type="button" |                            입력값 초기화                            |
 |    SubmitBtnElm.tsx     |        React Hook Form에서 입력한 모든 값을 submit 하는 컴포넌트        | button type="reset"  |                           입력 값 Submit                            |
 
-### 3. 프로젝트 핵심폴더 (커스텀 엘리먼트 - 커스텀 엘리먼트가 적용된 컴포넌트)
+### 2-1. 프로젝트 코드 - 커스텀 엘리먼트가 적용된 컴포넌트
 
 ```
 📦pages
@@ -273,7 +282,7 @@
 |  LoginForm.tsx   | 로그인 폼 |
 | RegisterForm.tsx |  등록 폼  |
 
-### 4. 프로젝트 폴더 (React-Query가 적용된 컴포넌트)
+### 2-2. 프로젝트 코드 - React-Query가 적용된 컴포넌트
 
 #### 🗒️ 유저(User)의 로그인(Login)과 등록(Register)액션에 따라 구분해 코드 정리 했습니다.
 
@@ -301,7 +310,7 @@
 | RegisterQuery.tsx | RegisterApi에서 정의한 Axios 요청을 활용한 Register관련 React-Query 코드 |
 |  RegisterApi.ts   |                      Register 관련한 Axios 요청코드                      |
 
-### 5. 프로젝트 폴더 (Zod을 활용한 타입정의 컴포넌트)
+### 2-3. 프로젝트 코드 - Zod을 활용한 타입정의 컴포넌트
 
 ```
 📦pages
@@ -323,7 +332,7 @@
 |  RegisterData.ts  |         등록 관련 데이터의 default 값         |
 | RegisterSchema.ts | 로그인에 사용될 값의 유효성을 검사하는 Schema |
 
-### 6. 프로젝트 폴더 (로그인/등록 페이지의 뷰 컴포넌트)
+### 2-4. 프로젝트 코드 - 로그인/등록 페이지의 뷰 컴포넌트
 
 ```
 📦pages
