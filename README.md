@@ -97,81 +97,84 @@
   <tbody>
     <tr>
       <th>목적</th>
-      <td>상품/유저의 CRUD </td>
-      <td rowspan="2">
-        <p>재사용과 추상화 특징을 갖는<br/> React Hook Form 적용된 <br/>폼 엘리먼트(form,input) 컴포넌트</p>
-        <p>리프레쉬 토큰 기반의 로그인</p>
+      <td align="center">상품/유저의 CRUD </td>
+      <td align="center" rowspan="2">
+        <ul>
+          <li>재사용과 추상화 특징을 갖는<br/> React Hook Form 적용된 <br/>폼 엘리먼트(form,input) 컴포넌트</li>
+          <li>리프레쉬 토큰 기반의 로그인</li>
+        </ul>
       </td>
     </tr>
     <tr>
       <th>특징</th>
-      <td>웹접근성을 준수하려는 컴포넌트 코드 구현</td>
+      <td align="center">웹접근성을 준수하려는 컴포넌트 코드 구현</td>
     </tr>
     <tr>
       <th>리액트</th>
-      <td>JS 리액트</td>
-      <td>TS 리액트</td>
+      <td align="center">JS 리액트</td>
+      <td align="center">TS 리액트</td>
     </tr>
     <tr>
       <th>CSS-in-JS</th>
-      <td>Chakra UI <br/>/ styled-components</td>
-      <td>styled-components</td>
+      <td align="center">Chakra UI <br/>/ styled-components</td>
+      <td align="center">styled-components</td>
     </tr>
     <tr>
       <th>폼 유효성 관리</th>
-      <td>React Hook Form</td>
-      <td>Zod</td>
+      <td align="center">React Hook Form</td>
+      <td align="center">Zod</td>
     </tr>
     <tr>
       <th>상태관리</th>
-      <td>Redux-toolkit</td>
-      <td>
+      <td align="center">Redux-toolkit</td>
+      <td align="center">
         <p>Context Api</p>
         <p>React Query</p>
       </td>
     </tr>
     <tr>
       <th>토큰관리</th>
-      <td>localStorage에 저장</td>
-      <td>Access Token + Refresh Token</td>
+      <td align="center">localStorage에 저장</td>
+      <td align="center">Access Token + Refresh Token</td>
     </tr>
     <tr>
       <th>서버요청(Axios)</th>
       <td>커스텀 Axios</td>
-      <td>
+      <td align="center">
         <p>커스텀 Axios</p>
         <p>Axios Interceptors</p>
       </td>
     </tr>
     <tr>
       <th>라우팅(Route)</th>
-      <td>기본 라우팅</td>
-      <td>
+      <td align="center">기본 라우팅</td>
+      <td align="center">
         <p>Protected Route Role based</p>
         <p>이전 Location을 저장해, 로그인 후 해당 경로로 리다이렉트</p>
       </td>
     </tr>
     <tr>
       <th>이미지 업로드 npm</th>
-      <td>react-file-base64</td>
-      <td>
+      <td align="center">react-file-base64</td>
+      <td align="center">
         <p>multer</p>
         <p>cloudinary</p>
       </td>
     </tr>
     <tr>
       <th>대표 npm</th>
-      <td>react-daum-postcode</td>
-      <td>
+      <td align="center">react-daum-postcode</td>
+      <td align="center">
         <p>browser-image-compression</p>
         <p>craco</p>
       </td>
     </tr>
     <tr>
       <th>폴더경로</th>
-      <td>상대경로</td>
-      <td>상대경로와 절대경로 혼용</td>
+      <td align="center">상대경로</td>
+      <td align="center">상대경로와 절대경로 혼용</td>
     </tr>
+
   </tbody>
 </table>
 
