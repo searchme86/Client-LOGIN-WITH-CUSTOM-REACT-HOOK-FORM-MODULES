@@ -195,6 +195,35 @@
 
 ## 📦 폴더구조
 
+```
+📦src
+ ┣ 📂assets
+ ┣ 📂components
+ ┣ 📂context
+ ┣ 📂hooks
+ ┣ 📂pages
+ ┣ 📂server
+ ┣ 📂types
+ ┣ 📜.env
+ ┣ 📜App.tsx
+ ┣ 📜Layout.tsx
+ ┣ 📜Router.tsx
+ ┗ 📜index.tsx
+```
+
+|   폴더명   |                        내용                         |
+| :--------: | :-------------------------------------------------: |
+|   assets   |                       스타일                        |
+| components |  커스텀 엘리먼트와 Navbar, Footer와 같은 컴포넌트   |
+|  context   |           컨텍스트, 프로젝트 상태를 저장            |
+|   hooks    |             공통으로 사용하는 공통 hook             |
+|   pages    |     프로젝트 페이지(로그인 페이지/ 등록 페이지)     |
+|   server   |            axios와 auth 및 토큰 미들웨어            |
+|   types    |        env에서 사용하는 데이터의 type을 정의        |
+| Layout.tsx | 페이지의 기본 레이아웃을 정의함, outlet 기능 포함됨 |
+| Router.tsx |        프로젝트 라우트를 따로 분리해 정의함         |
+| index.tsx  |                 프로젝트 기본 진입                  |
+
 ## 🔧 프로젝트 스펙
 
 ## 📈 작업현황
