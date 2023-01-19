@@ -24,10 +24,11 @@
 
 - 리액트 훅 폼을 프로젝트 목적으로 선택한 이유
 
-  - 이전 포트폴리오에서 핵심적인 기능이면서 이를 개선하고 싶었음
-  - 모든 웹 개발에서 폼(Form) 을 자주 사용하고 이에 대한 관리가 중요하기 때문
-  - 폼 관리에 React Hook Form이 쉽게 사용되기 때문
+  - 이전 포트폴리오에서 핵심적인 기능임
+  - 모든 웹 개발에서 사용자가 폼(Form)을 자주 사용하고 서버로 값이 전달되는 진입점(Entry Point)
+  - 폼 관리에 React Hook Form이 자주 사용
   - 이전 프로젝트에서 [Chakra UI + React Hook Form](https://chakra-ui.com/getting-started/with-hook-form 'Chakra UI + React Hook Form') 조합을 사용함
+  - 타입스크립트를 사용하면서 이것이 적용된 버전은 어떻게 코드로 작성하는지 연습
 
 ### [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed '이전 포트폴리오,fleamarketagora') 코드를 다음의 이유로 개선하려고 합니다.
 
