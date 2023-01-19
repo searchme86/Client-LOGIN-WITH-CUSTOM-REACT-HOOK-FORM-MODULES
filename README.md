@@ -1,6 +1,6 @@
 ## ⌨️ 개요
 
-### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 *"클라이언트"*를 담당하는 프로젝트입니다.
+### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 *클라이언트*를 담당하는 프로젝트입니다.
 
 ### 해당 강좌를 통해서 아이디어를 얻었습니다
 
@@ -73,6 +73,13 @@
 ## 🔦 프로젝트 목적
 
 - React Hook Form이 적용된, 추상성이 높은 폼 엘리먼트(form, input) 구현
+
+  - 모든 폼 엘리먼트(form,input,select 등)는 React Hook Form이 적용된 커스텀 컴포넌트로 변경
+  - 주입되는 props를 통해 컴포넌트의 사용성을 결정함
+    - Input 컴포넌트
+    - Input Checkbox 컴포넌트
+    - Input File Upload 컴포넌트
+
 - Persistant Auth가 가능한 로그인 기능 구현
 
 ## 📦 폴더구조
