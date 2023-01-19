@@ -205,6 +205,8 @@
   - Zod을 활용한 타입정의 컴포넌트
   - 로그인/등록 페이지의 뷰 컴포넌트
 - 3. 프로젝트 로그인 코드
+  - Auth 관련 컴포넌트
+  - Axios 관련 컴포넌트
 
 ### 1. 프로젝트 전체 코드
 
@@ -365,6 +367,52 @@
 |   Register.style.ts   |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
 | RegisterContainer.tsx |                            등록 폼 컴포넌트를 담는 등록 메인 컴포넌트                            |
 |   RegisterHead.tsx    |          등록 페이지의 헤더 영역으로, 로그인 페이지로 이동하는 링크를 반환하는 컴포넌트          |
+
+//
+
+### 3.프로젝트 로그인 코드
+
+```
+📦server
+ ┣ 📂auth
+ ┗ 📂axios
+```
+
+### 3-1. 프로젝트 코드 - Auth 관련 컴포넌트
+
+```
+📦auth
+ ┣ 📜AuthMiddleware.tsx
+ ┣ 📜AuthRequired.tsx
+ ┗ 📜useAuthRefreshToken.tsx
+
+```
+
+|         파일명          |                                               내용                                               |
+| :---------------------: | :----------------------------------------------------------------------------------------------: |
+|   AuthMiddleware.tsx    |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
+|    AuthRequired.tsx     |                                  로그인 페이지의 레퍼 컴포넌트                                   |
+| useAuthRefreshToken.tsx | 로그인 페이지의 로그인 버튼 클릭 후, 에러 메세지 및 등록폼으로 이동하는 링크를 반환하는 컴포넌트 |
+
+### 3-2. 프로젝트 코드 - Axios 관련 컴포넌트
+
+```
+
+```
+
+|        파일명         |                                               내용                                               |
+| :-------------------: | :----------------------------------------------------------------------------------------------: |
+|    Login.style.ts     |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
+|  LoginBackground.tsx  |                                  로그인 페이지의 레퍼 컴포넌트                                   |
+|    LoginBottom.tsx    | 로그인 페이지의 로그인 버튼 클릭 후, 에러 메세지 및 등록폼으로 이동하는 링크를 반환하는 컴포넌트 |
+|    LoginHeader.tsx    |           로그인 페이지의 헤더 영역으로, fontAwesome 이미지와 제목을 반환하는 컴포넌트           |
+|     LoginMain.tsx     |                                로그인 폼을 반환하는 메인 컴포넌트                                |
+|       Login.tsx       |                     이하 모든 로그인 컴포넌트를 모두 반환하는 레퍼 컴포넌트                      |
+|   Register.style.ts   |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
+| RegisterContainer.tsx |                            등록 폼 컴포넌트를 담는 등록 메인 컴포넌트                            |
+|   RegisterHead.tsx    |          등록 페이지의 헤더 영역으로, 로그인 페이지로 이동하는 링크를 반환하는 컴포넌트          |
+
+//
 
 ## 🔧 5. 프로젝트 스펙
 
