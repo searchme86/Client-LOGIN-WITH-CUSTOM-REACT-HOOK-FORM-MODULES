@@ -75,12 +75,14 @@
 - React Hook Form이 적용된, 추상성이 높은 폼 엘리먼트(form, input) 구현
 
   - 모든 폼 엘리먼트(form,input,select 등)는 React Hook Form이 적용된 커스텀 컴포넌트로 변경
+    - 모든 폼은 React Hook Form 안에서 관리 가능
   - (Form 컴포넌트 안에서) 용도에 맞게 필요한 컴포넌트를 가져다 사용가능
     - Input Checkbox 컴포넌트
     - Input File Upload 컴포넌트
   - 주입되는 props를 통해 컴포넌트의 사용성을 결정
     - Input 컴포넌트
   - [Zod](https://github.com/colinhacks/zod 'zod')를 통해 Form의 Validation 구현
+    - 타입스크립트의 타입을 통한 유효성 검사 가능
 
 - Persistant Auth가 가능한 로그인 기능 구현
 
