@@ -107,7 +107,7 @@
     </tr>
     <tr>
       <th>특징</th>
-      <td align="center">웹접근성을 준수하려는 컴포넌트 코드 구현</td>
+      <td align="center">웹접근성을 준수하려는<br/>컴포넌트 코드 구현</td>
     </tr>
     <tr>
       <th>리액트</th>
@@ -116,7 +116,12 @@
     </tr>
     <tr>
       <th>CSS-in-JS</th>
-      <td align="center">Chakra UI <br/>/ styled-components</td>
+      <td align="center">
+        <ul>
+          <li>Chakra UI</li>
+          <li>styled-components</li>
+        </ul>
+      </td>
       <td align="center">styled-components</td>
     </tr>
     <tr>
@@ -128,8 +133,10 @@
       <th>상태관리</th>
       <td align="center">Redux-toolkit</td>
       <td align="center">
-        <p>Context Api</p>
-        <p>React Query</p>
+        <ul>
+          <li>Context Api</li>
+          <li>React Query</li>
+        </ul>
       </td>
     </tr>
     <tr>
@@ -139,34 +146,42 @@
     </tr>
     <tr>
       <th>서버요청(Axios)</th>
-      <td>커스텀 Axios</td>
+      <td align="center">커스텀 Axios</td>
       <td align="center">
-        <p>커스텀 Axios</p>
-        <p>Axios Interceptors</p>
+        <ul>
+          <li>커스텀 Axios</li>
+          <li>Axios Interceptors</li>
+        </ul>
       </td>
     </tr>
     <tr>
       <th>라우팅(Route)</th>
       <td align="center">기본 라우팅</td>
       <td align="center">
-        <p>Protected Route Role based</p>
-        <p>이전 Location을 저장해, 로그인 후 해당 경로로 리다이렉트</p>
+        <ul>
+          <li>Protected Route Role based</li>
+          <li>이전 Location을 저장해,<br/> 로그인 후 해당 경로로 리다이렉트</li>
+        </ul>
       </td>
     </tr>
     <tr>
       <th>이미지 업로드 npm</th>
       <td align="center">react-file-base64</td>
       <td align="center">
-        <p>multer</p>
-        <p>cloudinary</p>
+        <ul>
+          <li>multer</li>
+          <li>cloudinary</li>
+        </ul>
       </td>
     </tr>
     <tr>
       <th>대표 npm</th>
       <td align="center">react-daum-postcode</td>
       <td align="center">
-        <p>browser-image-compression</p>
-        <p>craco</p>
+        <ul>
+          <li>browser-image-compression</li>
+          <li>craco</li>
+        </ul>
       </td>
     </tr>
     <tr>
