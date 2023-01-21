@@ -1,28 +1,28 @@
 ## 📝 목차
 
-### 1. 개요
+### 1. [개요](#⌨️-개요)
 
-### 2. 프로젝트 착수계기
+### 2. [프로젝트 착수계기](#🚀-프로젝트-착수계기)
 
-### 3. 프로젝트 목적
+### 3. [프로젝트 목적](#🔦-프로젝트-목적)
 
-### 4. 이전 프로젝트와 비교
+### 4. [이전 프로젝트와 비교](#🔌-이전-프로젝트와-비교)
 
-### 5. 작업 히스토리 및 현황
+### 5. [작업 히스토리 및 현황](#📈-작업-히스토리-및-현황)
 
-### 6. 폴더구조 및 코드
+### 6. [폴더구조 및 코드](#📦-폴더구조)
 
-### 7. 프로젝트 스펙
+### 7. [프로젝트 스펙](#🔧-프로젝트-스펙)
 
-### 8. 코드 흐름
+### 8. [코드 흐름](#🔬-코드-흐름)
 
-### 9. 코드 설명
+### 9. [코드 설명](#🔮-코드-설명)
 
-### 10. 작업 중 어려웠던 점
+### 10. [작업 중 어려웠던 점](#😭-작업-중-어려웠던-점)
 
-### 11. 버그 및 한계 / 시도했지만 실패
+### 11. [버그 및 한계 / 시도했지만 실패](#🐛-버그-및-한계--시도했지만-실패)
 
-### 12. 수정사항 및 향후 계획
+### 12. [수정사항 및 향후 계획](#👀-수정사항-및-향후-계획)
 
 ---
 
@@ -952,10 +952,10 @@ export default InputElm;
 
 ### 참고
 
-[React hook error is returning an empty object](https://stackoverflow.com/questions/71415804/react-hook-error-is-returning-an-empty-object 'React hook error is returning an empty object')
-[How can I serialize an input File object to JSON?](https://stackoverflow.com/questions/24139216/how-can-i-serialize-an-input-file-object-to-json 'https://stackoverflow.com/questions/24139216/how-can-i-serialize-an-input-file-object-to-json')
-[Trouble with react hook form, using file as input](https://stackoverflow.com/questions/72007804/trouble-with-react-hook-form-using-file-as-input 'Trouble with react hook form, using file as input')
-[Image field uploaded with react-hook-form works on the frontend but in the next.js API route, the req.body.image is an empty object](https://stackoverflow.com/questions/67009524/image-field-uploaded-with-react-hook-form-works-on-the-frontend-but-in-the-next 'Image field uploaded with react-hook-form works on the frontend but in the next.js API route, the req.body.image is an empty object')
+- [React hook error is returning an empty object](https://stackoverflow.com/questions/71415804/react-hook-error-is-returning-an-empty-object 'React hook error is returning an empty object')
+- [How can I serialize an input File object to JSON?](https://stackoverflow.com/questions/24139216/how-can-i-serialize-an-input-file-object-to-json 'https://stackoverflow.com/questions/24139216/how-can-i-serialize-an-input-file-object-to-json')
+- [Trouble with react hook form, using file as input](https://stackoverflow.com/questions/72007804/trouble-with-react-hook-form-using-file-as-input 'Trouble with react hook form, using file as input')
+- [Image field uploaded with react-hook-form works on the frontend but in the next.js API route, the req.body.image is an empty object](https://stackoverflow.com/questions/67009524/image-field-uploaded-with-react-hook-form-works-on-the-frontend-but-in-the-next 'Image field uploaded with react-hook-form works on the frontend but in the next.js API route, the req.body.image is an empty object')
 
 ### 2. 리액트TS에서 컨텍스트의 타입 정의
 
@@ -1018,8 +1018,8 @@ export default InputElm;
   ] = `Bearer ${newAccessToken}`;
 ```
 
-[fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420](https://github.com/axios/axios/pull/5420 'fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420')
-[Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416](https://github.com/axios/axios/issues/5416 'Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416')
+- [fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420](https://github.com/axios/axios/pull/5420 'fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420')
+- [Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416](https://github.com/axios/axios/issues/5416 'Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416')
 
 ### 7. Enum에서 정의한 타입을 적용하기
 
