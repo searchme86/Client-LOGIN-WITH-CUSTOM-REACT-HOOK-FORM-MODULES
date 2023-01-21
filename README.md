@@ -750,6 +750,145 @@ export default SingleImageUploader;
 
 ```
 
+### Custom Elements - [Provider] input
+
+```js
+
+/**
+ * 기능 1) Input-Label을 하나의 모듈로 정의
+ * 기능 2) Input-Label의 기본 속성을 Props로 전달
+ * 기능 3) Input-Label의 스타일을 정의가능 (LabelHide)을 통해 label을 숨길 수 있음
+ * 기능 4) 웹접근성 관점에서 Input-Label을 사용하기 편하도록 정의(*스타일 속성 이외는 TS를 통해 필수 입력하도록 설정함)
+ *
+ * @param
+ * <Model extends Record<string, any>> : 인풋 값에 대한 타입정보
+ *
+ *[string] zodValidationKey : 인풋의 name을 정의
+  [string] inputType : input file type을 정의하기 위한 값 (string)
+  [string] LabelTxt :인풋 라벨의 텍스트
+  [boolean] LabelHide : 인풋 라벨이 보일지 말지를 값을 전달함(boolean)
+  [string] inputID : (웹접근성) 인풋과 라벨(htmlFor)을 연결하기 위한 값
+  [string] autoComplete : 폼과 관련해 브라우저가 값을 가져야 하기 때문에
+
+  [string] placeholder :  인풋의 placeholder
+  [string] inputWidth : (스타일) 인풋의 너비
+  [string] inputHeight : (스타일) 인풋의 높이
+  [string] labelWeight : (스타일) 라벨의 폰트 웨이트
+  [string] labelSize : (스타일) 라벨 폰트 사이즈
+  [string] labelMargin : (스타일) 라벨의 마진
+  [string] inputPadding : (스타일) 폼의 패딩
+ *
+*/
+
+function InputElm<Model extends Record<string, any>>({
+  zodValidationKey,
+  LabelTxt,
+  LabelHide,
+  labelWeight,
+  labelSize,
+  labelMargin,
+  inputType,
+  inputID,
+  autoComplete,
+  inputPadding,
+  placeholder,
+  inputWidth,
+  inputHeight,
+}: {
+  zodValidationKey: keyof Model;
+  LabelTxt: string;
+  labelSize?: string;
+  labelWeight?: number;
+  labelMargin?: string;
+  inputType: HTMLInputTypeAttribute;
+  inputID: string;
+  placeholder: string;
+  autoComplete?: string;
+  inputWidth?: string;
+  inputHeight?: string;
+  inputPadding?: string;
+  LabelHide?: boolean;
+}) {
+  const {
+    register,
+    formState: { isSubmitting },
+  } = useFormContext();
+
+  return (
+    <>
+      <InputContainer>
+        <InputLabel
+          htmlFor={inputID}
+          display="block"
+          fontWeight={labelWeight}
+          fontSize={labelSize}
+          margin={labelMargin}
+          LabelHide={LabelHide}
+        >
+          {LabelTxt}
+        </InputLabel>
+        <InputWrapper width={inputWidth}>
+          <Input
+            type={inputType}
+            id={inputID}
+            {...register(zodValidationKey.toString())}
+            autoComplete={autoComplete}
+            placeholder={placeholder}
+            padding={inputPadding}
+            height={inputHeight}
+            disabled={isSubmitting}
+          />
+
+          <TFormErrorMessage name={zodValidationKey.toString()} />
+        </InputWrapper>
+      </InputContainer>
+    </>
+  );
+}
+
+export default InputElm;
+
+```
+
+### Custom Elements - [Consumer] input
+
+```js
+
+/**
+ * @param
+ * <RegisterSchemaType> : 커스텀 Input엘리먼트에 들어올 값의 타입을 정의해줌
+ * zodValidationKey: input의 속성 name의 값
+   inputType="text" :  input의 type
+   inputID="userNickname" : 웹접근성을 위해 input과 Lable연결
+   LabelTxt="닉네임" : Label 텍스트
+   labelWeight={500} : Label의 폰트웨이트
+   labelSize="16px" : Label 폰트 사이즈
+   labelMargin="0 0 5px 0" : Label의 margin
+   inputWidth="100%" : input의 width
+   inputHeight="40px" : input의 height
+   placeholder="닉네임을 등록해주세요" : input의 placeholder
+   inputPadding="0 10px 0 10px" : input의 패딩
+ *
+*/
+
+ <InputElm<RegisterSchemaType>
+  zodValidationKey="userNickName"
+  LabelTxt="닉네임"
+  labelWeight={500}
+  labelSize="16px"
+  labelMargin="0 0 5px 0"
+  inputWidth="100%"
+  inputHeight="40px"
+  inputType="text"
+  placeholder="닉네임을 등록해주세요"
+  inputID="userNickname"
+  inputPadding="0 10px 0 10px"
+/>
+
+
+
+```
+
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 ## 😭 작업 중 어려웠던 점
