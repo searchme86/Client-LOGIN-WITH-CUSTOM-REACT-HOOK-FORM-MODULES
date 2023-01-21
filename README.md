@@ -539,6 +539,33 @@ function FormElm<
 
 ```js
 
+/**
+ * function FormElm<
+  DataSchema extends Record<string, any>,
+  Schema extends z.Schema<any, any>
+>({
+ *
+
+ @param : DataSchema , Schema
+  : onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void; 에서 data를 받기 때문
+
+  정의(Define)한
+  1)
+    DataSchema extends Record<string, any>에
+    <LoginSchemaType> 타입을 할당함
+    *LoginSchemaType : 사용자가 정의한, zod를 통해 만든 Schema 타입,
+    => 사용자가 원하는 zod Schema 타입을 할당하면 됨
+
+  2)
+    Schema extends z.Schema<any, any>에
+    typeof LoginFormSchema 할당함
+    *LoginFormSchema : 사용자가 정의한, zod를 통해 만든 validation zod 객체
+    => 사용자가 원하는 zod validation 객체를 전달하면 됨
+ *
+*/
+
+// LoginSchema.ts
+
 import { z } from 'zod';
 
 export const LoginFormSchema = z.object({
@@ -585,32 +612,6 @@ function LoginForm() {
     }
   };
 
-
-/**
- * function FormElm<
-  DataSchema extends Record<string, any>,
-  Schema extends z.Schema<any, any>
->({
- *
-
- @param : DataSchema , Schema
-  : onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void; 에서 data를 받기 때문
-
-  정의(Define)한
-  1)
-    DataSchema extends Record<string, any>에
-    <LoginSchemaType> 타입을 할당함
-    *LoginSchemaType : 사용자가 정의한, zod를 통해 만든 Schema 타입,
-    => 사용자가 원하는 zod Schema 타입을 할당하면 됨
-
-  2)
-    Schema extends z.Schema<any, any>에
-    typeof LoginFormSchema 할당함
-    *LoginFormSchema : 사용자가 정의한, zod를 통해 만든 validation zod 객체
-    => 사용자가 원하는 zod validation 객체를 전달하면 됨
- *
-*/
-
   return (
     <FormElm<LoginSchemaType, typeof LoginFormSchema>
       onSubmit={onLoginSubmit}
@@ -620,12 +621,6 @@ function LoginForm() {
     </FormElm>
   );
 }
-
-export default LoginForm;
-
-
-
-
 
 ```
 
