@@ -594,7 +594,8 @@ export const LoginFormSchema = z.object({
 export type LoginSchemaType = z.infer<typeof LoginFormSchema>;
 
 // SubmitHandler : react-hook-formd에서 onSubmit의 타입
-// SubmitHandler<LoginSchemaType>  : zod를 통해 만든 LoginFormSchema의 타입을 통해 타입을 추출/추론(infer)한 타입을 onSubmit 핸들러 타입에 연결함
+// SubmitHandler<LoginSchemaType>
+// : zod를 통해 만든 LoginFormSchema의 타입을 통해 타입을 추출/추론(infer)한 타입을 onSubmit 핸들러 타입에 연결함
 
 
 function LoginForm() {
@@ -621,6 +622,136 @@ function LoginForm() {
     </FormElm>
   );
 }
+
+```
+
+### Custom Elements - [Provider] Input type="file",(components > Input > SingleImageUploader.tsx)
+
+```js
+
+import React, { useState, useEffect } from 'react';
+import { useFormContext } from 'react-hook-form';
+
+import useImageCompression from '@hooks/useImageCompression';
+
+import {
+  ImageContainer,
+  ImageWrapper,
+  ImageElmn,
+  ImageClickBtn,
+  ImageTitle,
+  ImageErrorMessage,
+} from '@assets/styles/Image.style';
+import { DisplayContainer, DisplayItem } from '@assets/styles/Display.style';
+
+import upload from '@assets/Images/upload.png';
+
+function SingleImageUploader<Model extends Record<string, any>>({
+  zodValidationKey,
+  btnTxt,
+}: {
+  zodValidationKey: keyof Model;
+  btnTxt: string;
+}) {
+  const [base64, setBase64] = useState<string>();
+
+  // 이미지 압축 모듈로 만든 훅
+  const { CompressImage } = useImageCompression();
+
+// useFormContext을 통해 React Hook Form 기능을 사용
+  const {
+    watch,
+    register,
+    formState: { isSubmitting, errors },
+  } = useFormContext();
+
+  // isImage :  이미지가 현재 존재하는지 여부를 검사
+  // 업로드한 이미지의 타이틀이 화면에 출력되기 위해 사용함
+  // *zodValidationKey : input name에 값을 받기 위한 placeHolder 역할
+  // input type="file"의 경우 [0]위치에 해당 이미지 값이 존재함
+  let isImage =
+    watch(zodValidationKey.toString()) && watch(zodValidationKey.toString())[0];
+
+  // 이미지 미리보기 기능을 위해서 Base64 형태로 변환
+  // CompressImage : 이미지 압축을 담당하는 기능의 훅(hooks > useImageCompression.tsx)
+  // Compress이 될 경우, 이미지는 Blob으로 변경됨, File을 통해서 이미지를 읽기
+  useEffect(() => {
+    const transformBase64 = async () => {
+      if (
+        watch(zodValidationKey.toString()) &&
+        watch(zodValidationKey.toString())[0]
+      ) {
+        let compressed = await CompressImage(
+          watch(zodValidationKey.toString())[0]
+        );
+        const reader = new FileReader();
+        if (compressed) reader.readAsDataURL(compressed);
+        reader.onloadend = () => {
+          setBase64(reader?.result as string);
+        };
+      }
+    };
+    transformBase64();
+  }, [isImage]);
+
+  return (
+    <ImageContainer>
+      <DisplayContainer display="flex">
+        <ImageWrapper width="60%" height="80px">
+          {base64 ? (
+            <ImageElmn src={base64} alt="upload" />
+          ) : (
+            <ImageElmn src={upload} alt="upload" />
+          )}
+        </ImageWrapper>
+
+        <input
+          type="file"
+          id="fileupload"
+          disabled={isSubmitting}
+          {...register(zodValidationKey.toString())}
+          style={{ display: 'none' }}
+        />
+
+        <DisplayItem
+          display="flex"
+          width="60%"
+          flexDirection="column"
+          textAlign="left"
+          padding="10px"
+          margin="auto 0 0 0"
+        >
+          <ImageClickBtn htmlFor="fileupload">{btnTxt}</ImageClickBtn>
+          {watch(zodValidationKey.toString()) &&
+          watch(zodValidationKey.toString())[0] ? (
+            <ImageTitle>
+              {watch(zodValidationKey.toString())[0]?.name}
+            </ImageTitle>
+          ) : null}
+        </DisplayItem>
+      </DisplayContainer>
+
+      {errors[zodValidationKey.toString()] ? (
+        <ImageErrorMessage>
+          {errors[zodValidationKey.toString()]?.message?.toString()}
+        </ImageErrorMessage>
+      ) : null}
+    </ImageContainer>
+  );
+}
+
+export default SingleImageUploader;
+
+```
+
+### Custom Elements - [Consumer] Input type="file" (RegisterForm.tsx)
+
+```js
+
+ <SingleImageUploader<RegisterSchemaType>
+    zodValidationKey="userImage"
+    btnTxt="파일 등록"
+  />
 
 ```
 
