@@ -973,6 +973,12 @@ export default InputElm;
 
 ### 7. Enum에서 정의한 타입을 적용하기
 
+![enum_error_before_01](https://user-images.githubusercontent.com/47154709/213870339-a44eae1f-3caa-4e03-874f-e85e2027c56b.png)
+
+![enum_error_before_02](https://user-images.githubusercontent.com/47154709/213870348-3ea69598-2929-4884-921e-e0d0208102ef.png)
+
+![enum_error_cleared](https://user-images.githubusercontent.com/47154709/213870357-c6ca0056-c4fe-4c54-8b34-3dd0e447ad56.png)
+
 ```js
   export const Tiers = [
     {
