@@ -629,22 +629,17 @@ function LoginForm() {
 
 ```js
 
-import React, { useState, useEffect } from 'react';
-import { useFormContext } from 'react-hook-form';
-
-import useImageCompression from '@hooks/useImageCompression';
-
-import {
-  ImageContainer,
-  ImageWrapper,
-  ImageElmn,
-  ImageClickBtn,
-  ImageTitle,
-  ImageErrorMessage,
-} from '@assets/styles/Image.style';
-import { DisplayContainer, DisplayItem } from '@assets/styles/Display.style';
-
-import upload from '@assets/Images/upload.png';
+/**
+ * @param Model extends Record<string, any>
+ * : SingleImageUploader 컴포넌트가 받을 타입
+ * : RegisterSchemaType을 전달함
+ *
+ * <SingleImageUploader<RegisterSchemaType>
+    zodValidationKey="userImage"
+    btnTxt="파일 등록"
+  />
+ *
+*/
 
 function SingleImageUploader<Model extends Record<string, any>>({
   zodValidationKey,
