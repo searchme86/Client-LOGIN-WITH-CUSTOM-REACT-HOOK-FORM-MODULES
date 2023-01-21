@@ -471,23 +471,35 @@
 
 ## 🔮 코드 설명
 
-### Custom Elements - form,(components > customElements > FormElm.tsx)
+### Custom Elements - [Provider] form,(components > customElements > FormElm.tsx)
 
 ```js
-import React, { BaseSyntheticEvent } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormProvider, useForm } from 'react-hook-form';
-import { z } from 'zod';
 
-import { FormElmContainer } from '@assets/styles/Form.style';
+/**
+ * @name : Form엘리먼트 정의
+ *
+ * @param : schema, onSubmit , children , defaultValues
+ * schema : Form 엘리먼트에 적용되는 zod Schema
+ * onSubmit : Form에서 사용 될 이벤트 핸들러
+ * children : Form 엘리먼트 하위에 사용 될 폼 엘리먼트(Input / Select 등등)
+ * defaultValues : 자식 엘리먼트(Input / Select 등등)이 갖는 값의 default values
+ *
+ * @type : DataSchema , z.Schema
+ * DataSchema : string, any형태의 객체를 상속하는 값의 집합
+ * z.Schema : zod에서 사용자가 schema를 생성되는 타입 값
+ *
+ * @returns : Form 엘리먼트
+ * FormElmContainer : styled-components로 만든 스타일 컴포넌트
+ * FormProvider : react-hook-form에 관련된 값을 자식 컴포넌트에 전달(Provioder)하는 역할
+ * **/
 
-type GenericOnSubmit = (
-  data: Record<string, any>,
-  event?: BaseSyntheticEvent
-) => void;
-
+// Form 엘리먼트를 정의
 function FormElm<
+  // React Hook Form 에서 Input 과 같은 폼에서 사용될 값의 타입을 정의
+  // 키는 string 이, 값은 어떤 값이든 허용하기 위해 any
   DataSchema extends Record<string, any>,
+  // zod로 Schema를 만들 경우, 해당 Schema에서 사용 할 값의 타입
+  // 어떤 값이 올 지 모르기 때문에 any, any
   Schema extends z.Schema<any, any>
 >({
   schema,
@@ -495,16 +507,20 @@ function FormElm<
   children,
   defaultValues,
 }: {
+  // 사용자가 사용할 zod schema를 받는 것을 준비
   schema: Schema;
   onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void;
   children: any;
   defaultValues?: Record<string, any>;
 }) {
+
+  // *methods 에 React Hook Form을 커스텀 할 수 있는 기능들을 사용할 수 있음
   const methods = useForm({
     defaultValues,
     resolver: zodResolver(schema),
   });
 
+// methods를 통해 React Hook Form에서 사용할 handleSubmit 메서드를 호출 함
   const handleSubmit = methods.handleSubmit;
 
   return (
@@ -517,11 +533,6 @@ function FormElm<
     </FormElmContainer>
   );
 }
-
-export default FormElm;
-
-
-
 ```
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
