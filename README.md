@@ -969,13 +969,17 @@ export default InputElm;
 [fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420](https://github.com/axios/axios/pull/5420 'fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420')
 [Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416](https://github.com/axios/axios/issues/5416 'Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416')
 
-<!-- ------------------------------------------------------------------------------------------------------------- -->
-
 ### 7. Enum에서 정의한 타입을 적용하기
+
+### 문제 : zod에서 정의한 schema 타입이 아닌 모든 string을 받을 수 있음, 정의한 Enum 타입만 받을 수 있도록 변경
 
 ![enum_error_before_01](https://user-images.githubusercontent.com/47154709/213870339-a44eae1f-3caa-4e03-874f-e85e2027c56b.png)
 
+### 문제 : 정의한 Enum 타입이 할당이 되지 않음
+
 ![enum_error_before_02](https://user-images.githubusercontent.com/47154709/213870348-3ea69598-2929-4884-921e-e0d0208102ef.png)
+
+### 문제 해결
 
 ![enum_error_cleared](https://user-images.githubusercontent.com/47154709/213870357-c6ca0056-c4fe-4c54-8b34-3dd0e447ad56.png)
 
@@ -1004,7 +1008,6 @@ export default InputElm;
 ```
 
 ```js
-
 export type TireIDType = typeof Tiers[number]['id'];
 
 export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
@@ -1021,6 +1024,10 @@ export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
     .refine((val) => Tiers.map((tier) => tier.id).includes(val)),
 
 ```
+
+[TypeScript: How to get types from arrays](https://steveholgado.com/typescript-types-from-arrays/ 'TypeScript: How to get types from arrays')
+
+<!-- ------------------------------------------------------------------------------------------------------------- -->
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
