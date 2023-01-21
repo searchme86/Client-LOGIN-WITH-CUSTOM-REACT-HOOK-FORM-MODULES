@@ -971,7 +971,50 @@ export default InputElm;
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
-### 7. Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
+### 7. Enum에서 정의한 타입을 적용하기
+
+```js
+  export const Tiers = [
+    {
+      id: 'BRONZE',
+      name: 'Bronze',
+      description: 'Get average points',
+      price: 0.99,
+    },
+    {
+      id: 'SILVER',
+      name: 'Silver',
+      description: 'Get extra points',
+      price: 4.99,
+    },
+    {
+      id: 'GOLD',
+      name: 'Gold',
+      description: 'The highest possible tier',
+      price: 19.99,
+    },
+  ] as const;
+
+```
+
+```js
+
+export type TireIDType = typeof Tiers[number]['id'];
+
+export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
+  Tiers[0].id,
+  ...Tiers.slice(1).map((p) => p.id),
+];
+
+
+```
+
+```js
+ tier: z
+    .enum(TireIDEnum)
+    .refine((val) => Tiers.map((tier) => tier.id).includes(val)),
+
+```
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
