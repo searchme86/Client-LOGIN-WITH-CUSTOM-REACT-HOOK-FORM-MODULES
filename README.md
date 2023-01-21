@@ -925,8 +925,6 @@ export default InputElm;
 
 [Set a conditional initial value for useState in React](https://bobbyhadz.com/blog/react-usestate-conditional-initial-value 'Set a conditional initial value for useState in React')
 
-<!-- ------------------------------------------------------------------------------------------------------------- -->
-
 ### 6. Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
 
 ![error  axios_header_type_3](https://user-images.githubusercontent.com/47154709/213869328-f12a1861-c0bc-4793-8770-ba42d26bd481.png)
@@ -967,6 +965,13 @@ export default InputElm;
     'Authorization'
   ] = `Bearer ${newAccessToken}`;
 ```
+
+[fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420](https://github.com/axios/axios/pull/5420 'fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420')
+[Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416](https://github.com/axios/axios/issues/5416 'Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416')
+
+<!-- ------------------------------------------------------------------------------------------------------------- -->
+
+### 7. Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
