@@ -471,7 +471,7 @@
 
 ## 🔮 코드 설명
 
-### Custom Elements - [Provider] form,(components > customElements > FormElm.tsx)
+### Custom Elements - [Provider] form (components > customElements > FormElm.tsx)
 
 ```js
 
@@ -533,6 +533,100 @@ function FormElm<
     </FormElmContainer>
   );
 }
+```
+
+### Custom Elements - [Consumer] form (LoginSchema.ts / RegisterSchema.ts / LoginForm.tsx / RegisterForm.tsx)
+
+```js
+
+import { z } from 'zod';
+
+export const LoginFormSchema = z.object({
+  //유저 로그인 닉네임
+  LoginUserNickname: z
+    .string()
+    .min(3, { message: '문자는 적어도 3자를 충족해야 합니다.' })
+    .regex(new RegExp('^[A-z][A-z0-9-_]{3,23}$'), {
+      message:
+        '닉네임은 문자로 시작합니다. 언더스코어 및 하이픈은 갯수에서 포함되지 않습니다.',
+    }),
+
+  //유저 로그인 비밀번호
+  LoginUserPassword: z
+    .string()
+    .trim()
+    .min(6, { message: '문자는 적어도 6자를 충족해야 합니다.' })
+    .regex(
+      new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,24}$'),
+      {
+        message: '대문자와 소문자, 그리고 숫자와 특수문자를 포함해주세요..',
+      }
+    ),
+});
+
+export type LoginSchemaType = z.infer<typeof LoginFormSchema>;
+
+// SubmitHandler : react-hook-formd에서 onSubmit의 타입
+// SubmitHandler<LoginSchemaType>  : zod를 통해 만든 LoginFormSchema의 타입을 통해 타입을 추출/추론(infer)한 타입을 onSubmit 핸들러 타입에 연결함
+
+
+function LoginForm() {
+
+// React-Query 훅을 Import해서 사용함
+// LoginApi.tsx , RegisterApi에서 정의한 Axios를 사용함
+  const {
+    LoginQuery: { mutate: LoginUser },
+  } = LoginQuery();
+
+
+  const onLoginSubmit: SubmitHandler<LoginSchemaType> = async (data) => {
+    if (data) {
+      LoginUser(data);
+    }
+  };
+
+
+/**
+ * function FormElm<
+  DataSchema extends Record<string, any>,
+  Schema extends z.Schema<any, any>
+>({
+ *
+
+ @param : DataSchema , Schema
+  : onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void; 에서 data를 받기 때문
+
+  정의(Define)한
+  1)
+    DataSchema extends Record<string, any>에
+    <LoginSchemaType> 타입을 할당함
+    *LoginSchemaType : 사용자가 정의한, zod를 통해 만든 Schema 타입,
+    => 사용자가 원하는 zod Schema 타입을 할당하면 됨
+
+  2)
+    Schema extends z.Schema<any, any>에
+    typeof LoginFormSchema 할당함
+    *LoginFormSchema : 사용자가 정의한, zod를 통해 만든 validation zod 객체
+    => 사용자가 원하는 zod validation 객체를 전달하면 됨
+ *
+*/
+
+  return (
+    <FormElm<LoginSchemaType, typeof LoginFormSchema>
+      onSubmit={onLoginSubmit}
+      schema={LoginFormSchema}
+    >
+     ...중략...
+    </FormElm>
+  );
+}
+
+export default LoginForm;
+
+
+
+
+
 ```
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
