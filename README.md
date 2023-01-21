@@ -467,6 +467,25 @@
 
 ## 🔬 코드 흐름
 
+### 기본 플로우
+![기본00](https://user-images.githubusercontent.com/47154709/213873799-9242853d-f451-4fd7-8e61-06710499a5cb.png)
+
+### 등록
+![등록하기01](https://user-images.githubusercontent.com/47154709/213873806-4e7405d5-ba1f-447b-b6b0-5d20d6702ca5.png)
+
+### 로그인
+![로그인02](https://user-images.githubusercontent.com/47154709/213873816-bec1d5e7-4cca-4a5e-b953-e513140fdcf0.png)
+
+### 뷰
+![뷰파일03](https://user-images.githubusercontent.com/47154709/213873820-4985da7c-ec1e-4312-87c1-be9df4e5efa1.png)
+
+### 상태저장
+![상태관리_요청04](https://user-images.githubusercontent.com/47154709/213873822-80714725-9a6b-4547-96f2-cc539569443e.png)
+
+### Axios InterCeptor
+![엑시오스05](https://user-images.githubusercontent.com/47154709/213873828-f4e7e327-081c-41e5-b2dd-ffe1ec49b842.png)
+
+
 ## 🔮 코드 설명
 
 ### Custom Elements - [Provider] form (components > customElements > FormElm.tsx)
