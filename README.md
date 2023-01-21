@@ -1110,10 +1110,10 @@ export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
   - 이전 포트폴리오(JS리액트)에서는 타입 정보를 확인하지 않기 때문에, string으로 인식하여 해당 Axios Error Message 저장이 가능함
   - TS리액트에서 Axios Error는 'Axios ERROR'라는 타입이 존재해, 'Axios ERROR'를 'string'에 할당 할 수 없음
 
-  ### 3. Auth & RefreshToken
+### 3. Auth & RefreshToken
 
-  - 현재 Register / Login 만 가능함
-  - Auth 체크가 되질 않아, Protected Auth Router가 작동않됨
+- 현재 Register / Login 만 가능함
+- Auth 체크가 되질 않아, Protected Auth Router가 작동않됨
 
 ## 👀 수정사항 및 향후 계획
 
