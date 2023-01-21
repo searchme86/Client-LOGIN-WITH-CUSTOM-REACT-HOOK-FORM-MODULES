@@ -195,6 +195,40 @@
   </tbody>
 </table>
 
+## 📈 작업 히스토리 및 현황
+
+|   상태   |          카테고리           |                                                                    과업                                                                    |
+| :------: | :-------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
+|   완료   | 타입스크립트로 마이그레이션 |                                               베이스 JS리액트 코드를 TS버전으로 마이그레이션                                               |
+|          |        프로젝트 구성        |                                                     TS리액트 프로젝트로 기본 구조 완성                                                     |
+|          |      리펙토링 및 구현       | 기존 로그인 코드에 인라인 Axios 요청을 별도 컴포넌트로 하려고 함<br/> 액션(GET/POST)에 따른 커스텀 컴포넌트(useAxiosGet/useAxiosPost) 개발 |
+|          |     구글링 및 코드이해      |                                           재사용가능한 React Hook Form에 대한 코드 및 이론 학습                                            |
+|          |            구현             |                              재사용가능한 React Hook Form 구현 (이미지 업로드 -> 인풋 폼 -> 초기화/등록 버튼)                              |
+|          |          리펙토링           |                                       베이스 JS리액트 코드에서 로그인/등록 페이지에서 핵심코드 추출                                        |
+|          |          리펙토링           |                    베이스 JS리액트 코드의 로그인 로직과 이전 포트폴리오에서 로그인/등록 페이지에서 핵심코드를 리펙토링                     |
+|          |            구현             |                                       재사용가능한 React Hook Form을 통해 등록 폼의 기본 골격을 만듦                                       |
+|          |           구글링            |                                                    Context / localStorage 타입이슈 해결                                                    |
+|          |       구글링 및 구현        |                                                Axios InterCeptor 학습 및 TS로 마이그레이션                                                 |
+|          |   폴더 정리 및 코드 분할    |               Axios InterCeptor를 request(useAxiosRequest)/Response(useAxiosResponse)에 따라 함수를 각각의 컴포넌트로 구분함               |
+|          |           구글링            |                                                          React-Query 학습 및 이해                                                          |
+|          |    리펙토링 - 등록페이지    |                                                   등록(register) 폼 만들기 (디자인 포함)                                                   |
+|          |   폴더 정리 및 코드 분할    |                                          로그인 및 등록 페이지의 뷰 컴포넌트를 분할해서 코드 정리                                          |
+|          |           테스트            |                                 커스텀 React Hook Form에서 값 생성 및 초기화/등록 버튼 동작하는지 개발작업                                 |
+|          |           테스트            |                                              등록 폼에서 Submit한 값이 서버로 전달되는지 확인                                              |
+|          |            구현             |                                                           등록(register) 폼 완료                                                           |
+|          |            구현             |                                                   로그인(login) 폼 만들기 (디자인 포함)                                                    |
+|          |            구현             |                                             로그인(login)에 해당하는 Axios 및 React-Query 개발                                             |
+|          |            구현             |                                            등록(Register)에 해당하는 Axios 및 React-Query 개발                                             |
+|          |           테스트            |                                  로그인 및 등록 React-Query에서 요청하는 값이 서버에서 확인되는지 테스트                                   |
+|          |            구현             |                                                           등록(register) 폼 완료                                                           |
+|          |      리펙토링 및 구현       |                                          기존 Context에 상태관리 useState를 useReducer로 리펙토링                                          |
+|          |   폴더 정리 및 코드 분할    |                                         유저의 Login/Register에 따라 React-Query코드를 나눠 정리함                                         |
+| 진행예정 |           테스트            |                                           엑시오스 인터셉터와 백엔드의 리프레쉬 토큰 패칭 테스트                                           |
+|          |            구현             |                                             백엔드로 Refresh Token을 요청하는 React-Query 개발                                             |
+|          |           테스트            |                           AuthMiddleWare & Protected Router 백엔드로 Refresh Token을 요청하는 React-Query 테스트                           |
+|          |            구현             |                                 React-Query와 Axios InterCeptor / Refresh Token이 서로 적용되는 코드 구현                                  |
+|          |            배포             |                                                                 코드 배포                                                                  |
+
 ## 📦 폴더구조
 
 - 1. 프로젝트 전체 코드
@@ -431,43 +465,66 @@
 |                             framer-motion                              |       로그인 페이지 애니메이션       |                로그인 페이지 애니메이션                 |
 |                                  zod                                   |      폼 인풋의 유효성 타입검사       |               폼 인풋 값의 유효성을 검사                |
 
-## 📈 작업 히스토리 및 현황
-
-|   상태   |          카테고리           |                                                                    과업                                                                    |
-| :------: | :-------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
-|   완료   | 타입스크립트로 마이그레이션 |                                               베이스 JS리액트 코드를 TS버전으로 마이그레이션                                               |
-|          |        프로젝트 구성        |                                                     TS리액트 프로젝트로 기본 구조 완성                                                     |
-|          |      리펙토링 및 구현       | 기존 로그인 코드에 인라인 Axios 요청을 별도 컴포넌트로 하려고 함<br/> 액션(GET/POST)에 따른 커스텀 컴포넌트(useAxiosGet/useAxiosPost) 개발 |
-|          |     구글링 및 코드이해      |                                           재사용가능한 React Hook Form에 대한 코드 및 이론 학습                                            |
-|          |            구현             |                              재사용가능한 React Hook Form 구현 (이미지 업로드 -> 인풋 폼 -> 초기화/등록 버튼)                              |
-|          |          리펙토링           |                                       베이스 JS리액트 코드에서 로그인/등록 페이지에서 핵심코드 추출                                        |
-|          |          리펙토링           |                    베이스 JS리액트 코드의 로그인 로직과 이전 포트폴리오에서 로그인/등록 페이지에서 핵심코드를 리펙토링                     |
-|          |            구현             |                                       재사용가능한 React Hook Form을 통해 등록 폼의 기본 골격을 만듦                                       |
-|          |           구글링            |                                                    Context / localStorage 타입이슈 해결                                                    |
-|          |       구글링 및 구현        |                                                Axios InterCeptor 학습 및 TS로 마이그레이션                                                 |
-|          |   폴더 정리 및 코드 분할    |               Axios InterCeptor를 request(useAxiosRequest)/Response(useAxiosResponse)에 따라 함수를 각각의 컴포넌트로 구분함               |
-|          |           구글링            |                                                          React-Query 학습 및 이해                                                          |
-|          |    리펙토링 - 등록페이지    |                                                   등록(register) 폼 만들기 (디자인 포함)                                                   |
-|          |   폴더 정리 및 코드 분할    |                                          로그인 및 등록 페이지의 뷰 컴포넌트를 분할해서 코드 정리                                          |
-|          |           테스트            |                                 커스텀 React Hook Form에서 값 생성 및 초기화/등록 버튼 동작하는지 개발작업                                 |
-|          |           테스트            |                                              등록 폼에서 Submit한 값이 서버로 전달되는지 확인                                              |
-|          |            구현             |                                                           등록(register) 폼 완료                                                           |
-|          |            구현             |                                                   로그인(login) 폼 만들기 (디자인 포함)                                                    |
-|          |            구현             |                                             로그인(login)에 해당하는 Axios 및 React-Query 개발                                             |
-|          |            구현             |                                            등록(Register)에 해당하는 Axios 및 React-Query 개발                                             |
-|          |           테스트            |                                  로그인 및 등록 React-Query에서 요청하는 값이 서버에서 확인되는지 테스트                                   |
-|          |            구현             |                                                           등록(register) 폼 완료                                                           |
-|          |      리펙토링 및 구현       |                                          기존 Context에 상태관리 useState를 useReducer로 리펙토링                                          |
-|          |   폴더 정리 및 코드 분할    |                                         유저의 Login/Register에 따라 React-Query코드를 나눠 정리함                                         |
-| 진행예정 |           테스트            |                                           엑시오스 인터셉터와 백엔드의 리프레쉬 토큰 패칭 테스트                                           |
-|          |            구현             |                                             백엔드로 Refresh Token을 요청하는 React-Query 개발                                             |
-|          |           테스트            |                           AuthMiddleWare & Protected Router 백엔드로 Refresh Token을 요청하는 React-Query 테스트                           |
-|          |            구현             |                                 React-Query와 Axios InterCeptor / Refresh Token이 서로 적용되는 코드 구현                                  |
-|          |            배포             |                                                                 코드 배포                                                                  |
-
 ## 🔬 코드 흐름
 
+<!-- ------------------------------------------------------------------------------------------------------------- -->
+
 ## 🔮 코드 설명
+
+### Custom Elements - form,(components > customElements > FormElm.tsx)
+
+```js
+import React, { BaseSyntheticEvent } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { FormProvider, useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+import { FormElmContainer } from '@assets/styles/Form.style';
+
+type GenericOnSubmit = (
+  data: Record<string, any>,
+  event?: BaseSyntheticEvent
+) => void;
+
+function FormElm<
+  DataSchema extends Record<string, any>,
+  Schema extends z.Schema<any, any>
+>({
+  schema,
+  onSubmit,
+  children,
+  defaultValues,
+}: {
+  schema: Schema;
+  onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void;
+  children: any;
+  defaultValues?: Record<string, any>;
+}) {
+  const methods = useForm({
+    defaultValues,
+    resolver: zodResolver(schema),
+  });
+
+  const handleSubmit = methods.handleSubmit;
+
+  return (
+    <FormElmContainer margin="10px 0 10px 0">
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit as GenericOnSubmit)}>
+          {children}
+        </form>
+      </FormProvider>
+    </FormElmContainer>
+  );
+}
+
+export default FormElm;
+
+
+
+```
+
+<!-- ------------------------------------------------------------------------------------------------------------- -->
 
 ## 😭 작업 중 어려웠던 점
 
