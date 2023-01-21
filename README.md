@@ -1126,3 +1126,5 @@ export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
 ### 4. 프로젝트의 상태관리, useReducer에 immer 적용
 
 ### 5. Axios Error message 처리
+
+### 6. 배포
