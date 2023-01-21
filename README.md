@@ -911,6 +911,8 @@ export default InputElm;
 
 ### 3. 리액트TS에서 context에서 반환한 store가 'undefined'로 반환
 
+![error  context_undefined_02](https://user-images.githubusercontent.com/47154709/213869378-bdbcfbeb-b278-4aeb-985d-890f70e4b40c.png)
+
 [Creating a context with no default and no undefined check](https://www.carlrippon.com/react-context-with-typescript-p4/ 'Creating a context with no default and no undefined check')
 
 ### 4. 리액트TS에서 context와 useReducer를 사용하는데, 액선 생성자의 리턴타입에 대해 에러 발생
@@ -926,6 +928,9 @@ export default InputElm;
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 ### 6. Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
+
+![error  axios_header_type_3](https://user-images.githubusercontent.com/47154709/213869328-f12a1861-c0bc-4793-8770-ba42d26bd481.png)
+![error  axios_header_type_4](https://user-images.githubusercontent.com/47154709/213869341-f6eab351-bc3c-46b8-b007-f9b5f240992e.png)
 
 ### 이전 코드 (useAxiosRequest.tsx)
 
