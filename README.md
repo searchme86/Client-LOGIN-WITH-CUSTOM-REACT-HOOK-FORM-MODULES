@@ -66,7 +66,7 @@
       |                                   의존하는 컴포넌트의 Import depth “../”가 많음                                    |                                                                  컴포넌트의 가독성이 좋지 않음                                                                   |                                         절대경로를 사용                                         |
       |                                    Redux에 비동기/동기 상태가 함께 저장해 사용                                     |                                             비동기 상태를 관리하는 React-Query를 통해 프로젝트 상태를 분리해서 관리                                              |                   비동기는 React-Query에서, 동기상태는 Context로 이원해 관리                    |
 
-- 학습 내용을 코드에 직접 적용
+- 학습 내용을 코드에 적용
   - TypeScript
   - React-Query
   - Persistant Login
