@@ -1,8 +1,4 @@
-## ⌨️ 개요
-
-### [React Hook Form](https://react-hook-form.com/)이 적용된, 재사용가능한 폼 컴포넌트(form, input)를 바탕한 로그인 기능 구현하는 코드 중 *클라이언트*를 담당하는 코드
-
-## 📝 프로젝트 README
+## 📝 프로젝트 README.md
 
 |      파일명       |            내용             | 위치폴더 |
 | :---------------: | :-------------------------: | :------: |
@@ -11,36 +7,43 @@
 | Issue-to-learn.md |  이슈 및 해결사항, 배운점   |  /docs   |
 |  Constraints.md   | 프로젝트의 한계 및 향후계획 |  /docs   |
 
----
+## ⌨️ 프로젝트 개요
 
-### 프로젝트 제목
+|                                  카테고리                                  |        내용         |
+| :------------------------------------------------------------------------: | :-----------------: |
+|                                 코드 Role                                  |     클라이언트      |
+|                             프로젝트 코드 구현                             | 11.16 ~ 12.30. 2022 |
+|                             프로젝트 리펙토링                              |  01.02.2022 ~ 현재  |
+|                              프로젝트 기여도                               |      본인 100%      |
+|                                 클라이언트                                 |      TS React       |
+| [백엔드](https://github.com/searchme86/Server_JS-Express-mongoDB '백엔드') |       Nodejs        |
 
-### [React Hook Form](https://react-hook-form.com/)이 기본 적용된, 재사용가능한 폼 컴포넌트(form, input) 구현과 활용
+## 👋🏻 프로젝트 제목
+
+[React Hook Form](https://react-hook-form.com/)이 기본 적용된, 재사용가능한 폼 컴포넌트(form, input) 구현과 활용
 
 ## 🔦 프로젝트 특징
 
 - React Hook Form이 적용된, 추상성이 높은 폼 엘리먼트(form, input) 구현
 
-  - 모든 폼 엘리먼트(form,input,select 등)는 React Hook Form이 적용된 커스텀 컴포넌트로 변경
-  - (Form 컴포넌트 안에서) 타입 (input type="file", input type="text", input type="checkbox", select )에 맞게 필요한 컴포넌트를 가져와 사용가능
-    | 타입 | 컴포넌트 명 | 용도 |
-    | :---------------: | :-------------------------: | :--: |
-    |input type="file"|SingleImageUploader|하나의 파일 업로드|
-    |input type="text"|InputElm|텍스트 입력 Input|
+  - 폼 엘리먼트(form,input,select 등)는 React Hook Form이 적용된 커스텀 컴포넌트로 변경
+  - (Form 컴포넌트 안에서) 타입에 맞게 필요한 컴포넌트를 가져와 사용가능
+    | 타입 | 용도 |
+    | :---------------: | :--: |
+    |input type="file"|하나의 파일 업로드|
+    |input type="text"|Input 텍스트 입력 |
+    |input type="checkbox"|Input 체크박스 |
 
   - 주입되는 props를 통해 컴포넌트의 사용성을 결정
-
-    - input type="text"
-    - input type="file"
 
   - [Zod](https://github.com/colinhacks/zod 'zod')를 통해 Form의 Validation 구현
     - 타입스크립트의 타입을 통한 유효성 검사 가능
 
 - Persistant Auth가 가능한 로그인 기능 구현
 
-### ❕ 프로젝트 시작하게 된 계기
+## ❕ 프로젝트 시작하게 된 계기
 
-- 💪🏻 1. [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed '이전 포트폴리오,fleamarketagora')의 코드를 리펙토링하고 개선하여, 스스로 기술적 성장을 목표함
+- 💪🏻 [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed '이전 포트폴리오,fleamarketagora')의 코드를 리펙토링하고 개선하여, 스스로 기술적 성장을 목표함
 
   - 🔑 '상품 등록하기'에서, 폼(Form)과 React Hook Form을 통한 유효성 검사가 핵심기능 이었음
   - 💡 폼과 React Hook Form이 한 쌍으로 자주 사용되어, 함께 모듈화되는 방법이 없을까 생각하는 중, 관련 자료들을 발견하게 됨
@@ -63,7 +66,7 @@
       |                                   의존하는 컴포넌트의 Import depth “../”가 많음                                    |                                                                  컴포넌트의 가독성이 좋지 않음                                                                   |                                         절대경로를 사용                                         |
       |                                    Redux에 비동기/동기 상태가 함께 저장해 사용                                     |                                             비동기 상태를 관리하는 React-Query를 통해 프로젝트 상태를 분리해서 관리                                              |                   비동기는 React-Query에서, 동기상태는 Context로 이원해 관리                    |
 
-- 2. 학습 내용을 코드에 직접 적용
+- 학습 내용을 코드에 직접 적용
   - TypeScript
   - React-Query
   - Persistant Login
