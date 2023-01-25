@@ -17,7 +17,11 @@ import { RegisterFormDefaultData } from '../Utils/RegisterData';
 
 import useImageCompression from '@hooks/useImageCompression';
 
-import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
+import {
+  UlList,
+  UlLi,
+  DisplayContainer,
+} from '@components/styles/Display.style';
 
 function RegisterForm() {
   const { CompressImage } = useImageCompression();

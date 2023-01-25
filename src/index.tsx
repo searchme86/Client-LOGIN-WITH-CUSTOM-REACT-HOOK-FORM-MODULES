@@ -7,7 +7,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { StateContextProvider } from '@context/index';
 
-import GlobalStyle from '@assets/styles/common/GlobalStyle';
+import GlobalStyle from '@components/styles/common/GlobalStyle';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

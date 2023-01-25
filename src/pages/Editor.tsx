@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainer } from '@assets/styles/common/PageLayout.style';
+import { PageContainer } from '@components/styles/common/PageLayout.style';
 
 function Editor() {
   return (

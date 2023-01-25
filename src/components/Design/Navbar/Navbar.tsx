@@ -5,7 +5,7 @@ import { contextActionCreator } from '@context/contextConfig/contextActionCreato
 
 import LoginQuery from '@pages/User/Login/Query/LoginQuery';
 
-import { HeaderContainer } from '@assets/styles/common/PageLayout.style';
+import { HeaderContainer } from '@components/styles/common/PageLayout.style';
 import {
   HeaderLogoSection,
   HeaderLogo,

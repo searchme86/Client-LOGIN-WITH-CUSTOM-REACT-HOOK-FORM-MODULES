@@ -4,12 +4,15 @@ import FormElm from '@components/customElements/Form/FormElm';
 import InputElm from '@components/customElements/Input/InputElm';
 import SubmitBtnElm from '@components/customElements/UtilElements/SubmitBtnElm';
 import ResetBtnElm from '@components/customElements/UtilElements/ResetBtnElm';
+import {
+  UlList,
+  UlLi,
+  DisplayContainer,
+} from '@components/styles/Display.style';
 
 import LoginQuery from '../Query/LoginQuery';
 import { LoginSchemaType, LoginFormSchema } from '../Utils/LoginSchema';
 import { LoginFormDefaultData } from '../Utils/LoginData';
-
-import { UlList, UlLi, DisplayContainer } from '@assets/styles/Display.style';
 
 function LoginForm() {
   const {

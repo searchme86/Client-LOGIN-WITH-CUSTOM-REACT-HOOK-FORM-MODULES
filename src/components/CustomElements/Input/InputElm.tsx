@@ -7,7 +7,7 @@ import {
   InputWrapper,
   Input,
   InputLabel,
-} from '@assets/styles/Input.style';
+} from '@components/styles/Input.style';
 
 function InputElm<Model extends Record<string, any>>({
   zodValidationKey,

@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { FormElmContainer } from '@assets/styles/Form.style';
+import { FormElmContainer } from '@components/styles/Form.style';
 
 type GenericOnSubmit = (
   data: Record<string, any>,

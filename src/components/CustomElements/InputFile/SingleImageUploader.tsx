@@ -10,8 +10,11 @@ import {
   ImageClickBtn,
   ImageTitle,
   ImageErrorMessage,
-} from '@assets/styles/Image.style';
-import { DisplayContainer, DisplayItem } from '@assets/styles/Display.style';
+} from '@components/styles/Image.style';
+import {
+  DisplayContainer,
+  DisplayItem,
+} from '@components/styles/Display.style';
 
 import upload from '@assets/Images/upload.png';
 
