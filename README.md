@@ -56,15 +56,15 @@
     - 📒 [Chakra UI + React Hook Form](https://chakra-ui.com/getting-started/with-hook-form 'Chakra UI + React Hook Form')
 
     - #### 🙏 개선 희망사항
-      |                                                       AS-IS                                                        |                                                                                       개선 이유                                                                                        |                                              TO-BE                                              |
-      | :----------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: |
-      |                                        Cannot read properties of undefined                                         |                                       - 코드 규모가 확장 될 수록, 값이 undefined이거나 추적하기 어려움 <br/> - 값의 형태/타입을 찾아내기 어려움                                        |                      타입스크립트 <br/> 적용을 통해 <br/> 코드 안정성 확보                      |
-      |                 Token 상태 및 관리 <br/> - refresh 되지 않음 <br/> - LocalStorage에 저장하여 관리                  |                                                             - Token은 refresh 해야함 <br/> - LocalStorage에 저장하면 안됨                                                              | - Token에 refresh 특성부여 <br/> - 서버에서 생성해 토큰 갱신 <br/> - Persistant login 으로 전환 |
-      | ['react-file-base64'](https://www.npmjs.com/package/react-file-base64 'react-file-base64’)을 통해 이미지 업로드 함 |                                          폼 상태를 초기화(reset) 할 때, 모듈 'react-file-base64'에 저장된 값만 남아있어 이를 처리하기 어려움                                           |                              이미지 업로드 <br/> 과정 하나씩 구현                               |
-      |                                   (Chakra UI) Chakra UI를 통한 폼 컴포넌트 구현                                    |                                                                       ref로 input을 참조 되지 않는 버그🐛를 경험                                                                       |                                         Chakra UI 제외                                          |
-      |                              (styled-components) styled-components를 통한 스타일 구현                              | 컴포넌트를 감싸거나, <br/> 자식으로 props 전달 이외에 <br/> 특별한 목적 없는 div, <br/> 혹은 일반 스타일까지도, <br/> styled 컴포넌트로 만들어,<br/> 컴포넌트에 불필요한 코드가 낭비됨 |                                 의미없는 스타일 코드 생성 방지                                  |
-      |                                   의존하는 컴포넌트의 Import depth “../”가 많음                                    |                                                                          컴포넌트의 가독성이 <br/> 좋지 않음                                                                           |                                         절대경로를 사용                                         |
-      |                                    Redux에 비동기/동기 상태가 함께 저장해 사용                                     |                                                        비동기 상태를 관리하는 React-Query를 통해 프로젝트 상태를 분리해서 관리                                                         |                   비동기는 React-Query에서, 동기상태는 Context로 이원해 관리                    |
+      |                                       AS-IS                                       |                                                                                    개선 이유                                                                                     |                                              TO-BE                                              |
+      | :-------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: |
+      |                        Cannot read properties of undefined                        |                                 - 코드 규모가 확장 될 수록, 값이 undefined이거나 <br/> 추적하기 어려움 <br/> - 값의 형태/타입을 찾아내기 어려움                                  |                      타입스크립트 <br/> 적용을 통해 <br/> 코드 안정성 확보                      |
+      | Token 상태 및 관리 <br/> - refresh 되지 않음 <br/> - LocalStorage에 저장하여 관리 |                                                       - Token은 refresh 해야함 <br/> - LocalStorage에 <br/> 저장하면 안됨                                                        | - Token에 refresh 특성부여 <br/> - 서버에서 생성해 토큰 갱신 <br/> - Persistant login 으로 전환 |
+      |               npm'react-file-base64'을 통해 <br/> 이미지 업로드 함                |                                 폼 상태를 초기화(reset) 할 때, <br/> 모듈 'react-file-base64'에 저장된 값만 남아있어 <br/> 이를 처리하기 어려움                                  |                              이미지 업로드 <br/> 과정 하나씩 구현                               |
+      |                (Chakra UI) <br/> Chakra UI를 통한 폼 컴포넌트 구현                |                                                                    ref로 input을 참조 되지 않는 버그🐛를 경험                                                                    |                                         Chakra UI 제외                                          |
+      |          (styled-components) <br/> styled-components를 통한 스타일 구현           | 컴포넌트를 감싸거나, <br/> 자식으로 props 전달, <br/> 특별한 목적 없는 div, <br/> 혹은 일반 스타일까지도, <br/> styled 컴포넌트로 만들어,<br/> 컴포넌트에 불필요한 코드가 낭비됨 |                                 의미없는 스타일 코드 생성 방지                                  |
+      |                   의존하는 컴포넌트의 Import depth “../”가 많음                   |                                                                       컴포넌트의 가독성이 <br/> 좋지 않음                                                                        |                                         절대경로를 사용                                         |
+      |                    Redux에 비동기/동기 상태가 함께 저장해 사용                    |                                                비동기 상태를 관리하는 React-Query를 통해 <br/> 프로젝트 상태를 <br/> 분리해 관리                                                 |                비동기는 React-Query에서, <br/> 동기상태는 Context로 이원해 관리                 |
 
 - 학습 내용을 코드에 적용
   - TypeScript
@@ -182,34 +182,34 @@
 
 ## 📈 작업 히스토리 및 현황
 
-|   상태   |          카테고리           |                                                                       과업                                                                       |
-| :------: | :-------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: |
-|   완료   | 타입스크립트로 마이그레이션 |                                               베이스 JS리액트 코드를 <br/> TS버전으로 마이그레이션                                               |
-|          |        프로젝트 구성        |                                                        TS리액트 프로젝트로 기본 구조 완성                                                        |
-|          |    리펙토링 및<br/> 구현    | 기존 로그인 코드에 인라인 Axios 요청을 별도 컴포넌트로 하려고 함<br/> 액션(GET/POST)에 따른 <br/> 커스텀 컴포넌트(useAxiosGet/useAxiosPost) 개발 |
-|          |     구글링 및 코드이해      |                                              재사용가능한 React Hook Form에 대한 코드 및 이론 학습                                               |
-|          |            구현             |                              재사용가능한 React Hook Form 구현 <br/>(이미지 업로드 -> 인풋 폼 -> 초기화/등록 버튼)                               |
-|          |          리펙토링           |                                          베이스 JS리액트 코드에서 로그인/등록 페이지에서 핵심코드 추출                                           |
-|          |          리펙토링           |                     베이스 JS리액트 코드의 로그인 로직과 <br/>이전 포트폴리오에서 로그인/등록 페이지에서 핵심코드를 리펙토링                     |
-|          |            구현             |                                          재사용가능한 React Hook Form을 통해 등록 폼의 기본 골격을 만듦                                          |
-|          |           구글링            |                                                       Context / localStorage 타입이슈 해결                                                       |
-|          |       구글링 및 구현        |                                                   Axios InterCeptor 학습 및 TS로 마이그레이션                                                    |
-|          | 폴더 정리 및<br/> 코드 분할 |                Axios InterCeptor를<br/> request(useAxiosRequest)<br/> /Response(useAxiosResponse)<br/> 커스텀 훅으로 구분해 구현                 |
-|          |           구글링            |                                                             React-Query 학습 및 이해                                                             |
-|          | 리펙토링<br/> - 등록페이지  |                                                      등록(register) 폼 만들기 (디자인 포함)                                                      |
-|          | 폴더 정리 및<br/> 코드 분할 |                                          로그인 및 등록 페이지의 뷰 컴포넌트를<br/> 분할해서 코드 정리                                           |
-|          |           테스트            |                                 커스텀 React Hook Form에서<br/> 값 생성 및 초기화/등록 버튼 동작하는지 개발작업                                  |
-|          |           테스트            |                                                 등록 폼에서 Submit한 값이 서버로 전달되는지 확인                                                 |
-|          |            구현             |                                                              등록(register) 폼 완료                                                              |
-|          |            구현             |                                                      로그인(login) 폼 만들기 (디자인 포함)                                                       |
-|          |            구현             |                                                로그인(login)에 해당하는 Axios 및 React-Query 개발                                                |
-|          |            구현             |                                               등록(Register)에 해당하는 Axios 및 React-Query 개발                                                |
-|          |           테스트            |                                  로그인 및 등록 React-Query에서 요청하는 값이 <br/> 서버에서 확인되는지 테스트                                   |
-|          |            구현             |                                                              등록(register) 폼 완료                                                              |
-|          |    리펙토링 및<br/> 구현    |                                             기존 Context에 상태관리 useState를 useReducer로 리펙토링                                             |
-|          | 폴더 정리 및<br/> 코드 분할 |                                            유저의 Login/Register에 따라 React-Query코드를 나눠 정리함                                            |
-| 진행예정 |           테스트            |                                              엑시오스 인터셉터와 백엔드의 리프레쉬 토큰 패칭 테스트                                              |
-|          |            구현             |                                                백엔드로 Refresh Token을 요청하는 React-Query 개발                                                |
-|          |           테스트            |                     AuthMiddleWare & Protected Router을 통해 <br/> 백엔드로 Refresh Token을 요청하는 <br/>React-Query 테스트                     |
-|          |            구현             |                                    React-Query와 Axios InterCeptor / Refresh Token이 서로 적용되는 코드 구현                                     |
-|          |            배포             |                                                                    코드 배포                                                                     |
+|   상태   |             카테고리              |                                                                       과업                                                                       |
+| :------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: |
+|   완료   | 타입스크립트로 <br/> 마이그레이션 |                                               베이스 JS리액트 코드를 <br/> TS버전으로 마이그레이션                                               |
+|          |           프로젝트 구성           |                                                        TS리액트 프로젝트로 기본 구조 완성                                                        |
+|          |       리펙토링 및<br/> 구현       | 기존 로그인 코드에 인라인 Axios 요청을 별도 컴포넌트로 하려고 함<br/> 액션(GET/POST)에 따른 <br/> 커스텀 컴포넌트(useAxiosGet/useAxiosPost) 개발 |
+|          |        구글링 및 코드이해         |                                              재사용가능한 React Hook Form에 대한 코드 및 이론 학습                                               |
+|          |               구현                |                              재사용가능한 React Hook Form 구현 <br/>(이미지 업로드 -> 인풋 폼 -> 초기화/등록 버튼)                               |
+|          |             리펙토링              |                                          베이스 JS리액트 코드에서 로그인/등록 페이지에서 핵심코드 추출                                           |
+|          |             리펙토링              |                     베이스 JS리액트 코드의 로그인 로직과 <br/>이전 포트폴리오에서 로그인/등록 페이지에서 핵심코드를 리펙토링                     |
+|          |               구현                |                                          재사용가능한 React Hook Form을 통해 등록 폼의 기본 골격을 만듦                                          |
+|          |              구글링               |                                                       Context / localStorage 타입이슈 해결                                                       |
+|          |          구글링 및 구현           |                                                   Axios InterCeptor 학습 및 TS로 마이그레이션                                                    |
+|          |    폴더 정리 및<br/> 코드 분할    |                Axios InterCeptor를<br/> request(useAxiosRequest)<br/> /Response(useAxiosResponse)<br/> 커스텀 훅으로 구분해 구현                 |
+|          |              구글링               |                                                             React-Query 학습 및 이해                                                             |
+|          |    리펙토링<br/> - 등록페이지     |                                                      등록(register) 폼 만들기 (디자인 포함)                                                      |
+|          |    폴더 정리 및<br/> 코드 분할    |                                          로그인 및 등록 페이지의 뷰 컴포넌트를<br/> 분할해서 코드 정리                                           |
+|          |              테스트               |                                 커스텀 React Hook Form에서<br/> 값 생성 및 초기화/등록 버튼 동작하는지 개발작업                                  |
+|          |              테스트               |                                                 등록 폼에서 Submit한 값이 서버로 전달되는지 확인                                                 |
+|          |               구현                |                                                              등록(register) 폼 완료                                                              |
+|          |               구현                |                                                      로그인(login) 폼 만들기 (디자인 포함)                                                       |
+|          |               구현                |                                                로그인(login)에 해당하는 Axios 및 React-Query 개발                                                |
+|          |               구현                |                                               등록(Register)에 해당하는 Axios 및 React-Query 개발                                                |
+|          |              테스트               |                                  로그인 및 등록 React-Query에서 요청하는 값이 <br/> 서버에서 확인되는지 테스트                                   |
+|          |               구현                |                                                              등록(register) 폼 완료                                                              |
+|          |       리펙토링 및<br/> 구현       |                                             기존 Context에 상태관리 useState를 useReducer로 리펙토링                                             |
+|          |    폴더 정리 및<br/> 코드 분할    |                                            유저의 Login/Register에 따라 React-Query코드를 나눠 정리함                                            |
+| 진행예정 |              테스트               |                                              엑시오스 인터셉터와 백엔드의 리프레쉬 토큰 패칭 테스트                                              |
+|          |               구현                |                                                백엔드로 Refresh Token을 요청하는 React-Query 개발                                                |
+|          |              테스트               |                     AuthMiddleWare & Protected Router을 통해 <br/> 백엔드로 Refresh Token을 요청하는 <br/>React-Query 테스트                     |
+|          |               구현                |                                  React-Query와 Axios InterCeptor <br/>/ Refresh Token이 서로 적용되는 코드 구현                                  |
+|          |               배포                |                                                                    코드 배포                                                                     |
