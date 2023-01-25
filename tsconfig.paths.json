@@ -6,7 +6,7 @@
       "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
       "@context/*": ["context/*"],
-      "@server/*": ["server/*"],
+      "@config/*": ["config/*"],
       "@pages/*": ["pages/*"]
     }
   }

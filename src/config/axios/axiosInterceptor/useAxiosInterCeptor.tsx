@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { userCustomAxios } from '@server/axios/axiosCustom';
+import { userCustomAxios } from '@config/axios/axiosCustom';
 import useAxiosRequest from './useAxiosRequest';
 import useAxiosResponse from './useAxiosResponse';
 

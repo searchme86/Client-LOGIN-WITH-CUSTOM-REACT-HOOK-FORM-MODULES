@@ -7,7 +7,7 @@ module.exports = {
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@context': path.resolve(__dirname, 'src/context'),
-      '@server': path.resolve(__dirname, 'src/server'),
+      '@config': path.resolve(__dirname, 'src/config'),
       '@pages': path.resolve(__dirname, 'src/pages'),
     },
   },

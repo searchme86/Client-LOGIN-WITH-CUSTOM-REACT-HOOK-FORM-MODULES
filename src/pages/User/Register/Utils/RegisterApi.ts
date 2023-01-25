@@ -1,4 +1,4 @@
-import axios from '@server/axios/axiosCustom';
+import axios from '@config/axios/axiosCustom';
 
 import { IRegisterFormData } from './RegisterType';
 

@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
-import useAuthRefreshToken from '@server/auth/useAuthRefreshToken';
-import { userCustomAxios } from '@server/axios/axiosCustom';
-import { StatusCode, CustomAxiosRequestConfig } from '@server/axios/axiosType';
+import useAuthRefreshToken from '@config/auth/useAuthRefreshToken';
+import { userCustomAxios } from '@config/axios/axiosCustom';
+import { StatusCode, CustomAxiosRequestConfig } from '@config/axios/axiosType';
 
 function useAxiosResponse() {
   const refresh = useAuthRefreshToken();
