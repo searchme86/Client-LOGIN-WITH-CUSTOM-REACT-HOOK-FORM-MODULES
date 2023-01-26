@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 type AuthMiddlewareProps = {
-  children: React.ReactElement;
+  children: ReactNode;
 };
 
 function AuthMiddleware({ children }: AuthMiddlewareProps) {

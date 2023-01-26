@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent } from 'react';
+import React, { BaseSyntheticEvent, ReactNode } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -21,7 +21,7 @@ function FormElement<
 }: {
   schema: Schema;
   onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void;
-  children: any;
+  children: ReactNode;
   defaultValues?: Record<string, string>;
 }) {
   const methods = useForm({
