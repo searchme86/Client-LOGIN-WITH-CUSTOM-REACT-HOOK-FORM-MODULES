@@ -8,7 +8,7 @@ import {
 } from './register.style';
 
 import BgAnimation from '@components/design/bgAnimation/bgAnimation';
-import { OffScreenTitle } from '@components/styles/common/common.style';
+import { OffScreenTitle } from '@components/styles/common/hiddenText.style';
 
 interface ContainerProps {
   children: ReactNode;

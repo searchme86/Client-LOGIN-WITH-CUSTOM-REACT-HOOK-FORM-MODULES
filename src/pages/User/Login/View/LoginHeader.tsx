@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseChimneyWindow } from '@fortawesome/free-solid-svg-icons';
 
-import { OffScreenSpan } from '@components/styles/common/common.style';
+import { OffScreenSpan } from '@components/styles/common/hiddenText.style';
 import { LoginHead, LoginToHome, LoginTitle } from './login.style';
 
 function LoginHeader() {
