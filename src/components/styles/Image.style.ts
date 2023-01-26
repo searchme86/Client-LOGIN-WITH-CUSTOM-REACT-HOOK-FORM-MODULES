@@ -10,7 +10,7 @@ export const ImageContainer = styled.div<StyleProps>`
   overflow: hidden;
 `;
 
-export const ImageWrapper = styled.div<StyleProps>`
+export const ImageHolder = styled.div<StyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ export const ImageWrapper = styled.div<StyleProps>`
   background: #f2f2f2;
 `;
 
-export const ImageElmn = styled.img`
+export const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
   width: auto;

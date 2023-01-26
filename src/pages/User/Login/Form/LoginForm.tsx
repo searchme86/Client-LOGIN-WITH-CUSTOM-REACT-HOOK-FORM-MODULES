@@ -4,11 +4,7 @@ import FormElement from '@components/customElements/form/formElement';
 import InputElement from '@components/customElements/input/inputElement';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
 import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
-import {
-  UlList,
-  UlLi,
-  DisplayContainer,
-} from '@components/styles/display.style';
+import { List, Li, ContentBox } from '@components/styles/display.style';
 
 import LoginQuery from '../query/loginQuery';
 import { LoginSchemaType, LoginFormSchema } from '../utils/loginSchema';
@@ -30,8 +26,8 @@ function LoginForm() {
       onSubmit={onLoginSubmit}
       schema={LoginFormSchema}
     >
-      <UlList>
-        <UlLi margin="0 0 10px 0">
+      <List>
+        <Li margin="0 0 10px 0">
           <InputElement<LoginSchemaType>
             zodValidationKey="LoginUserNickname"
             LabelTxt="닉네임"
@@ -47,8 +43,8 @@ function LoginForm() {
             inputPadding="0 10px 0 10px"
             autoComplete="username"
           />
-        </UlLi>
-        <UlLi>
+        </Li>
+        <Li>
           <InputElement<LoginSchemaType>
             zodValidationKey="LoginUserPassword"
             LabelTxt="닉네임"
@@ -64,9 +60,9 @@ function LoginForm() {
             inputPadding="0 10px 0 10px"
             autoComplete="current-password"
           />
-        </UlLi>
-        <UlLi margin="0 0 10px 0">
-          <DisplayContainer>
+        </Li>
+        <Li margin="0 0 10px 0">
+          <ContentBox>
             <SubmitBtnElm
               display="block"
               btnTxt="로그인"
@@ -85,9 +81,9 @@ function LoginForm() {
               padding="10px 0 10px 0"
               values={LoginFormDefaultData}
             />
-          </DisplayContainer>
-        </UlLi>
-      </UlList>
+          </ContentBox>
+        </Li>
+      </List>
     </FormElement>
   );
 }

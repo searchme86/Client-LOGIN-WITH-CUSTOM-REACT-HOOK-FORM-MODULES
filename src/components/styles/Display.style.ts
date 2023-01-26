@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { StyleProps } from './common/style.type';
 
-export const UlList = styled.ul<StyleProps>`
+export const List = styled.ul<StyleProps>`
   display: ${({ display }) => display || `block`};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-itmes: ${({ alignItems }) => alignItems};
 `;
 
-export const UlLi = styled.li<StyleProps>`
+export const Li = styled.li<StyleProps>`
   width: ${({ width }) => width};
   padding: ${({ padding }) => padding};
   margin: ${({ margin }) => margin};
 `;
 
-export const DisplayContainer = styled.div<StyleProps>`
+export const ContentBox = styled.div<StyleProps>`
   display: ${({ display }) => display || `block`};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
@@ -22,7 +22,7 @@ export const DisplayContainer = styled.div<StyleProps>`
   box-sizing: border-box;
 `;
 
-export const DisplayItem = styled.div<StyleProps>`
+export const ImageFileNameView = styled.div<StyleProps>`
   display: ${({ display }) => display || `block`};
   flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};

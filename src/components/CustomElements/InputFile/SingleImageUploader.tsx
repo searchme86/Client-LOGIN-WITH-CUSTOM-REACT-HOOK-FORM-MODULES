@@ -5,15 +5,15 @@ import useImageCompression from '@hooks/useImageCompression';
 
 import {
   ImageContainer,
-  ImageWrapper,
-  ImageElmn,
+  ImageHolder,
+  Image,
   ImageButton,
   ImageTitle,
   ImageErrorMessage,
 } from '@components/styles/image.style';
 import {
-  DisplayContainer,
-  DisplayItem,
+  ContentBox,
+  ImageFileNameView,
 } from '@components/styles/display.style';
 
 import upload from '@assets/Images/upload.png';
@@ -58,14 +58,14 @@ function SingleImageUploader<Model extends Record<string, string>>({
 
   return (
     <ImageContainer>
-      <DisplayContainer display="flex">
-        <ImageWrapper width="60%" height="80px">
+      <ContentBox display="flex">
+        <ImageHolder width="60%" height="80px">
           {base64 ? (
-            <ImageElmn src={base64} alt="upload" />
+            <Image src={base64} alt="upload" />
           ) : (
-            <ImageElmn src={upload} alt="upload" />
+            <Image src={upload} alt="upload" />
           )}
-        </ImageWrapper>
+        </ImageHolder>
 
         <input
           type="file"
@@ -75,7 +75,7 @@ function SingleImageUploader<Model extends Record<string, string>>({
           style={{ display: 'none' }}
         />
 
-        <DisplayItem
+        <ImageFileNameView
           display="flex"
           width="60%"
           flexDirection="column"
@@ -90,8 +90,8 @@ function SingleImageUploader<Model extends Record<string, string>>({
               {watch(zodValidationKey.toString())[0]?.name}
             </ImageTitle>
           ) : null}
-        </DisplayItem>
-      </DisplayContainer>
+        </ImageFileNameView>
+      </ContentBox>
 
       {errors[zodValidationKey.toString()] ? (
         <ImageErrorMessage>

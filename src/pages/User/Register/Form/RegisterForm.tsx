@@ -6,7 +6,6 @@ import InputElement from '@components/customElements/input/inputElement';
 import SingleImageUploader from '@components/customElements/inputFile/singleImageUploader';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
 import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
-import List from '@components/design/list/list';
 
 import RegisterQuery from '../query/registerQuery';
 import {
@@ -17,11 +16,7 @@ import { RegisterFormDefaultData } from '../utils/registerData';
 
 import useImageCompression from '@hooks/useImageCompression';
 
-import {
-  UlList,
-  UlLi,
-  DisplayContainer,
-} from '@components/styles/display.style';
+import { List, Li, ContentBox } from '@components/styles/display.style';
 
 function RegisterForm() {
   const { CompressImage } = useImageCompression();
@@ -105,16 +100,16 @@ function RegisterForm() {
       onSubmit={onRegisterSubmit}
       schema={RegisterFormSchema}
     >
-      <UlList>
+      <List>
         {/* 프로필 이미지 */}
-        <UlLi margin="0 0 14px 0">
+        <Li margin="0 0 14px 0">
           <SingleImageUploader<RegisterSchemaType>
             zodValidationKey="userImage"
             btnTxt="파일 등록"
           />
-        </UlLi>
+        </Li>
         {/* 유저 닉네임 */}
-        <UlLi margin="0 0 14px 0">
+        <Li margin="0 0 14px 0">
           <InputElement<RegisterSchemaType>
             zodValidationKey="userNickName"
             LabelTxt="닉네임"
@@ -128,9 +123,9 @@ function RegisterForm() {
             inputID="userNickname"
             inputPadding="0 10px 0 10px"
           />
-        </UlLi>
+        </Li>
         {/* 유저 이메일  */}
-        <UlLi margin="0 0 14px 0">
+        <Li margin="0 0 14px 0">
           <InputElement<RegisterSchemaType>
             zodValidationKey="userEmail"
             LabelTxt="이메일"
@@ -145,9 +140,9 @@ function RegisterForm() {
             inputPadding="0 10px 0 10px"
             autoComplete="username"
           />
-        </UlLi>
+        </Li>
         {/* 유저 비밀번호 */}
-        <UlLi margin="0 0 14px 0">
+        <Li margin="0 0 14px 0">
           <InputElement<RegisterSchemaType>
             zodValidationKey="userPassword"
             LabelTxt="비밀번호"
@@ -164,8 +159,8 @@ function RegisterForm() {
           />
           {/* 비밀번호 작성규칙 */}
           <List />
-        </UlLi>
-        <UlLi margin="0 0 15px 0">
+        </Li>
+        <Li margin="0 0 15px 0">
           <InputElement<RegisterSchemaType>
             zodValidationKey="userConfirmPassword"
             LabelTxt="비밀번호 확인"
@@ -180,9 +175,9 @@ function RegisterForm() {
             inputID="confirmPassword"
             inputPadding="0 10px 0 10px"
           />
-        </UlLi>
-        <UlLi>
-          <DisplayContainer
+        </Li>
+        <Li>
+          <ContentBox
             display="flex"
             justifyContent="space-evenly"
             padding="20px 0 0 0"
@@ -202,9 +197,9 @@ function RegisterForm() {
               padding="10px 0 10px 0"
               values={RegisterFormDefaultData}
             />
-          </DisplayContainer>
-        </UlLi>
-      </UlList>
+          </ContentBox>
+        </Li>
+      </List>
     </FormElement>
   );
 }
