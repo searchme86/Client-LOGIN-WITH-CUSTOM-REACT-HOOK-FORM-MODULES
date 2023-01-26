@@ -6,12 +6,12 @@ import { z } from 'zod';
 import { FormElementContainer } from '@components/styles/form.style';
 
 type GenericOnSubmit = (
-  data: Record<string, any>,
+  data: Record<string, string>,
   event?: BaseSyntheticEvent
 ) => void;
 
 function FormElement<
-  DataSchema extends Record<string, any>,
+  DataSchema extends Record<string, string>,
   Schema extends z.Schema<any, any>
 >({
   schema,
@@ -22,7 +22,7 @@ function FormElement<
   schema: Schema;
   onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void;
   children: any;
-  defaultValues?: Record<string, any>;
+  defaultValues?: Record<string, string>;
 }) {
   const methods = useForm({
     defaultValues,
