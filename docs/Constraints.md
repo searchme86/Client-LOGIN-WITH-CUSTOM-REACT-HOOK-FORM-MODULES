@@ -10,28 +10,30 @@
 
       - registerSchema.ts 중
 
-      ```js
-      const MAX_FILE_SIZE = 500000;
-      const ACCEPTED_IMAGE_TYPES = [
-        'image/jpeg',
-        'image/jpg',
-        'image/png',
-        'image/webp',
-      ];
+        ```js
+        const MAX_FILE_SIZE = 500000;
+        const ACCEPTED_IMAGE_TYPES = [
+          'image/jpeg',
+          'image/jpg',
+          'image/png',
+          'image/webp',
+        ];
 
-         userImage: z
-      .any()
-      .refine((files) => files?.length > 0, {
-        message: '이미지를 등록해 주세요',
-      })
-      .refine((files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type), {
-        message: '파일 확장자는 jpg, jpeg, png, webp 만 가능합니다.',
-      })
-      .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
-        message: '최대 5MB 까지 업로드 가능 합니다, 파일 용량을 체크해주세요',
-      }),
+          ...중략...
 
-      ```
+        userImage: z
+          .any()
+          .refine((files) => files?.length > 0, {
+            message: '이미지를 등록해 주세요',
+          })
+          .refine((files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type), {
+            message: '파일 확장자는 jpg, jpeg, png, webp 만 가능합니다.',
+          })
+          .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, {
+            message: '최대 5MB 까지 업로드 가능 합니다, 파일 용량을 체크해주세요',
+          }),
+
+        ```
 
     - 이미지 삭제 기능을 추가하지 못함
 
