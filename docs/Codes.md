@@ -32,16 +32,16 @@
 
 ## 🔧 1. 프로젝트 스펙
 
-|                               npm 모듈명                               |               사용목적               |                        사용이유                         |
-| :--------------------------------------------------------------------: | :----------------------------------: | :-----------------------------------------------------: |
-|                              @craco/craco                              |          프로젝트 경로설정           | 폴더가 중첩될 수록 경로 depth 때문에, 가독성으로 사용함 |
-| @fortawesome/free-solid-svg-icons <br/> @fortawesome/react-fontawesome |            아이콘 이미지             |     이전 프로젝트에서 사용해왔고, 사용방법이 간단함     |
-|                 react-hook-form // @hookform/resolvers                 |           React Hook Form            |                     React Hook Form                     |
-|                         @tanstack/react-query                          |             React Query              |                       React Query                       |
-|                       base-64 // @types/base-64                        | 이미지를 base64 형태로 인코딩/디코딩 |      이미지를 최종 base64 형태로 만들기 위해 필요       |
-|                       browser-image-compression                        |          이미지 용량을 압축          |  이미지를 폼데이터에 저장할때, 조금은 용량을 줄일 용도  |
-|                             framer-motion                              |       로그인 페이지 애니메이션       |                로그인 페이지 애니메이션                 |
-|                                  zod                                   |      폼 인풋의 유효성 타입검사       |               폼 인풋 값의 유효성을 검사                |
+|                               npm 모듈명                               |                  사용목적                  |                                    사용이유                                     |
+| :--------------------------------------------------------------------: | :----------------------------------------: | :-----------------------------------------------------------------------------: |
+|                              @craco/craco                              |             프로젝트 경로설정              | 폴더가 중첩될 수록 <br/> 경로 depth 때문에, <br/> 컴포넌트 가독성 목적으로 사용 |
+| @fortawesome/free-solid-svg-icons <br/> @fortawesome/react-fontawesome |               아이콘 이미지                |             이전 프로젝트에서 사용해왔고 <br/>, 사용 방법이 간단함              |
+|               react-hook-form <br/> @hookform/resolvers                |              React Hook Form               |                                 React Hook Form                                 |
+|                         @tanstack/react-query                          |                React Query                 |                                   React Query                                   |
+|                      base-64 <br/> @types/base-64                      | 이미지를 base64 형태로 <br/> 인코딩/디코딩 |               이미지를 <br/> 최종 base64 형태로 만들기 위해 필요                |
+|                       browser-image-compression                        |             이미지 용량을 압축             |             이미지를 폼데이터에 저장 할 때, <br/> 용량을 줄 일 용도             |
+|                             framer-motion                              |          로그인 페이지 애니메이션          |                            로그인 페이지 애니메이션                             |
+|                                  zod                                   |         폼 인풋의 유효성 타입검사          |                        폼 인풋 값의 <br/> 유효성을 검사                         |
 
 ## 🔬 2. 코드 흐름
 
@@ -89,19 +89,19 @@
 ┗ 📜router.tsx
 ```
 
-|   폴더명   |                                              내용                                               |
-| :--------: | :---------------------------------------------------------------------------------------------: |
-|   assets   |                                           이미지 파일                                           |
-| components | customElements, design(디자인 컴포넌트), <br/> styles(styled-components로 만든 스타일 컴포넌트) |
-|   config   |                                   Auth와 Axios 관련 파일 관리                                   |
-|  context   |                                 컨텍스트, 프로젝트 상태를 저장                                  |
-|   hooks    |                                   공통으로 사용하는 공통 hook                                   |
-|   pages    |                           프로젝트 페이지(로그인 페이지/ 등록 페이지)                           |
-|   types    |                              env에서 사용하는 데이터의 type을 정의                              |
-|    .env    |                                        프로젝트 환경변수                                        |
-| layout.tsx |                       페이지의 기본 레이아웃을 정의함, outlet 기능 포함됨                       |
-| router.tsx |                              프로젝트 라우트를 따로 분리해 정의함                               |
-| index.tsx  |                                       프로젝트 기본 진입                                        |
+|   폴더명   |                                                 내용                                                  |
+| :--------: | :---------------------------------------------------------------------------------------------------: |
+|   assets   |                                              이미지 파일                                              |
+| components | customElements, <br/> design(디자인 컴포넌트), <br/> styles(styled-components로 만든 스타일 컴포넌트) |
+|   config   |                                      Auth와 Axios 관련 파일 관리                                      |
+|  context   |                                  컨텍스트, <br/>프로젝트 상태를 저장                                  |
+|   hooks    |                                   공통으로 사용하는 <br/>공통 hook                                    |
+|   pages    |                           프로젝트 페이지 <br/>(로그인 페이지/ 등록 페이지)                           |
+|   types    |                              env에서 사용하는 <br/> 데이터의 type을 정의                              |
+|    .env    |                                           프로젝트 환경변수                                           |
+| layout.tsx |                         페이지의 <br/>기본 레이아웃을 정의함, <br/> (outlet)                          |
+| router.tsx |                              프로젝트 라우트를 <br/> 따로 분리해 정의함                               |
+| index.tsx  |                                          프로젝트 기본 진입                                           |
 
 ### 2. 프로젝트 코드 - 커스텀 엘리먼트
 
@@ -155,19 +155,19 @@
 
 ```
 
-|       파일명        |               내용                |                 의존                 |
-| :-----------------: | :-------------------------------: | :----------------------------------: |
-|    loginForm.tsx    |             로그인 폼             | 커스텀 엘리먼트, <br/> loginData.ts  |
-|   loginQuery.tsx    | 로그인 api를 담당하는 리액트 쿼리 |             loginApi.ts              |
-|     loginApi.ts     |    로그인 api(로그인/로그아웃)    |             loginType.ts             |
-|    loginData.ts     |           로그인 초기값           |                 zod                  |
-|   loginSchema.ts    |    로그인 인풋값의 유효성관리     |                 zod                  |
-|    loginType.ts     |  로그인에 사용되는 모든 타입정의  |                                      |
-|   login.style.ts    |     로그인 styled-components      |          styled-components           |
-| loginBackground.tsx |             로그인 뷰             |                                      |
-|   loginBottom.tsx   |             로그인 뷰             |                                      |
-|    loginMain.tsx    |             로그인 뷰             | loginBottom.tsx ,loginBackground.tsx |
-|      login.tsx      |           로그인 페이지           |           모든 로그인 파일           |
+|       파일명        |               내용                |                    의존                    |
+| :-----------------: | :-------------------------------: | :----------------------------------------: |
+|    loginForm.tsx    |             로그인 폼             |    커스텀 엘리먼트, <br/> loginData.ts     |
+|   loginQuery.tsx    | 로그인 api를 담당하는 리액트 쿼리 |                loginApi.ts                 |
+|     loginApi.ts     |    로그인 api(로그인/로그아웃)    |                loginType.ts                |
+|    loginData.ts     |           로그인 초기값           |                    zod                     |
+|   loginSchema.ts    |    로그인 인풋값의 유효성관리     |                    zod                     |
+|    loginType.ts     |  로그인에 사용되는 모든 타입정의  |                                            |
+|   login.style.ts    |     로그인 styled-components      |             styled-components              |
+| loginBackground.tsx |             로그인 뷰             |                                            |
+|   loginBottom.tsx   |             로그인 뷰             |                                            |
+|    loginMain.tsx    |             로그인 뷰             | loginBottom.tsx , <br/>loginBackground.tsx |
+|      login.tsx      |           로그인 페이지           |              모든 로그인 파일              |
 
 ### 2-2. 프로젝트 코드 - 유저 등록하기
 
