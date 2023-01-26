@@ -1,9 +1,3 @@
-## 다음 내용들을 다룹니다.
-
-### 1. 😭 작업 중 어려웠던 점
-
----
-
 ## 😭 작업 중 어려웠던 점
 
 ### 1. watch()를 통해 값을 확인하면, Input type="file"에 등록된 value만 빈 객체로 확인됨
@@ -143,15 +137,3 @@ export const TireIDEnum: [TireIDType, ...TireIDType[]] = [
 ```
 
 [TypeScript: How to get types from arrays](https://steveholgado.com/typescript-types-from-arrays/ 'TypeScript: How to get types from arrays')
-
-### 1. React Hook Form 한계점 보완
-
-### 2. Auth & RefreshToken 구현
-
-### 3. 프로젝트 스타일, tailwindCSS로 변경
-
-### 4. 프로젝트의 상태관리, useReducer에 immer 적용
-
-### 5. Axios Error message 처리
-
-### 6. 배포
