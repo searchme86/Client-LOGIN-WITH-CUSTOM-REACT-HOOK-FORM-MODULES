@@ -2,6 +2,6 @@ import styled from 'styled-components';
 
 import { StyleProps } from './common/style.type';
 
-export const FormElmContainer = styled.div<StyleProps>`
+export const FormElementContainer = styled.div<StyleProps>`
   margin: ${({ margin }) => margin};
 `;

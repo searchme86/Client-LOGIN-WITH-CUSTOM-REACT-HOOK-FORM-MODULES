@@ -98,7 +98,7 @@
 ```
 📦customElements
  ┣ 📂Form
- ┃ ┗ 📜FormElm.tsx
+ ┃ ┗ 📜FormElement.tsx
  ┣ 📂Input
  ┃ ┗ 📜InputElm.tsx
  ┣ 📂InputFile
@@ -112,7 +112,7 @@
 
 |         파일명          |                                  내용                                   | 엘리먼트(HTML) 종류  |                                용도                                 |
 | :---------------------: | :---------------------------------------------------------------------: | :------------------: | :-----------------------------------------------------------------: |
-|       FormElm.tsx       |                 React Hook Form이 적용된, form 컴포넌트                 |         form         |               모든 폼 엘리먼트를 감싸는 부모 컴포넌트               |
+|     FormElement.tsx     |                 React Hook Form이 적용된, form 컴포넌트                 |         form         |               모든 폼 엘리먼트를 감싸는 부모 컴포넌트               |
 |      InputElm.tsx       |                React Hook Form이 적용된, input 컴포넌트                 |    input type="?"    | props에 따라 input type값이 변경 (예: type="password", type="text") |
 | SingleImageUploader.tsx |              하나(Single)의 이미지(Image) 업로드 컴포넌트               |  input type="file"   |                            이미지 업로드                            |
 |  FormErrorMessage.tsx   |           React Hook Form에서 에러 메세지를 반환하는 컴포넌트           |          p           |                        에러메세지를 보여주기                        |
@@ -274,7 +274,7 @@
 
 ## 🔮 코드 설명
 
-### Custom Elements - [Provider] form (components > customElements > FormElm.tsx)
+### Custom Elements - [Provider] form (components > customElements > FormElement.tsx)
 
 ```js
 
@@ -292,12 +292,12 @@
  * z.Schema : zod에서 사용자가 schema를 생성되는 타입 값
  *
  * @returns : Form 엘리먼트
- * FormElmContainer : styled-components로 만든 스타일 컴포넌트
+ * FormElementContainer : styled-components로 만든 스타일 컴포넌트
  * FormProvider : react-hook-form에 관련된 값을 자식 컴포넌트에 전달(Provioder)하는 역할
  * **/
 
 // Form 엘리먼트를 정의
-function FormElm<
+function FormElement<
   // React Hook Form 에서 Input 과 같은 폼에서 사용될 값의 타입을 정의
   // 키는 string 이, 값은 어떤 값이든 허용하기 위해 any
   DataSchema extends Record<string, any>,
@@ -327,13 +327,13 @@ function FormElm<
   const handleSubmit = methods.handleSubmit;
 
   return (
-    <FormElmContainer margin="10px 0 10px 0">
+    <FormElementContainer margin="10px 0 10px 0">
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit as GenericOnSubmit)}>
           {children}
         </form>
       </FormProvider>
-    </FormElmContainer>
+    </FormElementContainer>
   );
 }
 ```
@@ -343,7 +343,7 @@ function FormElm<
 ```js
 
 /**
- * function FormElm<
+ * function FormElement<
   DataSchema extends Record<string, any>,
   Schema extends z.Schema<any, any>
 >({
@@ -417,12 +417,12 @@ function LoginForm() {
   };
 
   return (
-    <FormElm<LoginSchemaType, typeof LoginFormSchema>
+    <FormElement<LoginSchemaType, typeof LoginFormSchema>
       onSubmit={onLoginSubmit}
       schema={LoginFormSchema}
     >
      ...중략...
-    </FormElm>
+    </FormElement>
   );
 }
 

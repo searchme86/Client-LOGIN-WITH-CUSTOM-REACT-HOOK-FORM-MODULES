@@ -1,7 +1,7 @@
 import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
-import FormElm from '@components/customElements/form/formElm';
+import FormElement from '@components/customElements/form/formElement';
 import InputElm from '@components/customElements/input/InputElm';
 import SingleImageUploader from '@components/customElements/inputFile/singleImageUploader';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
@@ -101,7 +101,7 @@ function RegisterForm() {
   };
 
   return (
-    <FormElm<RegisterSchemaType, typeof RegisterFormSchema>
+    <FormElement<RegisterSchemaType, typeof RegisterFormSchema>
       onSubmit={onRegisterSubmit}
       schema={RegisterFormSchema}
     >
@@ -205,7 +205,7 @@ function RegisterForm() {
           </DisplayContainer>
         </UlLi>
       </UlList>
-    </FormElm>
+    </FormElement>
   );
 }
 

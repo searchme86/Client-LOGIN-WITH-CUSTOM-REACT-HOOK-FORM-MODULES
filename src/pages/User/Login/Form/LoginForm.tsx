@@ -1,6 +1,6 @@
 import { SubmitHandler } from 'react-hook-form';
 
-import FormElm from '@components/customElements/form/formElm';
+import FormElement from '@components/customElements/form/formElement';
 import InputElm from '@components/customElements/input/InputElm';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
 import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
@@ -26,7 +26,7 @@ function LoginForm() {
   };
 
   return (
-    <FormElm<LoginSchemaType, typeof LoginFormSchema>
+    <FormElement<LoginSchemaType, typeof LoginFormSchema>
       onSubmit={onLoginSubmit}
       schema={LoginFormSchema}
     >
@@ -88,7 +88,7 @@ function LoginForm() {
           </DisplayContainer>
         </UlLi>
       </UlList>
-    </FormElm>
+    </FormElement>
   );
 }
 
