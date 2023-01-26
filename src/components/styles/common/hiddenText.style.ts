@@ -11,28 +11,10 @@ export const hiddenTextStyle = css`
   clip-path: inset(50%);
 `;
 
-export const OffScreen = styled.p`
-  ${hiddenTextStyle}
-`;
-
 export const OffScreenSpan = styled.span`
-  ${hiddenTextStyle}
-`;
-
-export const OffScreenStrong = styled.strong`
   ${hiddenTextStyle}
 `;
 
 export const OffScreenTitle = styled.h1`
   ${hiddenTextStyle}
-`;
-
-export const BasicUl = styled.ul`
-  margin: 0 auto;
-`;
-
-export const BasicLi = styled.li`
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
 `;
