@@ -22,36 +22,36 @@
 
 ### [React Hook Form](https://react-hook-form.com/)과 [Zod](https://github.com/colinhacks/zod 'zod')가 기본 적용된, 폼 엘리먼트(form, input) 구현과 활용(로그인)
 
-## ❕ 프로젝트 시작하게 된 계기
+## ❕프로젝트 시작하게 된 계기
 
 - 💪🏻 [이전 포트폴리오,fleamarketagora](https://github.com/searchme86/App_Final_Deployed '이전 포트폴리오,fleamarketagora')의 코드를 리펙토링하고 개선을 통해, 스스로 기술적 성장을 목표함
 
 - 🔑 '상품 등록하기'에서, 폼(Form)과 React Hook Form을 통한 유효성 검사가 핵심기능 이었음
 - 💡 폼과 React Hook Form이 한 쌍으로 자주 사용되어, 함께 모듈화되는 방법이 없을까 생각이 들었음
 
-  #### 📒 관련 자료
+  #### 📒 참고 자료
 
   - 📒 [How to create reusable form components with React Hook Forms and Typescript](https://www.thisdot.co/blog/how-to-create-reusable-form-components-with-react-hook-forms-and-typescript 'How to create reusable form components with React Hook Forms and Typescript')
   - 📒 [File Upload with Chakra UI and react-hook-form](https://gist.github.com/brenopolanski/5efe54b46cad0882b3ce41dc8db64608 'File Upload with Chakra UI and react-hook-form')
 
   - 📒 [Chakra UI + React Hook Form](https://chakra-ui.com/getting-started/with-hook-form 'Chakra UI + React Hook Form')
 
-- #### 🙏 개선 희망사항
+  - #### 🙏 개선 목표
 
-  |                                       AS-IS                                       |                                                          개선 이유                                                          |                                                    TO-BE                                                    |
-  | :-------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
-  |                        Cannot read properties of undefined                        |    - 코드 규모가 확장 될 수록, <br/> 값이 undefined이거나 <br/> 추적하기 어려움 <br/> - 값 형태/타입을 <br/> 찾기 어려움    |                            타입스크립트 <br/> 적용을 통해 <br/> 코드 안정성 확보                            |
-  | Token 상태 및 관리 <br/> - refresh 되지 않음 <br/> - LocalStorage에 저장하여 관리 |                             - Token은 refresh 해야함 <br/> - LocalStorage에 <br/> 저장하면 안됨                             | - Token에 <br/> refresh 특성부여 <br/> - 서버에서 생성해 토큰 갱신 <br/> - Persistant login 으로 <br/> 전환 |
-  |                 npm, 'react-file-base64'으로 <br/> 이미지 업로드                  | 폼 상태 초기화(reset) 할 때, <br/> 모듈 'react-file-base64'에 <br/> 이미지 값(base64)만 남아있어 <br/> 이를 처리하기 어려움 |                                    이미지 업로드 <br/> 과정 하나씩 구현                                     |
-  |               (Chakra UI) <br/> Chakra UI를 통한, 폼 컴포넌트 구현                |                                      ref로 input을 참조 되지 않는 <br/> 버그🐛를 경험                                       |                                               Chakra UI 제외                                                |
-  |                의존하는 컴포넌트의 <br/> Import depth “../”가 많음                |                                             컴포넌트의 가독성이 <br/> 좋지 않음                                             |                                               절대경로를 사용                                               |
-  |              Redux에 <br/>비동기/동기 상태가 <br/>함께 저장되어 사용              |                   비동기 상태를 관리하는 <br/>React-Query를 통해 <br/> 프로젝트 상태를 <br/> 분리해 관리                    |                비동기는 <br/> React-Query에서, <br/> 동기상태는 <br/> Context로 이원해 관리                 |
+    |                                       AS-IS                                       |                                                          개선 이유                                                          |                                                    TO-BE                                                    |
+    | :-------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+    |                        Cannot read properties of undefined                        |    - 코드 규모가 확장 될 수록, <br/> 값이 undefined이거나 <br/> 추적하기 어려움 <br/> - 값 형태/타입을 <br/> 찾기 어려움    |                            타입스크립트 <br/> 적용을 통해 <br/> 코드 안정성 확보                            |
+    | Token 상태 및 관리 <br/> - refresh 되지 않음 <br/> - LocalStorage에 저장하여 관리 |                             - Token은 refresh 해야함 <br/> - LocalStorage에 <br/> 저장하면 안됨                             | - Token에 <br/> refresh 특성부여 <br/> - 서버에서 생성해 토큰 갱신 <br/> - Persistant login 으로 <br/> 전환 |
+    |                 npm, 'react-file-base64'으로 <br/> 이미지 업로드                  | 폼 상태 초기화(reset) 할 때, <br/> 모듈 'react-file-base64'에 <br/> 이미지 값(base64)만 남아있어 <br/> 이를 처리하기 어려움 |                                    이미지 업로드 <br/> 과정 하나씩 구현                                     |
+    |               (Chakra UI) <br/> Chakra UI를 통한, 폼 컴포넌트 구현                |                                      ref로 input을 참조 되지 않는 <br/> 버그🐛를 경험                                       |                                               Chakra UI 제외                                                |
+    |                의존하는 컴포넌트의 <br/> Import depth “../”가 많음                |                                             컴포넌트의 가독성이 <br/> 좋지 않음                                             |                                               절대경로를 사용                                               |
+    |              Redux에 <br/>비동기/동기 상태가 <br/>함께 저장되어 사용              |                   비동기 상태를 관리하는 <br/>React-Query를 통해 <br/> 프로젝트 상태를 <br/> 분리해 관리                    |                비동기는 <br/> React-Query에서, <br/> 동기상태는 <br/> Context로 이원해 관리                 |
 
-- 학습 내용을 코드에 적용
-- TypeScript
-- React-Query
-- Persistant Login
-  - 💡 [React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios](https://www.youtube.com/watch?v=nI8PYZNFtac 'React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios')
+- ✏️ 학습 내용을 코드에 적용
+  - TypeScript
+  - React-Query
+  - Persistant Login
+    - 💡 [React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios](https://www.youtube.com/watch?v=nI8PYZNFtac 'React Login Authentication with JWT Access, Refresh Tokens, Cookies and Axios')
 
 ## 🔦 프로젝트 특징 및 장점
 
