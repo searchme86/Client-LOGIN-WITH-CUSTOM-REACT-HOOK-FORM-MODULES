@@ -8,7 +8,7 @@ import {
   LoginTitle,
   LinkLogin,
   SiteBrandTitle,
-} from './Register.style';
+} from './register.style';
 
 function RegisterHead() {
   return (

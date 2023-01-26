@@ -1,18 +1,18 @@
 import { SubmitHandler } from 'react-hook-form';
 
-import FormElm from '@components/customElements/Form/FormElm';
-import InputElm from '@components/customElements/Input/InputElm';
-import SubmitBtnElm from '@components/customElements/UtilElements/SubmitBtnElm';
-import ResetBtnElm from '@components/customElements/UtilElements/ResetBtnElm';
+import FormElm from '@components/customElements/form/formElm';
+import InputElm from '@components/customElements/input/InputElm';
+import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
+import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
 import {
   UlList,
   UlLi,
   DisplayContainer,
-} from '@components/styles/Display.style';
+} from '@components/styles/display.style';
 
-import LoginQuery from '../Query/LoginQuery';
-import { LoginSchemaType, LoginFormSchema } from '../Utils/LoginSchema';
-import { LoginFormDefaultData } from '../Utils/LoginData';
+import LoginQuery from '../query/loginQuery';
+import { LoginSchemaType, LoginFormSchema } from '../utils/loginSchema';
+import { LoginFormDefaultData } from '../utils/loginData';
 
 function LoginForm() {
   const {

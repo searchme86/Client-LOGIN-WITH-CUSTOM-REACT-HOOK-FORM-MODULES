@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PageContainer } from '@components/styles/common/PageLayout.style';
+import { PageContainer } from '@components/styles/common/pageLayout.style';
 
 function Unauthorized() {
   const navigate = useNavigate();

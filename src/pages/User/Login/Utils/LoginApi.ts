@@ -1,5 +1,5 @@
 import axios from '@config/axios/axiosCustom';
-import { ILoginInfo, IUser } from './LoginType';
+import { ILoginInfo, IUser } from './loginType';
 
 export const LoginUserApi = async (LoginInput: ILoginInfo) => {
   const response = await axios.post<IUser>(

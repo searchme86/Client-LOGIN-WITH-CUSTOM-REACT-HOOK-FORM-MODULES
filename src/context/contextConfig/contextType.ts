@@ -1,5 +1,5 @@
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
-import { IUser } from '@pages/User/Login/Utils/LoginType';
+import { IUser } from '@pages/user/login/utils/loginType';
 
 export type contextStateType = {
   authUser: IUser;

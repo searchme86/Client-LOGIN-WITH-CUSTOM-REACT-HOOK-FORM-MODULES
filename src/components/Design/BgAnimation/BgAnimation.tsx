@@ -10,7 +10,7 @@ import {
   BgTypeG,
   BgTypeH,
   BgTypeI,
-} from './BgAnimation.style';
+} from './bgAnimation.style';
 
 function BgAnimation() {
   return (

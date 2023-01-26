@@ -1,7 +1,7 @@
 import React from 'react';
-import RegisterContainer from './View/RegisterContainer';
-import RegisterHead from './View/RegisterHead';
-import RegisterForm from './Form/RegisterForm';
+import RegisterContainer from './view/registerContainer';
+import RegisterHead from './view/registerHead';
+import RegisterForm from './form/registerForm';
 
 function Register() {
   return (

@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 
-import { LoginWrapper, LoginBgShapehape } from './Login.style';
+import { LoginWrapper, LoginBgShapehape } from './login.style';
 
-import BgAnimation from '@components/Design/BgAnimation/BgAnimation';
+import BgAnimation from '@components/design/bgAnimation/bgAnimation';
 
 interface ChildProps {
   children: ReactNode;

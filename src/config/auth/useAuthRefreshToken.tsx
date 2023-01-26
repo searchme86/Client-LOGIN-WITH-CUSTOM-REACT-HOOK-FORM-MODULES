@@ -2,7 +2,7 @@ import axios from '@config/axios/axiosCustom';
 import { AxiosResponse, AxiosError } from 'axios';
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
-import { IUser } from '@pages/User/Login/Utils/LoginType';
+import { IUser } from '@pages/user/login/utils/loginType';
 
 function useRefreshToken() {
   const { dispatch } = useStateContext();

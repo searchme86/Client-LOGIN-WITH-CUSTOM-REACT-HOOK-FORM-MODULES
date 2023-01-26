@@ -1,6 +1,6 @@
 import axios from '@config/axios/axiosCustom';
 
-import { IRegisterFormData } from './RegisterType';
+import { IRegisterFormData } from './registerType';
 
 export const RegisterFormApi = async (formData: FormData) => {
   const response = await axios.post<IRegisterFormData>('/register', formData, {

@@ -1,4 +1,4 @@
-import { RegisterSchemaType } from './RegisterSchema';
+import { RegisterSchemaType } from './registerSchema';
 
 export const RegisterFormDefaultData: RegisterSchemaType = {
   userImage: '',

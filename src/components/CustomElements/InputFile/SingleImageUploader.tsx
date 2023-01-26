@@ -10,11 +10,11 @@ import {
   ImageClickBtn,
   ImageTitle,
   ImageErrorMessage,
-} from '@components/styles/Image.style';
+} from '@components/styles/image.style';
 import {
   DisplayContainer,
   DisplayItem,
-} from '@components/styles/Display.style';
+} from '@components/styles/display.style';
 
 import upload from '@assets/Images/upload.png';
 

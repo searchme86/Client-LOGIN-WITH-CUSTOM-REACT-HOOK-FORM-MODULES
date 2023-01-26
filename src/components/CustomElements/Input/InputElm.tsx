@@ -1,13 +1,13 @@
 import React, { HTMLInputTypeAttribute } from 'react';
 import { useFormContext } from 'react-hook-form';
-import TFormErrorMessage from '../UtilElements/FormErrorMessage';
+import TFormErrorMessage from '../utilElements/formErrorMessage';
 
 import {
   InputContainer,
   InputWrapper,
   Input,
   InputLabel,
-} from '@components/styles/Input.style';
+} from '@components/styles/input.style';
 
 function InputElm<Model extends Record<string, any>>({
   zodValidationKey,

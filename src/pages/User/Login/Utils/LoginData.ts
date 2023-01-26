@@ -1,4 +1,4 @@
-import { LoginSchemaType } from './LoginSchema';
+import { LoginSchemaType } from './loginSchema';
 
 export const LoginFormDefaultData: LoginSchemaType = {
   LoginUserNickname: '',

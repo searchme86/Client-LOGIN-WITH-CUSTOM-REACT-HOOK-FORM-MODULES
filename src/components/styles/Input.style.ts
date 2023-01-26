@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { StyleProps } from './common/Style.type';
-import { hiddenTextStyle } from './common/Common.style';
+import { StyleProps } from './common/style.type';
+import { hiddenTextStyle } from './common/common.style';
 
 export const InputContainer = styled.div<StyleProps>`
   width: ${({ width }) => width};

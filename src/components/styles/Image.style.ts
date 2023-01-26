@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { StyleProps } from './common/Style.type';
+import { StyleProps } from './common/style.type';
 
 export const ImageContainer = styled.div<StyleProps>`
   width: ${({ width }) => width};

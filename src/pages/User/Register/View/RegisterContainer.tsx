@@ -5,10 +5,10 @@ import {
   RegisterBox,
   RegisterBackground,
   RegisterForm,
-} from './Register.style';
+} from './register.style';
 
-import BgAnimation from '@components/Design/BgAnimation/BgAnimation';
-import { OffScreenTitle } from '@components/styles/common/Common.style';
+import BgAnimation from '@components/design/bgAnimation/bgAnimation';
+import { OffScreenTitle } from '@components/styles/common/common.style';
 
 interface ContainerProps {
   children: ReactNode;

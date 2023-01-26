@@ -2,7 +2,7 @@ import React from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
-import { RegisterFormApi } from '../Utils/RegisterApi';
+import { RegisterFormApi } from '../utils/registerApi';
 
 function RegisterQuery() {
   const RegisterQuery = useMutation(

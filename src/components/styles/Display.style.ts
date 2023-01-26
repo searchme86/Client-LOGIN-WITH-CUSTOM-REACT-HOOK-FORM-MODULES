@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyleProps } from './common/Style.type';
+import { StyleProps } from './common/style.type';
 
 export const UlList = styled.ul<StyleProps>`
   display: ${({ display }) => display || `block`};

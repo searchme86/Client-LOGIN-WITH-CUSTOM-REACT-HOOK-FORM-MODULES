@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { Button } from '@components/styles/Button.style';
+import { Button } from '@components/styles/button.style';
 
 function SubmitBtnElm({
   display,

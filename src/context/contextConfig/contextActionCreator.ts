@@ -1,6 +1,6 @@
 import { contextReducerAction } from '@context/contextConfig/contextAction';
-import { IUser } from '@pages/User/Login/Utils/LoginType';
-import { ApiResponse } from '@pages/User/Login/Utils/LoginType';
+import { IUser } from '@pages/user/login/utils/loginType';
+import { ApiResponse } from '@pages/user/login/utils/loginType';
 
 export const contextActionCreator = {
   addErrorMessage: (error: ApiResponse) => ({

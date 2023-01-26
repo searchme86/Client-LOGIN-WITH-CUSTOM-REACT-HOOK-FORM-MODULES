@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginAlertArea, LoginToSignUp, LoginToSignUpMsg } from './Login.style';
+import { LoginAlertArea, LoginToSignUp, LoginToSignUpMsg } from './login.style';
 
 function LoginBottom() {
   return (

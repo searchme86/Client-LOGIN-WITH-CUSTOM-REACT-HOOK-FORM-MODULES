@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useStateContext } from '@context/index';
 import { contextActionCreator } from '@context/contextConfig/contextActionCreator';
 
-import LoginQuery from '@pages/User/Login/Query/LoginQuery';
+import LoginQuery from '@pages/user/login/query/loginQuery';
 
-import { HeaderContainer } from '@components/styles/common/PageLayout.style';
+import { HeaderContainer } from '@components/styles/common/pageLayout.style';
 import {
   HeaderLogoSection,
   HeaderLogo,
@@ -14,7 +14,7 @@ import {
   HeaderMuenu,
   HeaderMenuList,
   HeaderMenuLi,
-} from './NavBar.style';
+} from './navBar.style';
 
 import { FaBars } from 'react-icons/fa';
 import { links } from './data';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Footer from '@components/Design/Footer/Footer';
-import Navbar from '@components/Design/Navbar/Navbar';
+import Footer from '@components/design/footer/footer';
+import Navbar from '@components/design/navbar/navbar';
 
-import { MainContainer } from '@components/styles/common/PageLayout.style';
+import { MainContainer } from '@components/styles/common/pageLayout.style';
 
 function Layout() {
   return (
