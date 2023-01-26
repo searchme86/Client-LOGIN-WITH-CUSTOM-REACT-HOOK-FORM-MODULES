@@ -9,7 +9,7 @@ import {
   InputLabel,
 } from '@components/styles/input.style';
 
-function InputElement<Model extends Record<string, any>>({
+function InputElement<Model extends Record<string, string>>({
   zodValidationKey,
   LabelTxt,
   LabelHide,

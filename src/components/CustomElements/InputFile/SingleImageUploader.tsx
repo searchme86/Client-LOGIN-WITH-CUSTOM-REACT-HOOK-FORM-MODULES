@@ -18,7 +18,7 @@ import {
 
 import upload from '@assets/Images/upload.png';
 
-function SingleImageUploader<Model extends Record<string, any>>({
+function SingleImageUploader<Model extends Record<string, string>>({
   zodValidationKey,
   btnTxt,
 }: {

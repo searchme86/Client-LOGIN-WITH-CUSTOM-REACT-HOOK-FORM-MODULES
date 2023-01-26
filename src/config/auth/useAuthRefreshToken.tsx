@@ -9,7 +9,7 @@ function useRefreshToken() {
 
   const refresh = async () => {
     try {
-      const userRefreshedInfo: AxiosResponse<IUser, any> = await axios.get(
+      const userRefreshedInfo: AxiosResponse<IUser, string> = await axios.get(
         '/refresh',
         {
           withCredentials: true,

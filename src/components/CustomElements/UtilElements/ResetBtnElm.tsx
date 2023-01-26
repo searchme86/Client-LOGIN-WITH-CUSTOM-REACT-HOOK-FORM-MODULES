@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 
 import { Button } from '@components/styles/button.style';
 
-function ResetBtnElm<DefaultValue extends Record<string, any>>({
+function ResetBtnElm<DefaultValue extends Record<string, string>>({
   width,
   values,
   btnTxt,
