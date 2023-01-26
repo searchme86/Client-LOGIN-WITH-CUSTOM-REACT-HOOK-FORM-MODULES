@@ -9,7 +9,7 @@ import {
   InputLabel,
 } from '@components/styles/input.style';
 
-function InputElm<Model extends Record<string, any>>({
+function InputElement<Model extends Record<string, any>>({
   zodValidationKey,
   LabelTxt,
   LabelHide,
@@ -75,4 +75,4 @@ function InputElm<Model extends Record<string, any>>({
   );
 }
 
-export default InputElm;
+export default InputElement;

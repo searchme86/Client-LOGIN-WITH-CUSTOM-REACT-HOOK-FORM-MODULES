@@ -100,7 +100,7 @@
  ┣ 📂Form
  ┃ ┗ 📜FormElement.tsx
  ┣ 📂Input
- ┃ ┗ 📜InputElm.tsx
+ ┃ ┗ 📜InputElement.tsx
  ┣ 📂InputFile
  ┃ ┗ 📜SingleImageUploader.tsx
  ┗ 📂UtilElements
@@ -113,7 +113,7 @@
 |         파일명          |                                  내용                                   | 엘리먼트(HTML) 종류  |                                용도                                 |
 | :---------------------: | :---------------------------------------------------------------------: | :------------------: | :-----------------------------------------------------------------: |
 |     FormElement.tsx     |                 React Hook Form이 적용된, form 컴포넌트                 |         form         |               모든 폼 엘리먼트를 감싸는 부모 컴포넌트               |
-|      InputElm.tsx       |                React Hook Form이 적용된, input 컴포넌트                 |    input type="?"    | props에 따라 input type값이 변경 (예: type="password", type="text") |
+|    InputElement.tsx     |                React Hook Form이 적용된, input 컴포넌트                 |    input type="?"    | props에 따라 input type값이 변경 (예: type="password", type="text") |
 | SingleImageUploader.tsx |              하나(Single)의 이미지(Image) 업로드 컴포넌트               |  input type="file"   |                            이미지 업로드                            |
 |  FormErrorMessage.tsx   |           React Hook Form에서 에러 메세지를 반환하는 컴포넌트           |          p           |                        에러메세지를 보여주기                        |
 |       PreElm.tsx        | React Hook Form에서 watch메서드로 폼 입력한 값을 미리 보여주는 컴포넌트 |         pre          |                          입력 값 미리보기                           |
@@ -583,7 +583,7 @@ export default SingleImageUploader;
  *
 */
 
-function InputElm<Model extends Record<string, any>>({
+function InputElement<Model extends Record<string, any>>({
   zodValidationKey,
   LabelTxt,
   LabelHide,
@@ -649,7 +649,7 @@ function InputElm<Model extends Record<string, any>>({
   );
 }
 
-export default InputElm;
+export default InputElement;
 
 ```
 
@@ -674,7 +674,7 @@ export default InputElm;
  *
 */
 
- <InputElm<RegisterSchemaType>
+ <InputElement<RegisterSchemaType>
   zodValidationKey="userNickName"
   LabelTxt="닉네임"
   labelWeight={500}

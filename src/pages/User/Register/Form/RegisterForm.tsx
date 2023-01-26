@@ -2,7 +2,7 @@ import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
 
 import FormElement from '@components/customElements/form/formElement';
-import InputElm from '@components/customElements/input/InputElm';
+import InputElement from '@components/customElements/input/inputElement';
 import SingleImageUploader from '@components/customElements/inputFile/singleImageUploader';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
 import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
@@ -115,7 +115,7 @@ function RegisterForm() {
         </UlLi>
         {/* 유저 닉네임 */}
         <UlLi margin="0 0 14px 0">
-          <InputElm<RegisterSchemaType>
+          <InputElement<RegisterSchemaType>
             zodValidationKey="userNickName"
             LabelTxt="닉네임"
             labelWeight={500}
@@ -131,7 +131,7 @@ function RegisterForm() {
         </UlLi>
         {/* 유저 이메일  */}
         <UlLi margin="0 0 14px 0">
-          <InputElm<RegisterSchemaType>
+          <InputElement<RegisterSchemaType>
             zodValidationKey="userEmail"
             LabelTxt="이메일"
             labelWeight={500}
@@ -148,7 +148,7 @@ function RegisterForm() {
         </UlLi>
         {/* 유저 비밀번호 */}
         <UlLi margin="0 0 14px 0">
-          <InputElm<RegisterSchemaType>
+          <InputElement<RegisterSchemaType>
             zodValidationKey="userPassword"
             LabelTxt="비밀번호"
             labelWeight={500}
@@ -166,7 +166,7 @@ function RegisterForm() {
           <List />
         </UlLi>
         <UlLi margin="0 0 15px 0">
-          <InputElm<RegisterSchemaType>
+          <InputElement<RegisterSchemaType>
             zodValidationKey="userConfirmPassword"
             LabelTxt="비밀번호 확인"
             labelWeight={500}

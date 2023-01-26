@@ -1,7 +1,7 @@
 import { SubmitHandler } from 'react-hook-form';
 
 import FormElement from '@components/customElements/form/formElement';
-import InputElm from '@components/customElements/input/InputElm';
+import InputElement from '@components/customElements/input/inputElement';
 import SubmitBtnElm from '@components/customElements/utilElements/submitBtnElm';
 import ResetBtnElm from '@components/customElements/utilElements/resetBtnElm';
 import {
@@ -32,7 +32,7 @@ function LoginForm() {
     >
       <UlList>
         <UlLi margin="0 0 10px 0">
-          <InputElm<LoginSchemaType>
+          <InputElement<LoginSchemaType>
             zodValidationKey="LoginUserNickname"
             LabelTxt="닉네임"
             LabelHide={true}
@@ -49,7 +49,7 @@ function LoginForm() {
           />
         </UlLi>
         <UlLi>
-          <InputElm<LoginSchemaType>
+          <InputElement<LoginSchemaType>
             zodValidationKey="LoginUserPassword"
             LabelTxt="닉네임"
             LabelHide={true}
