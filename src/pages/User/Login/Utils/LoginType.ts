@@ -12,6 +12,6 @@ export interface ILoginInfo extends ILoginUser {
   LoginUserPassword: string;
 }
 
-export interface ApiResponse {
+export interface IApiResponse {
   message: string;
 }

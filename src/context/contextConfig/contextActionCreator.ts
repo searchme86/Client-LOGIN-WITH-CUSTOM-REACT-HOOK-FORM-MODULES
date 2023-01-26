@@ -1,9 +1,9 @@
 import { contextReducerAction } from '@context/contextConfig/contextAction';
 import { IUser } from '@pages/user/login/utils/loginType';
-import { ApiResponse } from '@pages/user/login/utils/loginType';
+import { IApiResponse } from '@pages/user/login/utils/loginType';
 
 export const contextActionCreator = {
-  addErrorMessage: (error: ApiResponse) => ({
+  addErrorMessage: (error: IApiResponse) => ({
     type: contextReducerAction.ADD_ERRORMESSAGE,
     payload: { message: error.message },
   }),
