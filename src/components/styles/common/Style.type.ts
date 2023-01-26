@@ -3,9 +3,9 @@ type justifyContentType =
   | 'space-between'
   | 'space-around'
   | 'space-evenly';
-type alignItemsType = 'start' | 'center' | 'start' | 'end';
-type flexDirection = 'column' | 'column-reverse' | 'row' | 'row-reverse';
-type textAlign = 'center' | 'left' | 'right';
+type alignItemsType = 'start' | 'center' | 'end';
+type flexDirectionType = 'column' | 'column-reverse' | 'row' | 'row-reverse';
+type textAlignType = 'center' | 'left' | 'right';
 
 export interface StyleProps {
   display?: string;
@@ -15,12 +15,12 @@ export interface StyleProps {
   margin?: string;
   bgColor?: string;
   fontSize?: string;
+  fontColor?: string;
   fontWeight?: number;
   LabelHide?: boolean;
   borderRadius?: string;
   justifyContent?: justifyContentType;
   alignItems?: alignItemsType;
-  flexDirection?: flexDirection;
-  textAlign?: textAlign;
-  fontColor?: string;
+  flexDirection?: flexDirectionType;
+  textAlign?: textAlignType;
 }
