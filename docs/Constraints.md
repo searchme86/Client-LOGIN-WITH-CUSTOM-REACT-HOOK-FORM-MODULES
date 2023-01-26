@@ -1,8 +1,6 @@
 ## 다음 내용들을 다룹니다.
 
-### 1. 🐛 버그 및 한계 / 시도했지만 실패
-
-### 2. 👀 수정사항 및 향후 계획
+### 🐛 버그 및 한계 / 시도했지만 실패
 
 ---
 
@@ -41,17 +39,3 @@
 
 - 현재 Register / Login 만 가능함
 - Auth 체크가 되질 않아, Protected Auth Router가 작동않됨
-
-## 👀 수정사항 및 향후 계획
-
-### 1. React Hook Form 한계점 보완
-
-### 2. Auth & RefreshToken 구현
-
-### 3. 프로젝트 스타일, tailwindCSS로 변경
-
-### 4. 프로젝트의 상태관리, useReducer에 immer 적용
-
-### 5. Axios Error message 처리
-
-### 6. 배포
