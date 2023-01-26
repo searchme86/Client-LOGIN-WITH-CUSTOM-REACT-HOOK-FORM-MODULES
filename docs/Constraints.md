@@ -12,8 +12,8 @@
 
       - React Hook Form에서 Input, onChange 이벤트에 해당하는 핸들러 적용을 더 연구해야함
 
-      - input type에 조건식을 두어, 값이 true/false에 따라 input type="text" / input type="passowrd"로 변경기능 추가 못함
-        예) 인풋 비밀번호, 좌우 측 편에 버튼 클릭 시, 비밀번호 보이기
+      - input type에 조건식을 두어, 값이 true/false에 따라, input type="text" / input type="passowrd"로 변경기능 추가 못함
+        - 목표: 인풋 비밀번호, 우측에 버튼이 있고, 이를 클릭 시, 비밀번호 보이기 토글기능
 
 - 🔧 Axios Error Message 처리
 
