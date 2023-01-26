@@ -519,7 +519,7 @@ function SingleImageUploader<Model extends Record<string, any>>({
           padding="10px"
           margin="auto 0 0 0"
         >
-          <ImageClickBtn htmlFor="fileupload">{btnTxt}</ImageClickBtn>
+          <ImageButton htmlFor="fileupload">{btnTxt}</ImageButton>
           {watch(zodValidationKey.toString()) &&
           watch(zodValidationKey.toString())[0] ? (
             <ImageTitle>

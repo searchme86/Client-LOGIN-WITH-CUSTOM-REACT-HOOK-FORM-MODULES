@@ -29,7 +29,7 @@ export const ImageElmn = styled.img`
   height: auto;
 `;
 
-export const ImageClickBtn = styled.label<StyleProps>`
+export const ImageButton = styled.label<StyleProps>`
   text-align: center;
   width: 85px;
   margin: 0 auto;
