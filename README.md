@@ -9,18 +9,18 @@
 
 ## ⌨️ 프로젝트 개요
 
-|                                  카테고리                                  |        내용         |
-| :------------------------------------------------------------------------: | :-----------------: |
-|                                 코드 Role                                  |     클라이언트      |
-|                             프로젝트 코드 구현                             | 11.16 ~ 12.30. 2022 |
-|                             프로젝트 리펙토링                              |  01.02.2022 ~ 현재  |
-|                              프로젝트 기여도                               |      본인 100%      |
-|                                 클라이언트                                 |      TS React       |
-| [백엔드](https://github.com/searchme86/Server_JS-Express-mongoDB '백엔드') |      JS Nodejs      |
+|                                                카테고리                                                |        내용         |
+| :----------------------------------------------------------------------------------------------------: | :-----------------: |
+|                                               코드 Role                                                |     클라이언트      |
+|                                           프로젝트 코드 구현                                           | 11.16 ~ 12.30. 2022 |
+|                                           프로젝트 리펙토링                                            |  01.02.2022 ~ 현재  |
+|                                            프로젝트 기여도                                             |      본인 100%      |
+|                                               클라이언트                                               |      TS React       |
+| [백엔드](https://github.com/searchme86/Server-LOGIN-WITH-CUSTOM-REACT-HOOK-FORM-MODULES '백엔드 코드') |      JS Nodejs      |
 
 ## 👋🏻 프로젝트 제목
 
-[React Hook Form](https://react-hook-form.com/)과 [Zod](https://github.com/colinhacks/zod 'zod')가 기본 적용된, 폼 엘리먼트(form, input) 구현
+### [React Hook Form](https://react-hook-form.com/)과 [Zod](https://github.com/colinhacks/zod 'zod')가 기본 적용된, 폼 엘리먼트(form, input) 구현과 활용(로그인)
 
 ## ❕ 프로젝트 시작하게 된 계기
 
@@ -64,7 +64,7 @@
   - 2-1. (FormElement 컴포넌트 안에서) 필요한 컴포넌트 를 가져와 사용가능
     | 타입 | 용도 |
     | :-------------------: | :----------------------------------------: |
-    | input type="file" | SingleImageUploader.tsx(input file="file") |
+    | input type="file" | SingleImageUploader.tsx (input file="file") |
     | input type="text" | Input 텍스트 입력 (예 : inputType="text") |
     | input type="password" | Input 비밀번호 (예: inputType="password") |
 
@@ -88,8 +88,8 @@
     </Li>
     ```
 
-    > Li : Styled-components로 만든 HTML, li 엘리먼트
-    > InputElement : React Hook Form과 Zod가 적용된 커스텀 Input 엘리먼트
+    - Li : Styled-components로 만든 HTML, li 엘리먼트
+    - InputElement : React Hook Form과 Zod가 적용된 커스텀 Input 엘리먼트
 
   - 2-2. Styled-components에 props를 받아, 원하는 스타일로 변경 가능
 
