@@ -1,35 +1,39 @@
-## 🐛 버그 및 한계 / 시도했지만 실패
+## 🐛 버그 및 한계
 
-### React Hook Form
+- 🪛 React Hook Form
 
-### 1. React Hook Form 엘리먼트 구현에 집중하게 되어 Auth 구현을 완벽히 처리 못함
+  - resetElement
 
-### 2. Reset 버튼 엘리먼트
+    - Reset 초기화 버튼을 누르면, input type="file" 값이 삭제되지 않음
 
-- Reset초기화 버튼을 누르면 input type="file" 값이 삭제되지 않음
+  - InputElement
 
-### 3. Input 엘리먼트
+    - Input 폼 값의 입력 지연을 위한, useDebounce 훅을 적용하지 못함
 
-- debounce 훅을 적용하지 못함
-- type="password" / type="text" 의 type을 변경하는 버튼 추가 실패
-  - 입력한 비밀번호 보기 버튼 기능을 넣기 위해, type={}에 조건식을 통해 password/type으로, 변경하려 했지만 실패함
+      - React Hook Form에서 Input, onChange 이벤트에 해당하는 핸들러 적용을 더 연구해야함
 
-### 그 외
+      - input type에 조건식을 두어, 값이 true/false에 따라 input type="text" / input type="passowrd"로 변경기능 추가 못함
+        예) 인풋 비밀번호, 좌우 측 편에 버튼 클릭 시, 비밀번호 보이기
 
-### 1. 컴포넌트 분리
+- 🔧 Axios Error Message 처리
 
-- File 및 FormData를 각각 담당하는 컴포넌트를 만드려 했지만, [Hook의 규칙](https://ko.reactjs.org/docs/hooks-rules.html 'Hook의 규칙')에 위배되기 때문에, 따로 컴포넌트를 만들지 않고, onSubmit 함수에 모두 정의함
-  - 'Hook을 일반적인 JavaScript 함수에서 호출하지 마세요.'
-    - React Hook Form의 모든 data는 onSubmit함수에서 생성되기 때문에, 해당 함수 외부에서는 폼 데이터 접근이 불가능함
+  - 백엔드에서 반횐되는 Axios Error Message를 RegisterForm/LoginForm에서 보여주지 못함
 
-### 2. Axios Error Message
+    - Axios Error 타입을 string에 할당? 하는 방안을 연구해야함
 
-- 백엔드에서 반횐되는 Axios Error Message를 RegisterForm/LoginForm에서 보여주지 못함
+      - 이전 포트폴리오(JS리액트)에서는 타입 정보를 확인하지 않기 때문에, string으로 인식하여 해당 Axios Error Message 저장해 사용했음
+      - TS리액트에서 Axios Error는 'Axios ERROR'라는 타입이 존재해, 'Axios ERROR'를 'string'에 할당 할 수 없음
 
-  - 이전 포트폴리오(JS리액트)에서는 타입 정보를 확인하지 않기 때문에, string으로 인식하여 해당 Axios Error Message 저장이 가능함
-  - TS리액트에서 Axios Error는 'Axios ERROR'라는 타입이 존재해, 'Axios ERROR'를 'string'에 할당 할 수 없음
+- 🔨 Authentication(로그인) & Authorization(권한) with Axios interceptor
 
-### 3. Auth & RefreshToken
+  - React Hook Form 엘리먼트 구현에 많은 시간을 소요해, Auth 구현을 완벽히 처리 못함
+  - 현재 등록하기 & 로그인 만 가능
 
-- 현재 Register / Login 만 가능함
-- Auth 체크가 되질 않아, Protected Auth Router가 작동않됨
+  - Authentication(로그인)
+
+    - refresh Token을 요청하는 React-Query 구현 못함
+
+  - Authorization(권한)
+
+    - role에 따른 유저 라우트 filter 구현 못함
+      - Protected Auth Router

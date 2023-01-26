@@ -49,14 +49,6 @@
           - 리액트에서 'base64'을 'encode', 'decode' 방법
             - > import { decode as base64_decode, encode as base64_encode } from 'base-64';
 
-    - InputElement 구현
-
-      - (구현 실패) 입력지연을 위한 useDebounce 훅을 InputElement에 적용하는 법
-
-        - React Hook Form에서 input이 onChange 이벤트 일 경우, useDebounce 훅을 넣는 방법을 연구해야함
-
-      - (구현 실패) input type에 조건식을 두어, true/false에 따라 input type="text" / input type="passowrd"로 변경
-
 - 2. 🛠️ TypeScript
 
   - Context(& useReducer)
