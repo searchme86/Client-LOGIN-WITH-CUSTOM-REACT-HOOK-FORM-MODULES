@@ -1,51 +1,62 @@
-## 😭 작업 중 어려웠던 점 / 배운점
+## 😭 고민된 점 / 어려웠던 점 / 배운 점
 
-- 1. Custom React Hook Form 구현
+- 1. 🧱 CUSTOM-REACT-HOOK-FORM-MODULES
 
-  - Custom React Hook Form 프로젝트 정의
+  - ⚙️ 프로젝트 기획 및 목표 수립
 
-    - 어느정도 까지 컴포넌트의 추상성 level을 정해야 할 지 고민이었음
-      - 컴포넌트 중첩에 대해 고민하여, forwardRef와 ref에 대해 학습함
-        > <input type={type} ref={ref} {...HTMLAttributesProps} />
+    - 컴포넌트의 기능을 어떤 단계(level)까지 [추상화](https://dokhakdubini.tistory.com/395 '추상화 정의') 할 지 정의
 
-  - Custom React Hook Form 프로젝트 구현
+      - 예) 커스텀 버튼 컴포넌트를 만들 지, HTML 버튼 엘리먼트를 사용 할 지
+
+    - 중첩된 컴포넌트 설계를 고려하면서, forwardRef와 ref에 대해 학습함
+
+      > <input type={type} ref={ref} {...HTMLAttributesProps} />
+
+    - 향후 유지보수 고려해, 코드 주석만 있다면, 누구나 이해할 수 있는 정도의 코드
+
+    - TS 리액트를 통해 코드 안정성 확보
+
+  - 🔧 프로젝트 구현
 
     - TS로 마이그레이션
+
       - 대부분 참고 가능한 코드가 JS 리액트
         - 타입(Type)정보가 없거나 코드추론이 어려운 변수가 있어서, 이론측면으로 코드 활용
+
     - zod에서 File 타입의 초깃값(initialState)을 정의
+
       - File의 초깃값이란 것이 있고/없고 있데, 이를 어떻게 표현할지 어려웠음
         - 초깃값을 주지 않는 거로 결정함
 
-  - FormElement 구현
+    - FormElement 구현
 
-    - [훅 규칙](https://ko.reactjs.org/docs/hooks-rules.html '훅 규칙')을 준수하며 컴포넌트 생성
-      - 'Hook을 일반적인 JavaScript 함수에서 호출하지 마세요.'
-      - FormElement의 데이터는 '함수 onRegisterSubmit'에서만 참조 가능 하기 때문에
-        - 다음의 작업들을 컴포넌트로 분리할 수 없고, '함수 onRegisterSubmit' 안에서 모두 실행 해야함
-          - 폼 데이터 (formData) 생성
-          - 이미지 압축(ImageCompression)
-          - 파일 (FileReader) 처리
+      - [훅 규칙](https://ko.reactjs.org/docs/hooks-rules.html '훅 규칙')을 준수하며 컴포넌트 생성
+        - 'Hook을 일반적인 JavaScript 함수에서 호출하지 마세요.'
+        - FormElement의 데이터는 '함수 onRegisterSubmit'에서만 참조 가능 하기 때문에
+          - 다음의 작업들을 컴포넌트로 분리할 수 없고, '함수 onRegisterSubmit' 안에서 모두 실행 해야함
+            - 폼 데이터 (formData) 생성
+            - 이미지 압축(ImageCompression)
+            - 파일 (FileReader) 처리
 
-  - SingleImageUploader 구현
+    - SingleImageUploader 구현
 
-    - watch()를 통해 값을 확인하면, Input type="file"의 value만 빈 객체로 확인됨
-    - 등록된 이미지 미리보기
-      - 'base64', 'blob' 이란 데이터 형식을 경험
-      - 'base64'으로 데이터 (형식) 변환하는 방법
-        - 'encode', 'decode' 개념 경험
-        - 리액트에서 'base64'을 'encode', 'decode' 방법
-          - > import { decode as base64_decode, encode as base64_encode } from 'base-64';
+      - watch()를 통해 값을 확인하면, Input type="file"의 value만 빈 객체로 확인됨
+      - 등록된 이미지 미리보기
+        - 'base64', 'blob' 이란 데이터 형식을 경험
+        - 'base64'으로 데이터 (형식) 변환하는 방법
+          - 'encode', 'decode' 개념 경험
+          - 리액트에서 'base64'을 'encode', 'decode' 방법
+            - > import { decode as base64_decode, encode as base64_encode } from 'base-64';
 
-  - InputElement 구현
+    - InputElement 구현
 
-    - (구현 실패) 입력지연을 위한 useDebounce 훅을 InputElement에 적용하는 법
+      - (구현 실패) 입력지연을 위한 useDebounce 훅을 InputElement에 적용하는 법
 
-      - React Hook Form에서 input이 onChange 이벤트 일 경우, useDebounce 훅을 넣는 방법을 연구해야함
+        - React Hook Form에서 input이 onChange 이벤트 일 경우, useDebounce 훅을 넣는 방법을 연구해야함
 
-    - (구현 실패) input type에 조건식을 두어, true/false에 따라 input type="text" / input type="passowrd"로 변경
+      - (구현 실패) input type에 조건식을 두어, true/false에 따라 input type="text" / input type="passowrd"로 변경
 
-- 2. TypeScript
+- 2. 🛠️ TypeScript
 
   - Context(& useReducer)
 
@@ -61,9 +72,10 @@
 
   - Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
 
-- 3. Styled-components
-  - 어느 수준까지 스타일을 Styled-components로 변경 해야하는지 결정하기 어려움
-  - 공통 스타일 모듈을 만들어 사용해도, 유연성이 부족하여 다시 새로 만들어야 하는 경우 발생
+- 3. ⚱️ Styled-components
+  - 어느 수준까지 스타일을 Styled-components로 변경 해야 하는지 결정하기 어려움
+  - 공통 스타일 모듈을 만들어도, 필요하면 새로 만들어야 하는 경우 발생
+  - 기본 필요하면서 동시에 불필요한 코드 발생
   - 스타일 모듈명(변수명)을 가독성 있게 만들어야 함
 
 ---
