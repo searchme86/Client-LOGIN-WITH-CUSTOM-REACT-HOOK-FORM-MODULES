@@ -6,11 +6,31 @@
 
 ### 3. 📦 폴더구조 및 코드
 
+- 1. 프로젝트 전체 코드
+- 2. 프로젝트 코드 - 커스텀 엘리먼트
+  - 2-1. 프로젝트 코드 - 유저 로그인
+  - 2-2. 프로젝트 코드 - 유저 등록하기
+
 ### 4. 🔮 코드 설명
+
+- (커스텀 엘리먼트) formElement
+
+  - [provider] : formElement.tsx
+  - [consumer] : formElement.tsx / loginSchema.ts / registerSchema.ts / loginForm.tsx / registerForm.tsx
+
+- (페이지) registerForm.tsx
+
+  - [provider] : singleImageUploader.tsx
+  - [consumer] : registerForm.tsx
+
+- (커스텀 엘리먼트) : inputElement
+
+  - [provider] : inputElement.tsx
+  - [consumer] : inputElement.tsx
 
 ---
 
-## 🔧 프로젝트 스펙
+## 🔧 1. 프로젝트 스펙
 
 |                               npm 모듈명                               |               사용목적               |                        사용이유                         |
 | :--------------------------------------------------------------------: | :----------------------------------: | :-----------------------------------------------------: |
@@ -23,7 +43,7 @@
 |                             framer-motion                              |       로그인 페이지 애니메이션       |                로그인 페이지 애니메이션                 |
 |                                  zod                                   |      폼 인풋의 유효성 타입검사       |               폼 인풋 값의 유효성을 검사                |
 
-## 🔬 코드 흐름
+## 🔬 2. 코드 흐름
 
 ### 기본 플로우
 
@@ -49,232 +69,143 @@
 
 ![엑시오스05](https://user-images.githubusercontent.com/47154709/213873828-f4e7e327-081c-41e5-b2dd-ffe1ec49b842.png)
 
-## 📦 폴더구조 및 코드
-
-- 1. 프로젝트 전체 코드
-- 2. 프로젝트 커스텀 엘리먼트 코드
-  - 커스텀 엘리먼트
-  - 커스텀 엘리먼트가 적용된 컴포넌트
-  - React-Query가 적용된 컴포넌트
-  - Zod을 활용한 타입정의 컴포넌트
-  - 로그인/등록 페이지의 뷰 컴포넌트
-- 3. 프로젝트 로그인 코드
-  - Auth 관련 컴포넌트
-  - Axios 관련 컴포넌트
+## 📦 3. 폴더구조 및 코드
 
 ### 1. 프로젝트 전체 코드
 
 ```
 📦src
- ┣ 📂assets
- ┣ 📂components
- ┣ 📂context
- ┣ 📂hooks
- ┣ 📂pages
- ┣ 📂server
- ┣ 📂types
- ┣ 📜.env
- ┣ 📜App.tsx
- ┣ 📜Layout.tsx
- ┣ 📜Router.tsx
- ┗ 📜index.tsx
+┣ 📂assets
+┣ 📂components
+┣ 📂config
+┣ 📂context
+┣ 📂hooks
+┣ 📂pages
+┣ 📂types
+┣ 📜.env
+┣ 📜App.tsx
+┣ 📜index.tsx
+┣ 📜layout.tsx
+┗ 📜router.tsx
 ```
 
-|   폴더명   |                        내용                         |
-| :--------: | :-------------------------------------------------: |
-|   assets   |                       스타일                        |
-| components |  커스텀 엘리먼트와 Navbar, Footer와 같은 컴포넌트   |
-|  context   |           컨텍스트, 프로젝트 상태를 저장            |
-|   hooks    |             공통으로 사용하는 공통 hook             |
-|   pages    |     프로젝트 페이지(로그인 페이지/ 등록 페이지)     |
-|   server   |            axios와 auth 및 토큰 미들웨어            |
-|   types    |        env에서 사용하는 데이터의 type을 정의        |
-| Layout.tsx | 페이지의 기본 레이아웃을 정의함, outlet 기능 포함됨 |
-| Router.tsx |        프로젝트 라우트를 따로 분리해 정의함         |
-| index.tsx  |                 프로젝트 기본 진입                  |
+|   폴더명   |                                              내용                                               |
+| :--------: | :---------------------------------------------------------------------------------------------: |
+|   assets   |                                           이미지 파일                                           |
+| components | customElements, design(디자인 컴포넌트), <br/> styles(styled-components로 만든 스타일 컴포넌트) |
+|   config   |                                   Auth와 Axios 관련 파일 관리                                   |
+|  context   |                                 컨텍스트, 프로젝트 상태를 저장                                  |
+|   hooks    |                                   공통으로 사용하는 공통 hook                                   |
+|   pages    |                           프로젝트 페이지(로그인 페이지/ 등록 페이지)                           |
+|   types    |                              env에서 사용하는 데이터의 type을 정의                              |
+|    .env    |                                        프로젝트 환경변수                                        |
+| layout.tsx |                       페이지의 기본 레이아웃을 정의함, outlet 기능 포함됨                       |
+| router.tsx |                              프로젝트 라우트를 따로 분리해 정의함                               |
+| index.tsx  |                                       프로젝트 기본 진입                                        |
 
 ### 2. 프로젝트 코드 - 커스텀 엘리먼트
 
 ```
 📦customElements
- ┣ 📂Form
- ┃ ┗ 📜FormElement.tsx
- ┣ 📂Input
- ┃ ┗ 📜InputElement.tsx
- ┣ 📂InputFile
- ┃ ┗ 📜SingleImageUploader.tsx
- ┗ 📂UtilElements
- ┃ ┣ 📜FormErrorMessage.tsx
- ┃ ┣ 📜PreElm.tsx
- ┃ ┣ 📜ResetBtnElm.tsx
- ┃ ┗ 📜SubmitBtnElm.tsx
+┣ 📂form
+┃ ┗ 📜formElement.tsx
+┣ 📂input
+┃ ┗ 📜inputElement.tsx
+┣ 📂inputFile
+┃ ┗ 📜singleImageUploader.tsx
+┗ 📂utilElements
+┃ ┣ 📜formErrorMessage.tsx
+┃ ┣ 📜preElm.tsx
+┃ ┣ 📜resetBtnElm.tsx
+┃ ┗ 📜submitBtnElm.tsx
 ```
 
-|         파일명          |                                  내용                                   | 엘리먼트(HTML) 종류  |                                용도                                 |
-| :---------------------: | :---------------------------------------------------------------------: | :------------------: | :-----------------------------------------------------------------: |
-|     FormElement.tsx     |                 React Hook Form이 적용된, form 컴포넌트                 |         form         |               모든 폼 엘리먼트를 감싸는 부모 컴포넌트               |
-|    InputElement.tsx     |                React Hook Form이 적용된, input 컴포넌트                 |    input type="?"    | props에 따라 input type값이 변경 (예: type="password", type="text") |
-| SingleImageUploader.tsx |              하나(Single)의 이미지(Image) 업로드 컴포넌트               |  input type="file"   |                            이미지 업로드                            |
-|  FormErrorMessage.tsx   |           React Hook Form에서 에러 메세지를 반환하는 컴포넌트           |          p           |                        에러메세지를 보여주기                        |
-|       PreElm.tsx        | React Hook Form에서 watch메서드로 폼 입력한 값을 미리 보여주는 컴포넌트 |         pre          |                          입력 값 미리보기                           |
-|     ResetBtnElm.tsx     |        React Hook Form에서 입력한 모든 값을 초기화 하는 컴포넌트        | button type="button" |                            입력값 초기화                            |
-|    SubmitBtnElm.tsx     |        React Hook Form에서 입력한 모든 값을 submit 하는 컴포넌트        | button type="reset"  |                           입력 값 Submit                            |
+|         파일명          |    내용 (React Hook Form / Zod가 적용된)     | 엘리먼트(HTML) 타입  |                                용도                                 |
+| :---------------------: | :------------------------------------------: | :------------------: | :-----------------------------------------------------------------: |
+|     formElement.tsx     |                form 컴포넌트                 |         form         |               모든 폼 엘리먼트를 감싸는 부모 컴포넌트               |
+|    inputElement.tsx     |                input 컴포넌트                |    input type="?"    | props에 따라 input type값이 변경 (예: type="password", type="text") |
+| singleImageUploader.tsx | 하나(Single)의 이미지(Image) 업로드 컴포넌트 |  input type="file"   |                            이미지 업로드                            |
+|  formErrorMessage.tsx   |       에러 메세지를 반환하는 컴포넌트        |          p           |                        에러메세지를 보여주기                        |
+|       preElm.tsx        |    폼 입력한 값을 미리 보여주는 컴포넌트     |         pre          |                          입력 값 미리보기                           |
+|     resetBtnElm.tsx     |       (모든 값을) 초기화 하는 컴포넌트       | button type="button" |                            입력값 초기화                            |
+|    submitBtnElm.tsx     |             submit 하는 컴포넌트             | button type="reset"  |                           입력 값 Submit                            |
 
-### 2-1. 프로젝트 코드 - 커스텀 엘리먼트가 적용된 컴포넌트
-
-```
-📦pages
- ┣ 📂User
- ┃ ┣ 📂Login
- ┃ ┃ ┣ 📂Form
- ┃ ┃ ┃ ┗ 📜LoginForm.tsx
- ┃ ┣ 📂Register
- ┃ ┃ ┣ 📂Form
- ┃ ┃ ┃ ┗ 📜RegisterForm.tsx
-```
-
-|      파일명      |   내용    |
-| :--------------: | :-------: |
-|  LoginForm.tsx   | 로그인 폼 |
-| RegisterForm.tsx |  등록 폼  |
-
-### 2-2. 프로젝트 코드 - React-Query가 적용된 컴포넌트
-
-#### 🗒️ 유저(User)의 로그인(Login)과 등록(Register)액션에 따라 구분해 코드 정리 했습니다.
-
-#### 🗒️ 각 액션에 따른 백앤드 요청을 위해 React-Query도 구분해 정리했습니다.
+### 2-1. 프로젝트 코드 - 유저 로그인
 
 ```
 📦pages
- ┣ 📂User
- ┃ ┣ 📂Login
- ┃ ┃ ┣ 📂Query
- ┃ ┃ ┃ ┗ 📜LoginQuery.tsx
- ┃ ┃ ┣ 📂Utils
- ┃ ┃ ┃ ┣ 📜LoginApi.ts
- ┃ ┣ 📂Register
- ┃ ┃ ┣ 📂Query
- ┃ ┃ ┃ ┗ 📜RegisterQuery.tsx
- ┃ ┃ ┣ 📂Utils
- ┃ ┃ ┃ ┣ 📜RegisterApi.ts
-```
-
-|      파일명       |                                   내용                                   |
-| :---------------: | :----------------------------------------------------------------------: |
-|  LoginQuery.tsx   |    LoginApi에서 정의한 Axios 요청을 활용한 Login관련 React-Query 코드    |
-|    LoginApi.ts    |                       Login 관련한 Axios 요청코드                        |
-| RegisterQuery.tsx | RegisterApi에서 정의한 Axios 요청을 활용한 Register관련 React-Query 코드 |
-|  RegisterApi.ts   |                      Register 관련한 Axios 요청코드                      |
-
-### 2-3. 프로젝트 코드 - Zod을 활용한 타입정의 컴포넌트
-
-```
-📦pages
- ┣ 📂User
- ┃ ┣ 📂Login
- ┃ ┃ ┣ 📂Utils
- ┃ ┃ ┃ ┣ 📜LoginData.ts
- ┃ ┃ ┃ ┣ 📜LoginSchema.ts
- ┃ ┣ 📂Register
- ┃ ┃ ┣ 📂Utils
- ┃ ┃ ┃ ┣ 📜RegisterData.ts
- ┃ ┃ ┃ ┣ 📜RegisterSchema.ts
-```
-
-|      파일명       |                     내용                      |
-| :---------------: | :-------------------------------------------: |
-|   LoginData.ts    |    로그인 관련 데이터의 default 값을 정의     |
-|  LoginSchema.ts   | 로그인에 사용될 값의 유효성을 검사하는 Schema |
-|  RegisterData.ts  |         등록 관련 데이터의 default 값         |
-| RegisterSchema.ts | 로그인에 사용될 값의 유효성을 검사하는 Schema |
-
-### 2-4. 프로젝트 코드 - 로그인/등록 페이지의 뷰 컴포넌트
-
-```
-📦pages
- ┣ 📂User
- ┃ ┣ 📂Login
- ┃ ┃ ┣ 📂View
- ┃ ┃ ┃ ┣ 📜Login.style.ts
- ┃ ┃ ┃ ┣ 📜LoginBackground.tsx
- ┃ ┃ ┃ ┣ 📜LoginBottom.tsx
- ┃ ┃ ┃ ┣ 📜LoginHeader.tsx
- ┃ ┃ ┃ ┗ 📜LoginMain.tsx
- ┃ ┃ ┗ 📜Login.tsx
- ┃ ┣ 📂Register
- ┃ ┃ ┣ 📂View
- ┃ ┃ ┃ ┣ 📜Register.style.ts
- ┃ ┃ ┃ ┣ 📜RegisterContainer.tsx
- ┃ ┃ ┃ ┗ 📜RegisterHead.tsx
- ┃ ┃ ┗ 📜Register.tsx
+┣ 📂user
+┃ ┣ 📂login
+┃ ┃ ┣ 📂form
+┃ ┃ ┃ ┗ 📜loginForm.tsx
+┃ ┃ ┣ 📂query
+┃ ┃ ┃ ┗ 📜loginQuery.tsx
+┃ ┃ ┣ 📂utils
+┃ ┃ ┃ ┣ 📜loginApi.ts
+┃ ┃ ┃ ┣ 📜loginData.ts
+┃ ┃ ┃ ┣ 📜loginSchema.ts
+┃ ┃ ┃ ┗ 📜loginType.ts
+┃ ┃ ┣ 📂view
+┃ ┃ ┃ ┣ 📜login.style.ts
+┃ ┃ ┃ ┣ 📜loginBackground.tsx
+┃ ┃ ┃ ┣ 📜loginBottom.tsx
+┃ ┃ ┃ ┣ 📜loginHeader.tsx
+┃ ┃ ┃ ┗ 📜loginMain.tsx
+┃ ┃ ┗ 📜login.tsx
 
 ```
 
-|        파일명         |                                               내용                                               |
-| :-------------------: | :----------------------------------------------------------------------------------------------: |
-|    Login.style.ts     |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
-|  LoginBackground.tsx  |                                  로그인 페이지의 레퍼 컴포넌트                                   |
-|    LoginBottom.tsx    | 로그인 페이지의 로그인 버튼 클릭 후, 에러 메세지 및 등록폼으로 이동하는 링크를 반환하는 컴포넌트 |
-|    LoginHeader.tsx    |           로그인 페이지의 헤더 영역으로, fontAwesome 이미지와 제목을 반환하는 컴포넌트           |
-|     LoginMain.tsx     |                                로그인 폼을 반환하는 메인 컴포넌트                                |
-|       Login.tsx       |                     이하 모든 로그인 컴포넌트를 모두 반환하는 레퍼 컴포넌트                      |
-|   Register.style.ts   |               styled-components로 뷰 컴포넌트를 만들때, props로 전달될 타입을 정의               |
-| RegisterContainer.tsx |                            등록 폼 컴포넌트를 담는 등록 메인 컴포넌트                            |
-|   RegisterHead.tsx    |          등록 페이지의 헤더 영역으로, 로그인 페이지로 이동하는 링크를 반환하는 컴포넌트          |
+|       파일명        |               내용                |                 의존                 |
+| :-----------------: | :-------------------------------: | :----------------------------------: |
+|    loginForm.tsx    |             로그인 폼             | 커스텀 엘리먼트, <br/> loginData.ts  |
+|   loginQuery.tsx    | 로그인 api를 담당하는 리액트 쿼리 |             loginApi.ts              |
+|     loginApi.ts     |    로그인 api(로그인/로그아웃)    |             loginType.ts             |
+|    loginData.ts     |           로그인 초기값           |                 zod                  |
+|   loginSchema.ts    |    로그인 인풋값의 유효성관리     |                 zod                  |
+|    loginType.ts     |  로그인에 사용되는 모든 타입정의  |                                      |
+|   login.style.ts    |     로그인 styled-components      |          styled-components           |
+| loginBackground.tsx |             로그인 뷰             |                                      |
+|   loginBottom.tsx   |             로그인 뷰             |                                      |
+|    loginMain.tsx    |             로그인 뷰             | loginBottom.tsx ,loginBackground.tsx |
+|      login.tsx      |           로그인 페이지           |           모든 로그인 파일           |
 
-### 3.프로젝트 로그인 코드
-
-```
-📦server
- ┣ 📂auth
- ┗ 📂axios
-```
-
-### 3-1. 프로젝트 코드 - Auth 관련 컴포넌트
+### 2-2. 프로젝트 코드 - 유저 등록하기
 
 ```
-📦auth
- ┣ 📜AuthMiddleware.tsx
- ┣ 📜AuthRequired.tsx
- ┗ 📜useAuthRefreshToken.tsx
-
-```
-
-|         파일명          |                                 내용                                  | 특이사항 |
-| :---------------------: | :-------------------------------------------------------------------: | :------: |
-|   AuthMiddleware.tsx    |      Auth정보가 있을 경우, children을 반환하는 미들웨어 컴포넌트      |  작업중  |
-|    AuthRequired.tsx     | 토큰정보에서 유저의 Role에 따라 children을 반환하는 미들웨어 컴포넌트 |  작업중  |
-| useAuthRefreshToken.tsx |    서버에 새로운 토큰을 요청하고 이를 context에 저장하는 컴포넌트     |  작업중  |
-
-### 3-2. 프로젝트 코드 - Axios 관련 컴포넌트
-
-```
-📦axios
- ┣ 📂axiosCustom
- ┃ ┣ 📜useAxiosGet.tsx
- ┃ ┗ 📜useAxiosPost.tsx
- ┣ 📂axiosInterceptor
- ┃ ┣ 📜useAxiosInterCeptor.tsx
- ┃ ┣ 📜useAxiosRequest.tsx
- ┃ ┗ 📜useAxiosResponse.tsx
- ┣ 📜axiosCustom.ts
- ┗ 📜axiosType.ts
+📦register
+ ┣ 📂form
+ ┃ ┗ 📜registerForm.tsx
+ ┣ 📂query
+ ┃ ┗ 📜registerQuery.tsx
+ ┣ 📂utils
+ ┃ ┣ 📜registerApi.ts
+ ┃ ┣ 📜registerData.ts
+ ┃ ┣ 📜registerSchema.ts
+ ┃ ┗ 📜registerType.ts
+ ┣ 📂view
+ ┃ ┣ 📜register.style.ts
+ ┃ ┣ 📜registerContainer.tsx
+ ┃ ┗ 📜registerHead.tsx
+ ┗ 📜register.tsx
 
 ```
 
-|         파일명          |                                       내용                                        | 특이사항 |
-| :---------------------: | :-------------------------------------------------------------------------------: | :------: |
-|     useAxiosGet.tsx     |          React-Query 도입 전, Axios Get 액션만 담당하는 커스텀 컴포넌트           | 삭제예정 |
-|    useAxiosPost.tsx     |          React-Query 도입 전, Axios Post 액션만 담당하는 커스텀 컴포넌트          | 삭제예정 |
-| useAxiosInterCeptor.tsx | Request(useAxiosRequest),Response(useAxiosResponse) 함수를 받는 Axios InterCeptor | 보완예정 |
-|   useAxiosRequest.tsx   |                  Axios InterCeptor에서 Request, 요청 로직을 담당                  | 보완예정 |
-|  useAxiosResponse.tsx   |                 Axios InterCeptor에서 Response, 반환 로직을 담당                  | 보완예정 |
-|     axiosCustom.ts      |                               Axios를 커스텀한 코드                               |          |
-|      axiosType.ts       |       Axios를 커스텀하거나 Axios InterCeptor 사용하는데 필요한 타입을 정의        |          |
+|        파일명         |               내용                |                                                            의존                                                            |
+| :-------------------: | :-------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|   registerForm.tsx    |            등록하기 폼            | 커스텀 엘리먼트, <br/> registerData.ts, <br/> useImageCompression훅, <br/> formData, <br/> SubmitBtnElm, <br/> ResetBtnElm |
+|   registerQuery.tsx   | 로그인 api를 담당하는 리액트 쿼리 |                                                       registerApi.ts                                                       |
+|    registerApi.ts     |             등록 api              |                                                      registerType.ts                                                       |
+|    registerData.ts    |            등록 초기값            |                                                            zod                                                             |
+|   registerSchema.ts   |     등록 인풋값의 유효성관리      |                                                            zod                                                             |
+|    registerType.ts    |   등록에 사용되는 모든 타입정의   |                                                                                                                            |
+|   register.style.ts   |      등록 styled-components       |                                                     styled-components                                                      |
+| registerContainer.tsx |            등록하기 뷰            |                                                                                                                            |
+|   registerHead.tsx    |            등록하기 뷰            |                                                                                                                            |
+|     register.tsx      |          등록하기 페이지          |                                                     모든 등록하기 파일                                                     |
 
-## 🔮 코드 설명
+### 4. 🔮 코드 설명
 
-### Custom Elements - [Provider] form (components > customElements > FormElement.tsx)
+### Custom Elements - [Provider] form (components > customElements > formElement.tsx)
 
 ```js
 
@@ -299,8 +230,8 @@
 // Form 엘리먼트를 정의
 function FormElement<
   // React Hook Form 에서 Input 과 같은 폼에서 사용될 값의 타입을 정의
-  // 키는 string 이, 값은 어떤 값이든 허용하기 위해 any
-  DataSchema extends Record<string, any>,
+  // Input에서 받는 값의 키와 값은 모두 string
+   DataSchema extends Record<string, string>,
   // zod로 Schema를 만들 경우, 해당 Schema에서 사용 할 값의 타입
   // 어떤 값이 올 지 모르기 때문에 any, any
   Schema extends z.Schema<any, any>
@@ -313,7 +244,7 @@ function FormElement<
   // 사용자가 사용할 zod schema를 받는 것을 준비
   schema: Schema;
   onSubmit: (data: DataSchema, event?: BaseSyntheticEvent) => void;
-  children: any;
+  children: ReactNode;
   defaultValues?: Record<string, any>;
 }) {
 
@@ -338,7 +269,7 @@ function FormElement<
 }
 ```
 
-### Custom Elements - [Consumer] form (LoginSchema.ts / RegisterSchema.ts / LoginForm.tsx / RegisterForm.tsx)
+### Custom Elements - [Consumer] form (loginSchema.ts / registerSchema.ts / loginForm.tsx / registerForm.tsx)
 
 ```js
 
@@ -428,7 +359,7 @@ function LoginForm() {
 
 ```
 
-### Custom Elements - [Provider] Input type="file",(components > Input > SingleImageUploader.tsx)
+### Custom Elements - [Provider] Input type="file",(components > Input > singleImageUploader.tsx)
 
 ```js
 
@@ -444,7 +375,7 @@ function LoginForm() {
  *
 */
 
-function SingleImageUploader<Model extends Record<string, any>>({
+function SingleImageUploader<Model extends Record<string, string>>({
   zodValidationKey,
   btnTxt,
 }: {
@@ -493,15 +424,15 @@ function SingleImageUploader<Model extends Record<string, any>>({
   }, [isImage]);
 
   return (
-    <ImageContainer>
-      <DisplayContainer display="flex">
-        <ImageWrapper width="60%" height="80px">
+   <ImageContainer>
+      <ContentBox display="flex">
+        <ImageHolder width="60%" height="80px">
           {base64 ? (
-            <ImageElmn src={base64} alt="upload" />
+            <Image src={base64} alt="upload" />
           ) : (
-            <ImageElmn src={upload} alt="upload" />
+            <Image src={upload} alt="upload" />
           )}
-        </ImageWrapper>
+        </ImageHolder>
 
         <input
           type="file"
@@ -511,7 +442,7 @@ function SingleImageUploader<Model extends Record<string, any>>({
           style={{ display: 'none' }}
         />
 
-        <DisplayItem
+        <ImageFileNameView
           display="flex"
           width="60%"
           flexDirection="column"
@@ -526,8 +457,8 @@ function SingleImageUploader<Model extends Record<string, any>>({
               {watch(zodValidationKey.toString())[0]?.name}
             </ImageTitle>
           ) : null}
-        </DisplayItem>
-      </DisplayContainer>
+        </ImageFileNameView>
+      </ContentBox>
 
       {errors[zodValidationKey.toString()] ? (
         <ImageErrorMessage>
@@ -542,7 +473,7 @@ export default SingleImageUploader;
 
 ```
 
-### Custom Elements - [Consumer] Input type="file" (RegisterForm.tsx)
+### Custom Elements - [Consumer] Input type="file" (registerForm.tsx)
 
 ```js
 
@@ -583,7 +514,7 @@ export default SingleImageUploader;
  *
 */
 
-function InputElement<Model extends Record<string, any>>({
+function InputElement<Model extends Record<string, string>>({
   zodValidationKey,
   LabelTxt,
   LabelHide,
