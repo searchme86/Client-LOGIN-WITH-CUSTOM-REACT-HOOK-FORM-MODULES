@@ -16,9 +16,9 @@ export interface StyleProps {
   bgColor?: string;
   fontSize?: string;
   fontColor?: string;
+  borderRadius?: string;
   fontWeight?: number;
   LabelHide?: boolean;
-  borderRadius?: string;
   justifyContent?: justifyContentType;
   alignItems?: alignItemsType;
   flexDirection?: flexDirectionType;
