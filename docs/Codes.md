@@ -32,16 +32,16 @@
 
 ## 🔧 1. 프로젝트 스펙
 
-|                               npm 모듈명                               |                  사용목적                  |                                    사용이유                                     |
-| :--------------------------------------------------------------------: | :----------------------------------------: | :-----------------------------------------------------------------------------: |
-|                              @craco/craco                              |             프로젝트 경로설정              | 폴더가 중첩될 수록 <br/> 경로 depth 때문에, <br/> 컴포넌트 가독성 목적으로 사용 |
-| @fortawesome/free-solid-svg-icons <br/> @fortawesome/react-fontawesome |               아이콘 이미지                |             이전 프로젝트에서 사용해왔고 <br/>, 사용 방법이 간단함              |
-|               react-hook-form <br/> @hookform/resolvers                |              React Hook Form               |                                 React Hook Form                                 |
-|                         @tanstack/react-query                          |                React Query                 |                                   React Query                                   |
-|                      base-64 <br/> @types/base-64                      | 이미지를 base64 형태로 <br/> 인코딩/디코딩 |               이미지를 <br/> 최종 base64 형태로 만들기 위해 필요                |
-|                       browser-image-compression                        |             이미지 용량을 압축             |             이미지를 폼데이터에 저장 할 때, <br/> 용량을 줄 일 용도             |
-|                             framer-motion                              |          로그인 페이지 애니메이션          |                            로그인 페이지 애니메이션                             |
-|                                  zod                                   |         폼 인풋의 유효성 타입검사          |                        폼 인풋 값의 <br/> 유효성을 검사                         |
+|                               npm 모듈명                               |      사용목적      |                                    사용이유                                    |
+| :--------------------------------------------------------------------: | :----------------: | :----------------------------------------------------------------------------: |
+|                              @craco/craco                              | 프로젝트 경로설정  | 폴더가 중첩될수록 <br/> 경로 depth 때문에, <br/> 컴포넌트 가독성 목적으로 사용 |
+| @fortawesome/free-solid-svg-icons <br/> @fortawesome/react-fontawesome |   아이콘 이미지    |                            이전 프로젝트에서 사용함                            |
+|               react-hook-form <br/> @hookform/resolvers                |  React Hook Form   |                                React Hook Form                                 |
+|                         @tanstack/react-query                          |    React Query     |                                  React Query                                   |
+|                      base-64 <br/> @types/base-64                      |       base64       |                   이미지를 base64 형태로 <br/> 인코딩/디코딩                   |
+|                       browser-image-compression                        | 이미지 용량을 압축 |          이미지를 폼데이터에 저장할 때, <br/> 보다 작은 용량으로 저장          |
+|                             framer-motion                              |     애니메이션     |                            로그인 페이지 애니메이션                            |
+|                                  zod                                   |  폼 인풋의 유효성  |                        폼 인풋 값의 <br/> 유효성을 검사                        |
 
 ## 🔬 2. 코드 흐름
 

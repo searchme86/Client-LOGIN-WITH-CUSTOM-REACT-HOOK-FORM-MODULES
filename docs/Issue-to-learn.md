@@ -12,16 +12,16 @@
 
       > <input type={type} ref={ref} {...HTMLAttributesProps} />
 
-    - 향후 유지보수 고려해, 코드 주석만 있다면, 누구나 이해할 수 있는 정도의 코드
+    - 향후 유지보수 고려해, 코드 주석만 있다면, 누구나 이해할 수 있는 정도의 코드로 구현
 
-    - TS 리액트를 통해 코드 안정성 확보
+    - TS 리액트를 통해, 코드 안정성 확보
 
   - 🔧 프로젝트 구현
 
     - TS로 마이그레이션
 
       - 참고 가능한 코드가 대부분 JS 리액트
-        - 타입(Type)정보가 없거나 코드추론이 어려운 변수가 있어, 참고 수준으로 밖에 사용할 수 없었음
+        - 타입(Type) 정보가 없거나 코드 추론이 어려운 변수가 있어, 참고 수준으로밖에 사용할 수 없었음
 
     - Zod
 
@@ -33,8 +33,8 @@
 
       - [훅 규칙](https://ko.reactjs.org/docs/hooks-rules.html '훅 규칙')을 준수하며 컴포넌트 생성
         - 'Hook을 일반적인 JavaScript 함수에서 호출하지 마세요.'
-        - FormElement의 데이터는 '함수 onRegisterSubmit'에서만 참조 가능 하기 때문에
-          - 다음의 작업들을 컴포넌트로 분리할 수 없고, '함수 onRegisterSubmit' 안에서 모두 실행 해야함
+        - FormElement의 데이터는 '함수 onRegisterSubmit'에서만 참조 가능하기 때문에
+          - 다음의 작업을 컴포넌트로 분리할 수 없고, '함수 onRegisterSubmit' 안에서 모두 실행 해야 함
             - 폼 데이터 (formData) 생성
             - 이미지 압축(ImageCompression)
             - 파일 (FileReader) 처리
@@ -44,24 +44,24 @@
       - watch()를 통해 값을 확인하면, Input type="file"의 value만 빈 객체로 확인됨
       - 등록된 이미지 미리보기
         - 'base64', 'blob' 이란 데이터 형식을 경험
-        - 'base64'으로 데이터 (형식) 변환하는 방법
-          - 'encode', 'decode' 개념 경험
-          - 리액트에서 'base64'을 'encode', 'decode' 방법
+        - 'blob'에서 'base64'으로 데이터 (형식) 변환 코드를 접해봄
+          - 'encode', 'decode' 개념
+          - 리액트에서 'base64'을 'encode', 'decode' 코드
             - > import { decode as base64_decode, encode as base64_encode } from 'base-64';
 
 - 2. 🛠️ TypeScript
 
-  - Context(& useReducer)
+  - Context & useReducer
 
-    - context 타입 정의
-    - context에서 반환한 store가 'undefined'로 반환
-    - context와 useReducer를 사용하는데, 액선 생성자의 리턴타입에 대해 에러 발생
+    - Context 타입 정의
+    - Context에서 반환한 store가 'undefined'로 반환됨
+    - Context와 useReducer를 사용하는데, 액선 생성자의 리턴타입에 대해 에러 발생
 
   - LocalStorage & useState
 
-    - context와 useState를 사용하는데, initialState에 조건식을 넣어야 할 경우
+    - Context와 useState를 사용하는데, initialState에 조건식을 넣어야 할 경우
 
-  - Enum에서 정의한 타입을 적용하기
+  - Enum으로 정의한 타입으로 적용하기
 
   - Axios-Intercepter에서 Header의 타입이 존재하지 않습니다.
 
@@ -153,7 +153,7 @@
 - [fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420](https://github.com/axios/axios/pull/5420 'fix(types): fixed AxiosRequestConfig header interface by refactoring it to RawAxiosRequestConfig; #5420')
 - [Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416](https://github.com/axios/axios/issues/5416 'Property Authorization does not exists on type AxiosHeaders after upgrade to 1.2.2 #5416')
 
-### 7. Enum에서 정의한 타입을 적용하기
+### 7. Enum으로 정의한 타입으로 적용하기
 
 ### 문제 : zod에서 정의한 schema 타입이 아닌 모든 string을 받을 수 있음, 정의한 Enum 타입만 받을 수 있도록 변경
 
